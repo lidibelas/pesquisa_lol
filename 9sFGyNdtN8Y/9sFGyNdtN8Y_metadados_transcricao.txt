@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: 9sFGyNdtN8Y
+Arquivo original: TOP 1 KASSADIN CARREGANDO O @ayellol1 NO CHALLENGER !  _ Yiok [9sFGyNdtN8Y].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 1133.34 segundos
+Número de segmentos: 359
