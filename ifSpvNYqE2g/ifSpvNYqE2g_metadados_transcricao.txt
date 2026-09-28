@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: ifSpvNYqE2g
+Arquivo original: COMO O YIOK SE TORNOU O PLAYER MAIS ODIADO DO SERVIDOR ! [ifSpvNYqE2g].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 814.14 segundos
+Número de segmentos: 317
