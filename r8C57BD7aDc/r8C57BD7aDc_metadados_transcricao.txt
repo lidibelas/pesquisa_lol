@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: r8C57BD7aDc
+Arquivo original: YIOK SURTA AO VIVO DANDO COACH PARA UM VIEWER BRONZE IV! [r8C57BD7aDc].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 1454.78 segundos
+Número de segmentos: 776
