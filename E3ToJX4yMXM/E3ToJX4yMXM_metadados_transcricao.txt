@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: E3ToJX4yMXM
+Arquivo original: JUKES SURTOU AO CONHECER O PICK SECRETO DO YIOK ! [E3ToJX4yMXM].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 961.35 segundos
+Número de segmentos: 414
