@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: cyk1wQGe3tE
+Arquivo original: KASSADOLF NA FUGA DO LAZARO 😂 [cyk1wQGe3tE].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 15.05 segundos
+Número de segmentos: 7
