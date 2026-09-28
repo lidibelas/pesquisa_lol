@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: TRNthMDhtSU
+Arquivo original: SAPO IMUNDO 😂 #leagueoflegends #yiok [TRNthMDhtSU].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 17.88 segundos
+Número de segmentos: 6
