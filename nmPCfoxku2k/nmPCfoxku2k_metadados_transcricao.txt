@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: nmPCfoxku2k
+Arquivo original: ABSOLUT CONHECEU O MELHOR KASSADIN DO MUNDO !  _ Yiok [nmPCfoxku2k].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 837.22 segundos
+Número de segmentos: 254
