@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: Jyknzm3ZojA
+Arquivo original: ESSE SYLAS É CEGO 😂 #leagueoflegends #yiok [Jyknzm3ZojA].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 12.26 segundos
+Número de segmentos: 2
