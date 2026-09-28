@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: SBT6DCNR4BY
+Arquivo original: YIOK CAIU CONTRA UMA E-GIRL NO CHALLENGER E FICOU APAIXONADO ! [SBT6DCNR4BY].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 811.96 segundos
+Número de segmentos: 347
