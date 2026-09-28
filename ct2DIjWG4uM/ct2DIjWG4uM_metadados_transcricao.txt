@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: ct2DIjWG4uM
+Arquivo original: OFICIALMENTE DE VOLTA AO CHALLENGER  ! [ct2DIjWG4uM].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 735.68 segundos
+Número de segmentos: 249
