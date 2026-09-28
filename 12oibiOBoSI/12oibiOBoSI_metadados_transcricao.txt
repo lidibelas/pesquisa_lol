@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: 12oibiOBoSI
+Arquivo original: TOP 1 KASSADIN TESTA OS NOVOS BUFFS  ... _ FICOU MUITO FORTE  _  _ Yiok [12oibiOBoSI].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 994.00 segundos
+Número de segmentos: 356
