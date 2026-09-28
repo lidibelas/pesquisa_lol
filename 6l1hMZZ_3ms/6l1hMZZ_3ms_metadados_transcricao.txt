@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: 6l1hMZZ_3ms
+Arquivo original: APAVORANDO PRO - PLAYER DA LOUD NO CHALLENGER !  _ Yiok [6l1hMZZ_3ms].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 696.69 segundos
+Número de segmentos: 219
