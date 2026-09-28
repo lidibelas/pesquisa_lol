@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: bxVRyxvjqmc
+Arquivo original: OLHA O NICK DO CARA ...  💀 #leagueoflegendsbrasil [bxVRyxvjqmc] (1).mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 11.68 segundos
+Número de segmentos: 4
