@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: F7XtKG59y4Q
+Arquivo original: KASSADIN NA FUGA DO LAZARO 😂 #leagueoflegends #games   #yiok [F7XtKG59y4Q].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 26.73 segundos
+Número de segmentos: 15
