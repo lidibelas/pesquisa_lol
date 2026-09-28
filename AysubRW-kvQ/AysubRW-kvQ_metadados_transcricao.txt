@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: AysubRW-kvQ
+Arquivo original: TIO DO ALANZOKA NO LOL ...  #leagueoflegends #yiok #gamers [AysubRW-kvQ].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 16.07 segundos
+Número de segmentos: 5
