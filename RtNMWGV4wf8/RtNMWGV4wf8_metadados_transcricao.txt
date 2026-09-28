@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: RtNMWGV4wf8
+Arquivo original: TRESH FULL AP TA BUGADO 💀 #leagueoflegends #yiok #games [RtNMWGV4wf8].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 24.01 segundos
+Número de segmentos: 8
