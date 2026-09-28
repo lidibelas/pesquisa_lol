@@ -19,7 +19,8 @@ Corpus de vídeos, transcrições e comentários do canal **Yiok** (League of Le
 pesquisa_lol/
 ├── README.md                              ← este arquivo
 ├── .gitignore
-├── comentarios/                           ← comentários coletados
+├── comentarios/                           ← comentários coletados (1.222 brutos + 61 flagged)
+│   ├── data_base yiok - comentários.csv   ← base completa de comentários (1.222)
 │   └── comentarios_flagged_mol.csv        ← 61 comentários flagged (MOL)
 ├── lexico/                                ← léxico MOL
 │   ├── mol-lexicon.json
@@ -124,5 +125,5 @@ Este repositório contém dados de pesquisa acadêmica. Os vídeos e áudios per
 - ✅ 43 pastas por videoId com descrição, transcrição e metadados
 - ✅ 35 áudios `.mp3` no repositório (8 mantidos localmente pela pesquisadora)
 - ✅ Léxico MOL (92 termos / 8 categorias)
+- ✅ 1.222 comentários brutos (`comentarios/data_base yiok - comentários.csv`)
 - ✅ 61 comentários flagged (MOL)
-- 🟡 Pendente: CSV completo dos 1.222 comentários brutos
