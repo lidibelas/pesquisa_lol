@@ -2,7 +2,6 @@
 
 Corpus de vídeos, transcrições e comentários do canal **Yiok** (League of Legends) para pesquisa sobre **misoginia online em jogos**, usando abordagem **MOL (Misoginia Online em Léxico)**.
 
-> 📄 O documento metodológico completo (diário metodológico) fundamenta este README. O arquivo `.docx` original não é versionado no repositório.
 
 ## 📋 Visão geral
 
