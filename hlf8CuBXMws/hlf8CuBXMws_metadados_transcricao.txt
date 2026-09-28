@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: hlf8CuBXMws
+Arquivo original: RANK 1 KASSADIN VISITANDO O MESTRE! [hlf8CuBXMws].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 981.65 segundos
+Número de segmentos: 260
