@@ -1,0 +1,15 @@
+# Áudios muito grandes podem ser excluídos do versionamento
+# Descomente se necessário:
+# *.mp3
+
+# Arquivos temporários
+*.tmp
+*.bak
+*~
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.env

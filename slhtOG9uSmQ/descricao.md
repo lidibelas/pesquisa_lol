@@ -18,4 +18,4 @@ Não se esqueça de deixar um Like e um Comentário no vídeozudo Discord da gal
 
 ## Transcrição
 
-_(arquivo de transcrição a ser adicionado)_
+Transcrição disponível em `video/slhtOG9uSmQ/slhtOG9uSmQ_transcricao.txt` (texto puro) e `video/slhtOG9uSmQ/slhtOG9uSmQ_transcricao.csv` (segmentada com timestamps).

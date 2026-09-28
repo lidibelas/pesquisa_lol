@@ -18,4 +18,4 @@
 
 ## Transcrição
 
-_(arquivo de transcrição a ser adicionado)_
+Transcrição disponível em `video/Jyknzm3ZojA/Jyknzm3ZojA_transcricao.txt` (texto puro) e `video/Jyknzm3ZojA/Jyknzm3ZojA_transcricao.csv` (segmentada com timestamps).

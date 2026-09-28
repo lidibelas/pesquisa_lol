@@ -18,4 +18,4 @@
 
 ## Transcrição
 
-_(arquivo de transcrição a ser adicionado)_
+Transcrição disponível em `video/SeRNWYWd7V4/SeRNWYWd7V4_transcricao.txt` (texto puro) e `video/SeRNWYWd7V4/SeRNWYWd7V4_transcricao.csv` (segmentada com timestamps).

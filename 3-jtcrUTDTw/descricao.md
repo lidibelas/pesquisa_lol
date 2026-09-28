@@ -18,4 +18,4 @@
 
 ## Transcrição
 
-_(arquivo de transcrição a ser adicionado)_
+Transcrição disponível em `video/3-jtcrUTDTw/3-jtcrUTDTw_transcricao.txt` (texto puro) e `video/3-jtcrUTDTw/3-jtcrUTDTw_transcricao.csv` (segmentada com timestamps).

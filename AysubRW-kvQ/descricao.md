@@ -18,4 +18,4 @@
 
 ## Transcrição
 
-_(arquivo de transcrição a ser adicionado)_
+Transcrição disponível em `video/AysubRW-kvQ/AysubRW-kvQ_transcricao.txt` (texto puro) e `video/AysubRW-kvQ/AysubRW-kvQ_transcricao.csv` (segmentada com timestamps).

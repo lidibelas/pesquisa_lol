@@ -18,4 +18,4 @@
 
 ## Transcrição
 
-_(arquivo de transcrição a ser adicionado)_
+Transcrição disponível em `video/NlMxSXvoztk/NlMxSXvoztk_transcricao.txt` (texto puro) e `video/NlMxSXvoztk/NlMxSXvoztk_transcricao.csv` (segmentada com timestamps).

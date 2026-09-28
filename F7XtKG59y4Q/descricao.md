@@ -18,4 +18,4 @@
 
 ## Transcrição
 
-_(arquivo de transcrição a ser adicionado)_
+Transcrição disponível em `video/F7XtKG59y4Q/F7XtKG59y4Q_transcricao.txt` (texto puro) e `video/F7XtKG59y4Q/F7XtKG59y4Q_transcricao.csv` (segmentada com timestamps).

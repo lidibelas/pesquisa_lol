@@ -18,4 +18,4 @@
 
 ## Transcrição
 
-_(arquivo de transcrição a ser adicionado)_
+Transcrição disponível em `video/PGFU_utw5qg/PGFU_utw5qg_transcricao.txt` (texto puro) e `video/PGFU_utw5qg/PGFU_utw5qg_transcricao.csv` (segmentada com timestamps).
