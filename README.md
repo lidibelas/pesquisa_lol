@@ -132,12 +132,6 @@ A base analítica (`comentarios/base_analitica_mol.csv`) reúne os 1.222 coment�
 
 > ⚠️ **Versão primária.** Esta é a versão inicial da base de dados, entregue como primeira versão da entrega prevista para 02/10/2026. A codificação por flag binário (presença/ausência) é um modelo provisório que ainda será refinado em etapas futuras.
 
-### Próximos passos previstos
-
-- [ ] Refinar o léxico MOL com termos específicos da comunidade de League of Legends (gamer slang)
-- [ ] Analisar também as descrições dos 43 vídeos
-- [ ] Evoluir da codificação binária para análise multilabel mais granular
-- [ ] Atualizar colunas de transcrição (`transcrição_ytb`, `status-transcricao`) com resultados do faster-whisper
 
 ## 🙏 Créditos e referências
 
@@ -181,9 +175,10 @@ Este repositório contém dados de pesquisa acadêmica. Os vídeos e áudios per
 - ✅ Base analítica unificada (`comentarios/base_analitica_mol.csv`) — 1.222 comentários + codificação binária por categoria
 - ✅ 61 comentários flagged (MOL)
 
-### 🔜 Pendências para versões futuras
 
-- [ ] Refinar léxico MOL com termos específicos da comunidade de LoL
-- [ ] Analisar descrições dos 43 vídeos
-- [ ] Evoluir de flag binário para análise multilabel granular
-- [ ] Atualizar colunas de transcrição com faster-whisper
+### 🔜 Próximos passos previstos
+
+- [ ] Refinar o léxico MOL com termos específicos da comunidade de League of Legends (gamer slang)
+- [ ] Analisar também as descrições dos 43 vídeos
+- [ ] Evoluir da codificação binária para análise multilabel mais granular
+- [ ] Atualizar colunas de transcrição (`transcrição_ytb`, `status-transcricao`) com resultados do faster-whisper
