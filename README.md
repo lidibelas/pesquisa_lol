@@ -19,8 +19,10 @@ Corpus de vídeos, transcrições e comentários do canal **Yiok** (League of Le
 pesquisa_lol/
 ├── README.md                              ← este arquivo
 ├── .gitignore
-├── comentarios/                           ← comentários coletados (1.222 brutos + 61 flagged)
-│   ├── data_base yiok - comentários.csv   ← base completa de comentários (1.222)
+├── data_base yiok - videos.csv            ← base de vídeos (43 linhas, 30 variáveis do YTDT)
+├── comentarios/                           ← comentários coletados e base analítica
+│   ├── data_base yiok - comentários.csv   ← base completa de comentários brutos (1.222)
+│   ├── base_analitica_mol.csv             ← base analítica unificada (1.222 + codificação binária MOL)
 │   └── comentarios_flagged_mol.csv        ← 61 comentários flagged (MOL)
 ├── lexico/                                ← léxico MOL
 │   ├── mol-lexicon.json
@@ -90,6 +92,54 @@ A detecção de misoginia utiliza a abordagem **MOL (Misoginia Online em Léxico
 
 O léxico MOL final contém **92 termos** distribuídos em **8 categorias**, aplicados aos 1.222 comentários do corpus.
 
+### 5. Base analítica — codificação binária por categoria
+
+A base analítica (`comentarios/base_analitica_mol.csv`) reúne os 1.222 comentários em uma única tabela com codificação binária (1 = presença / 0 = ausência) para cada uma das 8 categorias do léxico MOL, seguindo o modelo de datasets acadêmicos com codificação categorial (cf. Fernandez, Bertholini e Maia, 2025; Lourenço, Vitena e Silva, 2022).
+
+**Estrutura da base analítica (17 colunas):**
+
+| Coluna | Descrição |
+|--------|-----------|
+| `videoId` | ID do vídeo no YouTube |
+| `comment_id` | ID único do comentário |
+| `text` | Texto do comentário |
+| `publishedAt` | Data de publicação |
+| `likeCount` | Número de likes |
+| `isReply` | Se é resposta (true/false) |
+| `flag_mol` | 1 se ≥1 termo MOL encontrado, 0 caso contrário |
+| `n_matches` | Número de termos do léxico encontrados |
+| `cat_xingamentos_genero` | 1/0 — xingamentos de gênero |
+| `cat_genitalia_feminina` | 1/0 — referências a genitália feminina |
+| `cat_body_shaming` | 1/0 — depreciação corporal |
+| `cat_gamer_misogino` | 1/0 — termos misóginos da cultura gamer |
+| `cat_homofobia_misoginia` | 1/0 — homofobia + misoginia |
+| `cat_sexual_degradante` | 1/0 — linguagem sexual degradante |
+| `cat_prostituicao_degradante` | 1/0 — depreciação via prostituição |
+| `cat_racial_interseccional` | 1/0 — interseccionalidade raça/gênero |
+| `termos_encontrados` | Lista dos termos que bateram |
+
+**Distribuição dos 61 comentários flagged por categoria:**
+
+| Categoria | Comentários |
+|-----------|-------------|
+| racial_interseccional | 18 |
+| body_shaming | 14 |
+| sexual_degradante | 13 |
+| xingamentos_genero | 11 |
+| gamer_misogino | 7 |
+| genitalia_feminina | 1 |
+| homofobia_misoginia | 1 |
+| prostituicao_degradante | 0 |
+
+> ⚠️ **Versão primária.** Esta é a versão inicial da base de dados, entregue como primeira versão da entrega prevista para 02/10/2026. A codificação por flag binário (presença/ausência) é um modelo provisório que ainda será refinado em etapas futuras.
+
+### Próximos passos previstos
+
+- [ ] Refinar o léxico MOL com termos específicos da comunidade de League of Legends (gamer slang)
+- [ ] Analisar também as descrições dos 43 vídeos
+- [ ] Evoluir da codificação binária para análise multilabel mais granular
+- [ ] Atualizar colunas de transcrição (`transcrição_ytb`, `status-transcricao`) com resultados do faster-whisper
+
 ## 🙏 Créditos e referências
 
 ### Software e ferramentas
@@ -109,6 +159,8 @@ O léxico MOL final contém **92 termos** distribuídos em **8 categorias**, apl
 
 - **RIEDER, Bernhard.** YouTube Data Tools. Version 2.0. 2015. Software.
 - **RADFORD, Alec; KIM, Jong Wook; XU, Tao; BROCKMAN, Greg; MCLEAVEY, Christine; SUTSKEVER, Ilya.** Robust Speech Recognition via Large-Scale Weak Supervision. *Proceedings of the 40th International Conference on Machine Learning*, v. 202, p. 28492–28518, 2023.
+- **FERNANDEZ, Michelle; BERTHOLINI, Frederico; MAIA, Bárbara.** Políticas de saúde dos Estados brasileiros durante a pandemia de Covid-19: um dataset das normativas produzidas. *Dados*, Rio de Janeiro, v. 68, n. 3, e20230153, 2025.
+- **LOURENÇO, Luiz Claudio; VITENA, Gabrielle Simões Lima; SILVA, Marina de Macedo.** Prisão provisória, racismo e seletividade penal: uma discussão a partir dos prontuários de uma unidade prisional. *Revista Brasileira de Segurança Pública*, v. 16, n. 2, p. 220–239, 2022.
 
 ### Criador do conteúdo
 
@@ -120,10 +172,19 @@ Este repositório contém dados de pesquisa acadêmica. Os vídeos e áudios per
 
 ## 📌 Status
 
-**Base de dados em construção.**
+**Versão primária da base de dados** — primeira versão da entrega prevista para 02/10/2026. A base está funcional mas ainda será refinada em etapas futuras.
 
 - ✅ 43 pastas por videoId com descrição, transcrição e metadados
 - ✅ 35 áudios `.mp3` no repositório (8 mantidos localmente pela pesquisadora)
-- ✅ Léxico MOL (92 termos / 8 categorias)
+- ✅ Léxico MOL v2 (92 termos / 8 categorias)
+- ✅ Base de vídeos (`data_base yiok - videos.csv`) — 43 vídeos, 30 variáveis do YTDT
 - ✅ 1.222 comentários brutos (`comentarios/data_base yiok - comentários.csv`)
+- ✅ Base analítica unificada (`comentarios/base_analitica_mol.csv`) — 1.222 comentários + codificação binária por categoria
 - ✅ 61 comentários flagged (MOL)
+
+### 🔜 Pendências para versões futuras
+
+- [ ] Refinar léxico MOL com termos específicos da comunidade de LoL
+- [ ] Analisar descrições dos 43 vídeos
+- [ ] Evoluir de flag binário para análise multilabel granular
+- [ ] Atualizar colunas de transcrição com faster-whisper
