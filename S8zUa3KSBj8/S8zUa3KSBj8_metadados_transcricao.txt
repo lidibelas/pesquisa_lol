@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: S8zUa3KSBj8
+Arquivo original: TINHA COMO SER PIOR_ 🫢 #leagueoflegends #yiok #games [S8zUa3KSBj8].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 28.19 segundos
+Número de segmentos: 1
