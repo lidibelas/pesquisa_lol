@@ -1,32 +1,32 @@
 # Pesquisa LoL — Corpus Yiok
 
-Corpus de vídeos e comentários do canal **Yiok** (League of Legends) para pesquisa sobre **misoginia online em jogos**.
+Corpus de vídeos, transcrições e comentários do canal **Yiok** (League of Legends) para pesquisa sobre **misoginia online em jogos**, usando abordagem **MOL (Misoginia Online em Léxico)**.
 
 ## 📋 Visão geral
 
-| Item | Valor |
-|------|-------|
-| **Canal** | Yiok (`UC_GFcLxFl1WhIOpZTzf9FSg`) |
-| **Total de vídeos** | 43 (22 longos + 21 shorts) |
-| **Período de coleta** | 21/08/2025 – 20/11/2025 |
-| **Total de comentários** | 1.222 |
-| **Total de views** | 418.042 |
-| **Transcrições** | 43 (Whisper large-v3, faster-whisper) |
+- **Canal**: Yiok (`UC_GFcLxFl1WhIOpZTzf9FSg`)
+- **Total de vídeos**: 43 (22 longos + 21 shorts)
+- **Período de coleta**: 21/08/2025 – 20/11/2025
+- **Total de comentários**: 1.222
+- **Total de views**: 418.042
+- **Transcrições**: 43 (Whisper large-v3 via faster-whisper)
 
 ## 📁 Estrutura do repositório
 
 ```
 pesquisa_lol/
-├── README.md                          ← este arquivo
-├── <videoId>/                         ← uma pasta por vídeo (43 total)
-│   ├── descricao.md                   ← metadados + descrição original
-│   ├── <videoId>.mp3                  ← áudio do vídeo (quando disponível)
-│   └── .gitkeep                       ← placeholder (quando áudio ainda não subido)
-└── video/                             ← transcrições centralizadas
+├── README.md                              ← este arquivo
+├── .gitignore
+├── comentarios/                           ← comentários coletados (a adicionar)
+├── lexico/                                ← léxico MOL (a adicionar)
+└── videos/                                ← uma pasta por vídeo (43 total)
     └── <videoId>/
-        ├── <videoId>_transcricao.txt  ← transcrição em texto puro
-        ├── <videoId>_transcricao.csv  ← transcrição segmentada (start, end, text)
-        └── <videoId>_metadados_transcricao.txt ← parâmetros da transcrição
+        ├── descricao.md                   ← metadados + descrição original
+        ├── <videoId>.mp3                  ← áudio do vídeo (35 disponíveis)
+        ├── <videoId>_transcricao.txt      ← transcrição em texto puro
+        ├── <videoId>_transcricao.csv      ← transcrição segmentada (start, end, text)
+        ├── <videoId>_metadados_transcricao.txt ← parâmetros da transcrição
+        └── .gitkeep                       ← placeholder (quando áudio ainda não subido)
 ```
 
 ## 🔬 Metodologia
@@ -41,7 +41,9 @@ Os comentários foram coletados utilizando a ferramenta **YouTube Data Tools** (
 
 ### 3. Download dos áudios
 
-Os áudios dos vídeos foram baixados utilizando o **Parabolic** ([github.com/NickvisionApps/Parabolic](https://github.com/NickvisionApps/Parabolic)), um frontend open-source do `yt-dlp` desenvolvido pela **Nickvision** (contribuidor principal: **nlogozzo**), sob licença MIT.
+Os áudios dos vídeos foram baixados utilizando o **Parabolic** ([github.com/NickvisionApps/Parabolic](https://github.com/NickvisionApps/Parabolic)), um frontend open-source do `yt-dlp` desenvolvido pela **Nickvision** (contribuidor principal: **nlogozzo**), sob licença MIT. 
+
+> *"Um santo que me salvou."* — Lídia Belas, sobre o criador do Parabolic 🙏
 
 ### 4. Transcrição automática
 
@@ -49,15 +51,13 @@ As transcrições foram geradas com **faster-whisper** ([github.com/SYSTRAN/fast
 
 **Parâmetros utilizados:**
 
-| Parâmetro | Valor |
-|-----------|-------|
-| Modelo | `Whisper large-v3` |
-| Idioma | `pt` |
-| Device | `cuda` (GPU) |
-| Compute type | `float16` |
-| Beam size | `5` |
-| VAD filter | `True` |
-| condition_on_previous_text | `False` |
+- **Modelo**: `Whisper large-v3`
+- **Idioma**: `pt`
+- **Device**: `cuda` (GPU)
+- **Compute type**: `float16`
+- **Beam size**: `5`
+- **VAD filter**: `True`
+- **condition_on_previous_text**: `False`
 
 Cada transcrição gera três arquivos:
 
@@ -79,7 +79,7 @@ O léxico MOL final contém **92 termos** distribuídos em **8 categorias**, apl
 ### Criadores das ferramentas
 
 - **Bernhard Rieder** — YouTube Data Tools (coleta de comentários)
-- **Nickvision / nlogozzo** — [Parabolic](https://github.com/NickvisionApps/Parabolic) (download de áudio, frontend do yt-dlp) — *"um santo que me salvou"*
+- **Nickvision / nlogozzo** — [Parabolic](https://github.com/NickvisionApps/Parabolic) (download de áudio, frontend do yt-dlp)
 - **SYSTRAN** — [faster-whisper](https://github.com/SYSTRAN/faster-whisper) (transcrição automática)
 - **OpenAI** — Whisper large-v3 (modelo de transcrição)
 
