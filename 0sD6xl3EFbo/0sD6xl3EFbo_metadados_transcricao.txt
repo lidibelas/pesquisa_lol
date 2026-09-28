@@ -1,0 +1,14 @@
+TRANSCRIÇÃO AUTOMÁTICA
+
+videoId: 0sD6xl3EFbo
+Arquivo original: TUDO O QUE VOCÊ PRECISA SABER - GUIA DEFINITIVO  CHALLENGER KASSADIN - RUNAS_BUILDS_COMBOS_DICAS ! [0sD6xl3EFbo].mp3
+Modelo: Whisper large-v3
+Implementação: faster-whisper
+Idioma: pt
+device: cuda
+compute_type: float16
+beam_size: 5
+vad_filter: True
+condition_on_previous_text: False
+Duração: 2602.61 segundos
+Número de segmentos: 1266
