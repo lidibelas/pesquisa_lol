@@ -19,8 +19,6 @@ Corpus de vídeos, transcrições e comentários do canal **Yiok** (League of Le
 pesquisa_lol/
 ├── README.md                              ← este arquivo
 ├── .gitignore
-├── docs/                                  ← documentação metodológica
-│   └── metodologia-yiok.docx              ← diário metodológico
 ├── comentarios/                           ← comentários coletados
 │   └── comentarios_flagged_mol.csv        ← 61 comentários flagged (MOL)
 ├── lexico/                                ← léxico MOL
@@ -29,11 +27,11 @@ pesquisa_lol/
 └── videos/                                ← uma pasta por vídeo (43 total)
     └── <videoId>/
         ├── descricao.md                   ← metadados + descrição original
-        ├── <videoId>.mp3                  ← áudio do vídeo (35 disponíveis)
+        ├── <videoId>.mp3                  ← áudio do vídeo (35 de 43 no repo; 8 mantidos localmente pela pesquisadora)
         ├── <videoId>_transcricao.txt      ← transcrição em texto puro
         ├── <videoId>_transcricao.csv      ← transcrição segmentada (start, end, text)
         ├── <videoId>_metadados_transcricao.txt ← parâmetros da transcrição
-        └── .gitkeep                       ← placeholder (quando áudio pendente)
+        └──                                ← (.gitkeep removido; pastas sem mp3 mantêm os demais arquivos)
 ```
 
 ## 🔬 Metodologia
@@ -121,4 +119,10 @@ Este repositório contém dados de pesquisa acadêmica. Os vídeos e áudios per
 
 ## 📌 Status
 
-**Em construção** — ver [Issues](https://github.com/lidibelas/pesquisa_lol/issues) para pendências.
+**Base de dados em construção.**
+
+- ✅ 43 pastas por videoId com descrição, transcrição e metadados
+- ✅ 35 áudios `.mp3` no repositório (8 mantidos localmente pela pesquisadora)
+- ✅ Léxico MOL (92 termos / 8 categorias)
+- ✅ 61 comentários flagged (MOL)
+- 🟡 Pendente: CSV completo dos 1.222 comentários brutos
