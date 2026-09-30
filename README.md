@@ -16,24 +16,25 @@ Corpus de vídeos, transcrições e comentários do canal **Yiok** (League of Le
 
 ```
 pesquisa_lol/
+├── AGENTS.md                              ← guia para agentes de IA (leia antes de operar o repo)
 ├── README.md                              ← este arquivo
 ├── .gitignore
-├── data_base yiok - videos.csv            ← base de vídeos (43 linhas, 30 variáveis do YTDT)
-├── comentarios/                           ← comentários coletados e base analítica
-│   ├── data_base yiok - comentários.csv   ← base completa de comentários brutos (1.222)
-│   ├── base_analitica_mol.csv             ← base analítica unificada (1.222 + codificação binária MOL)
-│   └── comentarios_flagged_mol.csv        ← 61 comentários flagged (MOL)
-├── lexico/                                ← léxico MOL
-│   ├── mol-lexicon.json
-│   └── mol-lexicon.csv
-└── videos/                                ← uma pasta por vídeo (43 total)
-    └── <videoId>/
-        ├── descricao.md                   ← metadados + descrição original
-        ├── <videoId>.mp3                  ← áudio do vídeo (35 de 43 no repo; 8 mantidos localmente pela pesquisadora)
-        ├── <videoId>_transcricao.txt      ← transcrição em texto puro
-        ├── <videoId>_transcricao.csv      ← transcrição segmentada (start, end, text)
-        ├── <videoId>_metadados_transcricao.txt ← parâmetros da transcrição
-        └──                                ← (.gitkeep removido; pastas sem mp3 mantêm os demais arquivos)
+└── data/                                  ← TODOS os dados da pesquisa
+    ├── data_base yiok - videos.csv        ← base de vídeos (43 linhas, 30 variáveis do YTDT)
+    ├── comentarios/                       ← comentários coletados e base analítica
+    │   ├── data_base yiok - comentários.csv   ← base completa de comentários brutos (1.222)
+    │   ├── base_analitica_mol.csv             ← base analítica unificada (1.222 + codificação binária MOL)
+    │   └── comentarios_flagged_mol.csv        ← 61 comentários flagged (MOL)
+    ├── lexico/                            ← léxico MOL
+    │   ├── mol-lexicon.json
+    │   └── mol-lexicon.csv
+    └── videos/                            ← uma pasta por vídeo (43 total)
+        └── <videoId>/
+            ├── descricao.md                   ← metadados + descrição original
+            ├── <videoId>.mp3                  ← áudio do vídeo (35 de 43 no repo; 8 >25 MB mantidos localmente)
+            ├── <videoId>_transcricao.txt      ← transcrição em texto puro
+            ├── <videoId>_transcricao.csv      ← transcrição segmentada (start, end, text)
+            └── <videoId>_metadados_transcricao.txt ← parâmetros da transcrição
 ```
 
 ## 🔬 Metodologia
@@ -93,7 +94,7 @@ O léxico MOL final contém **92 termos** distribuídos em **8 categorias**, apl
 
 ### 5. Base analítica — codificação binária por categoria
 
-A base analítica (`comentarios/base_analitica_mol.csv`) reúne os 1.222 comentários em uma única tabela com codificação binária (1 = presença / 0 = ausência) para cada uma das 8 categorias do léxico MOL, seguindo o modelo de datasets acadêmicos com codificação categorial (cf. Fernandez, Bertholini e Maia, 2025; Lourenço, Vitena e Silva, 2022).
+A base analítica (`data/comentarios/base_analitica_mol.csv`) reúne os 1.222 comentários em uma única tabela com codificação binária (1 = presença / 0 = ausência) para cada uma das 8 categorias do léxico MOL, seguindo o modelo de datasets acadêmicos com codificação categorial (cf. Fernandez, Bertholini e Maia, 2025; Lourenço, Vitena e Silva, 2022).
 
 **Estrutura da base analítica (17 colunas):**
 
@@ -170,9 +171,9 @@ Este repositório contém dados de pesquisa acadêmica. Os vídeos e áudios per
 - ✅ 43 pastas por videoId com descrição, transcrição e metadados
 - ✅ 35 áudios `.mp3` no repositório (8 mantidos localmente pela pesquisadora)
 - ✅ Léxico MOL v2 (92 termos / 8 categorias)
-- ✅ Base de vídeos (`data_base yiok - videos.csv`) — 43 vídeos, 30 variáveis do YTDT
-- ✅ 1.222 comentários brutos (`comentarios/data_base yiok - comentários.csv`)
-- ✅ Base analítica unificada (`comentarios/base_analitica_mol.csv`) — 1.222 comentários + codificação binária por categoria
+- ✅ Base de vídeos (`data/data_base yiok - videos.csv`) — 43 vídeos, 30 variáveis do YTDT
+- ✅ 1.222 comentários brutos (`data/comentarios/data_base yiok - comentários.csv`)
+- ✅ Base analítica unificada (`data/comentarios/base_analitica_mol.csv`) — 1.222 comentários + codificação binária por categoria
 - ✅ 61 comentários flagged (MOL)
 
 
