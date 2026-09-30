@@ -2,6 +2,8 @@
 
 Corpus de vídeos, transcrições e comentários do canal **Yiok** (League of Legends) para pesquisa sobre **misoginia online em jogos**, usando abordagem **MOL (Misoginia Online em Léxico)**.
 
+> ℹ️ **Sobre este projeto:** projeto de pesquisa pessoal da estudante **Lídia Belas** (Antropologia/UFBA), vinculado às disciplinas de **Métodos Digitais** e **Laboratório Quantitativo em Ciências Sociais**. Não há orientador formal — a pesquisadora conduz o projeto de forma independente. O propósito de toda a documentação é garantir reprodutibilidade e rastreabilidade metodológica para um futuro artigo acadêmico.
+
 
 ## 📋 Visão geral
 

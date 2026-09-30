@@ -4,9 +4,11 @@
 
 ## O que é este repositório
 
-`pesquisa_lol` é o corpus de dados da pesquisa de iniciação científica **PIBIC 2025–2026** da bolsista **Lídia Belas** no **LABHDUFBA** (Laboratório de Humanidades Digitais da UFBA). A pesquisa investiga **misoginia em comentários de vídeos de League of Legends** no YouTube, usando uma abordagem baseada em léxico (**MOL — Misogyny-Oriented Lexicon**).
+`pesquisa_lol` é o corpus de dados de um projeto de pesquisa pessoal da estudante **Lídia Belas** (Antropologia/UFBA), vinculado às disciplinas de **Métodos Digitais** e **Laboratório Quantitativo em Ciências Sociais**. A pesquisa investiga **misoginia em comentários de vídeos de League of Legends** no YouTube, usando uma abordagem baseada em léxico (**MOL — Misogyny-Oriented Lexicon**).
 
 O corpus foi coletado do canal do YouTuber **Yiok** (janela: 21/08/2025 a 21/11/2025), incluindo vídeos, transcrições, descrições e comentários.
+
+> ℹ️ Este projeto é de interesse pessoal de pesquisa da Lídia (LoL/gaming), não vinculado ao LABHDUFBA nem ao PIBIC. Não há orientador formal — a pesquisadora conduz o projeto de forma independente.
 
 ## Propósito da base
 
@@ -15,7 +17,8 @@ Esta base de dados serve como **corpus de pesquisa** para:
 1. **Detectar misoginia** em comentários de vídeos de LoL no YouTube por abordagem léxico (MOL)
 2. **Mapear categorias** de discurso misógino (xingamentos de gênero, body shaming, sexual degradante, racial interseccional, etc.)
 3. **Produzir evidência empírica** para análise antropológica sobre violência de gênero em espaços digitais de gaming
-4. Servir de **base para refinamento futuro** — o flag binário atual (presença/ausência) é uma versão primária que será expandida
+4. **Servir de base para um artigo acadêmico futuro** — por isso a documentação precisa estar completa e bem organizada, garantindo reprodutibilidade e rastreabilidade metodológica
+5. **Cumprir exigências das disciplinas** de Métodos Digitais e Laboratório Quantitativo em Ciências Sociais (UFBA)
 
 A base segue o modelo de codificação binária por categoria inspirado em **Fernandez et al. (2025)** e **Lourenço et al. (2022)**: cada comentário = 1 linha, cada categoria do léxico = 1 coluna com valor 1 (presente) ou 0 (ausente).
 
@@ -42,9 +45,9 @@ O repositório separa claramente **ferramenta de análise** de **dados brutos**:
 
 ### O que NÃO fazer
 
-- ❌ **NUNCA usar a conta ou token do orientador Leonardo (`leofn`)** neste repositório. Use apenas git + deploy key SSH da própria Lídia.
+- ❌ **NUNCA usar a conta ou token de terceiros** neste repositório. Use apenas git + deploy key SSH da própria Lídia.
 - ❌ **NÃO usar `gh` CLI** neste repositório — apenas `git` + deploy key SSH
-- ❌ **NÃO subir arquivos `.docx`** para o repositório (documentos de metodologia ficam locais)
+- ❌ **NÃO versionar documentos `.docx` de metodologia** (o arquivo enviado pela pesquisadora fica apenas como referência local, não no repo)
 - ❌ **NÃO subir áudios `.mp3` maiores que 25 MB** (limite do GitHub)
 - ❌ **NÃO modificar ou deletar dados originais** coletados (comentários brutos, transcrições, descrições)
 - ❌ **NÃO mover o `lexico/` para dentro de `data/`** — são coisas diferentes
@@ -93,16 +96,16 @@ A versão atual é **primária** (entrega de 02/10/2026). Os próximos passos pl
 - **`lexico/` na raiz** — separado de `data/` porque é ferramenta, não dado
 - **`data/` para tudo que é coleta** — vídeos, comentários, transcrições, CSVs brutos e analíticos
 - **Uma pasta por vídeo** (`data/videos/<videoId>/`) — preserva a correspondência metadados ↔ áudio ↔ transcrição ↔ comentários
-- **`.docx` fora do repo** — documentos de metodologia e relatórios ficam locais, não versionados
+- **`.docx` de metodologia fora do repo** — o documento enviado fica como referência local, não versionado
 - **Áudios >25 MB fora do repo** — 8 áudios que excedem o limite do GitHub ficam com a pesquisadora
 - **Commits claros** — `feat:`, `fix:`, `refactor:`, `docs:` para manter o histórico legível
-- **Deploy key SSH da Lídia** — nunca conta/token do orientador
+- **Deploy key SSH da Lídia** — nunca conta/token de terceiros
 
 ## Credenciais e acesso
 
 - **Deploy key SSH:** configurada em `~/.ssh/deploy_key_pesquisa_lol_write` (permissão de escrita)
 - **Remote:** `github-pesquisa-lol-write:lidibelas/pesquisa_lol.git`
-- **NUNCA** use o token ou conta GitHub do orientador aqui
+- **NUNCA** use token ou conta GitHub de terceiros aqui
 
 ## Estado atual (versão primária — 02/10/2026)
 
@@ -115,15 +118,15 @@ A versão atual é **primária** (entrega de 02/10/2026). Os próximos passos pl
 
 ## Contexto acadêmico
 
-- **Bolsista:** Lídia Belas (Antropologia/UFBA, LABHDUFBA)
-- **Orientador:** Leonardo Fernandes Nascimento (LABHDUFBA)
-- **Período:** PIBIC 2025–2026
+- **Pesquisadora:** Lídia Belas (Antropologia/UFBA)
+- **Projeto:** pesquisa pessoal (League of Legends / misoginia em gaming)
+- **Disciplinas vinculadas:** Métodos Digitais e Laboratório Quantitativo em Ciências Sociais (UFBA)
+- **Orientador:** não há orientador formal — a pesquisadora conduz o projeto de forma independente
 - **Ferramenta de coleta:** YouTube Data Tools (ytdt.digitalmethods.net)
 - **Léxico:** MOL — Misogyny-Oriented Lexicon (92 termos, 8 categorias)
 - **Modelo de dataset:** Fernandez et al. (2025) e Lourenço et al. (2022) — codificação binária por categoria
 
 ## Contato
 
-- **Lídia Belas:** responsável pelo repositório
-- **Leonardo Nascimento:** orientador (LABHDUFBA)
+- **Lídia Belas:** responsável pelo repositório (pesquisa pessoal)
 - **Tutor Hermes (pibic_labhdufba_bot):** agente de apoio à pesquisa
