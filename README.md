@@ -19,15 +19,16 @@ pesquisa_lol/
 ├── AGENTS.md                              ← guia para agentes de IA (leia antes de operar o repo)
 ├── README.md                              ← este arquivo
 ├── .gitignore
-└── data/                                  ← TODOS os dados da pesquisa
+├── lexico/                                ← léxico MOL (ferramenta de análise, NÃO é dado bruto)
+│   ├── mol-lexicon.json
+│   └── mol-lexicon.csv
+└── data/                                  ← dados da pesquisa (brutos e analíticos)
     ├── data_base yiok - videos.csv        ← base de vídeos (43 linhas, 30 variáveis do YTDT)
+    ├── data_base yiok.csv                 ← cópia da base de vídeos (upload via navegador)
     ├── comentarios/                       ← comentários coletados e base analítica
     │   ├── data_base yiok - comentários.csv   ← base completa de comentários brutos (1.222)
     │   ├── base_analitica_mol.csv             ← base analítica unificada (1.222 + codificação binária MOL)
     │   └── comentarios_flagged_mol.csv        ← 61 comentários flagged (MOL)
-    ├── lexico/                            ← léxico MOL
-    │   ├── mol-lexicon.json
-    │   └── mol-lexicon.csv
     └── videos/                            ← uma pasta por vídeo (43 total)
         └── <videoId>/
             ├── descricao.md                   ← metadados + descrição original
@@ -36,6 +37,8 @@ pesquisa_lol/
             ├── <videoId>_transcricao.csv      ← transcrição segmentada (start, end, text)
             └── <videoId>_metadados_transcricao.txt ← parâmetros da transcrição
 ```
+
+> 🔑 **Sobre a separação léxico ↔ dados:** o `lexico/` fica **na raiz**, fora de `data/`. O léxico é uma **ferramenta de análise** (lista de termos e categorias usada para detectar misoginia), não um dado bruto coletado do YouTube. Os dados brutos e analíticos ficam em `data/`.
 
 ## 🔬 Metodologia
 
