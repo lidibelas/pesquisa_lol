@@ -139,7 +139,7 @@ A base analítica (`data/comentarios/base_analitica_mol.csv`) reúne os 1.222 co
 > ⚠️ **Versão primária.** Esta é a versão inicial da base de dados, entregue como primeira versão da entrega prevista para 02/10/2026. A codificação por flag binário (presença/ausência) é um modelo provisório que ainda será refinado em etapas futuras.
 
 
-## 🙏 Créditos e referências
+## 📚 Créditos e referências
 
 ### Software e ferramentas
 
@@ -158,8 +158,32 @@ A base analítica (`data/comentarios/base_analitica_mol.csv`) reúne os 1.222 co
 
 - **RIEDER, Bernhard.** YouTube Data Tools. Version 2.0. 2015. Software.
 - **RADFORD, Alec; KIM, Jong Wook; XU, Tao; BROCKMAN, Greg; MCLEAVEY, Christine; SUTSKEVER, Ilya.** Robust Speech Recognition via Large-Scale Weak Supervision. *Proceedings of the 40th International Conference on Machine Learning*, v. 202, p. 28492–28518, 2023.
+- **MARTÍNEZ ARRANZ, A.; ZECH, S. T.; BONOTTI, M.** Political Parties and Civility in Parliament: The Case of Australia from 1901 to 2020. *Parliamentary Affairs*, v. 77, n. 2, p. 371–399, 2024. DOI: [10.1093/pa/gsad008](https://doi.org/10.1093/pa/gsad008). Open Access.
 - **FERNANDEZ, Michelle; BERTHOLINI, Frederico; MAIA, Bárbara.** Políticas de saúde dos Estados brasileiros durante a pandemia de Covid-19: um dataset das normativas produzidas. *Dados*, Rio de Janeiro, v. 68, n. 3, e20230153, 2025.
 - **LOURENÇO, Luiz Claudio; VITENA, Gabrielle Simões Lima; SILVA, Marina de Macedo.** Prisão provisória, racismo e seletividade penal: uma discussão a partir dos prontuários de uma unidade prisional. *Revista Brasileira de Segurança Pública*, v. 16, n. 2, p. 220–239, 2022.
+
+### Referência metodológica citável — Martínez Arranz et al. (2024)
+
+> MARTÍNEZ ARRANZ, A.; ZECH, S. T.; BONOTTI, M. **Political Parties and Civility in Parliament: The Case of Australia from 1901 to 2020.** *Parliamentary Affairs*, v. 77, n. 2, p. 371–399, 2024. DOI: [10.1093/pa/gsad008](https://doi.org/10.1093/pa/gsad008). Open Access.
+
+**Por que este artigo é relevante:**
+
+O artigo usa uma **abordagem lexicon-based** para detectar incivilidade no Parlamento australiano (corpus Hansard, >1,2 milhão de documentos) — a mesma família metodológica do MOL deste projeto. A métrica central é **frequência de termos por mil palavras**, que pode ser aplicada diretamente às transcrições deste corpus.
+
+**Equivalência metodológica:**
+
+| Artigo (Martínez Arranz et al.) | Este projeto |
+|---|---|
+| Corpus: discursos Hansard | Corpus: comentários + transcrições de vídeos de LoL |
+| Léxico: 1.383 termos de incivilidade (inglês) | Léxico MOL: 92 termos de misoginia (português) |
+| Métrica: frequência/mil palavras | Métrica: flag binário (comentários) + freq/mil palavras (transcrições) |
+| Comparação: entre partidos, câmaras, décadas | Comparação: entre temas de vídeo, fala vs comentários |
+| Variável dependente: incivilidade | Variável dependente: misoginia |
+
+**Como citar no artigo futuro:**
+
+- Na **seção de metodologia**: "Seguindo a abordagem lexicon-based de Martínez Arranz, Zech e Bonotti (2024) para detecção de incivilidade parlamentar — que utiliza um dicionário de termos e mede frequência por mil palavras —, este estudo aplica um léxico de misoginia em português brasileiro..."
+- Na **seção de discussão**: "Enquanto Martínez Arranz et al. (2024) comparam incivilidade entre partidos políticos, este estudo compara misoginia entre tipos de conteúdo em vídeos de gaming..."
 
 ### Criador do conteúdo
 
@@ -222,32 +246,6 @@ Analisar se certas **categorias do léxico MOL** (body shaming, racial intersecc
 - **Teste:** qui-quadrado por categoria ou análise de correspondência
 
 > ⚠️ Estas opções serão executadas **após o refinamento do léxico MOL**, que é a prioridade atual. As opções estão registradas aqui para planejamento — a análise estatística formal ainda não foi realizada.
-
-
-## 📚 Referência metodológica citável
-
-### Martínez Arranz, Zech & Bonotti (2024)
-
-> MARTÍNEZ ARRANZ, A.; ZECH, S. T.; BONOTTI, M. **Political Parties and Civility in Parliament: The Case of Australia from 1901 to 2020.** *Parliamentary Affairs*, v. 77, n. 2, p. 371–399, 2024. DOI: [10.1093/pa/gsad008](https://doi.org/10.1093/pa/gsad008). Open Access.
-
-**Por que este artigo é relevante:**
-
-O artigo usa uma **abordagem lexicon-based** para detectar incivilidade no Parlamento australiano (corpus Hansard, >1,2 milhão de documentos) — a mesma família metodológica do MOL deste projeto. A métrica central é **frequência de termos por mil palavras**, que pode ser aplicada diretamente às transcrições deste corpus.
-
-**Equivalência metodológica:**
-
-| Artigo (Martínez Arranz et al.) | Este projeto |
-|---|---|
-| Corpus: discursos Hansard | Corpus: comentários + transcrições de vídeos de LoL |
-| Léxico: 1.383 termos de incivilidade (inglês) | Léxico MOL: 92 termos de misoginia (português) |
-| Métrica: frequência/mil palavras | Métrica: flag binário (comentários) + freq/mil palavras (transcrições) |
-| Comparação: entre partidos, câmaras, décadas | Comparação: entre temas de vídeo, fala vs comentários |
-| Variável dependente: incivilidade | Variável dependente: misoginia |
-
-**Como citar no artigo futuro:**
-
-- Na **seção de metodologia**: "Seguindo a abordagem lexicon-based de Martínez Arranz, Zech e Bonotti (2024) para detecção de incivilidade parlamentar — que utiliza um dicionário de termos e mede frequência por mil palavras —, este estudo aplica um léxico de misoginia em português brasileiro..."
-- Na **seção de discussão**: "Enquanto Martínez Arranz et al. (2024) comparam incivilidade entre partidos políticos, este estudo compara misoginia entre tipos de conteúdo em vídeos de gaming..."
 
 
 ## 📌 Status
