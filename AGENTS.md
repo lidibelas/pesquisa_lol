@@ -81,15 +81,46 @@ pesquisa_lol/
             └── <videoId>_metadados_transcricao.txt
 ```
 
+## As duas fontes do corpus
+
+O corpus contém **duas fontes textuais distintas** — ambas analisáveis com o léxico MOL:
+
+1. **Comentários** (`data/comentarios/`) — o que a audiência escreve. 1.222 comentários, 61 flagged (5,0%). Métrica: flag binário (1/0).
+2. **Transcrições** (`data/videos/<videoId>/<videoId>_transcricao.txt`) — o que o Yiok diz nos vídeos. 43 transcrições, 81.553 palavras totais, 24 com misoginia detectada (55,8%). Métrica: frequência de termos por mil palavras.
+
+> As transcrições são uma **segunda fonte analítica**, não um complemento. Permitem comparar a linguagem do criador de conteúdo com a linguagem da audiência.
+
+## Opções de análise comparativa dentro da base
+
+A base atual permite comparações internas (correlação, não apenas descrição). As opções viáveis mapeadas são:
+
+1. **Tema do vídeo × misoginia nos comentários** — classificar vídeos por tipo de conteúdo (gameplay neutro / treta / relacionamento) e comparar proporção de comentários misóginos. VI: tema; VD: flag MOL. Teste: qui-quadrado + odds ratio.
+2. **Discurso do vídeo × discurso dos comentários** — aplicar MOL às 43 transcrições e comparar misoginia na fala do Yiok com misoginia nos comentários. Métrica das transcrições: freq/mil palavras (mesma do artigo de Martínez Arranz et al., 2024).
+3. **Engajamento × misoginia** — comparar likeCount entre comentários flagged e não-flagged. Teste: t-test ou Mann-Whitney.
+4. **Categorias MOL × tipo de vídeo** — analisar se certas categorias (body shaming, racial, gamer misógino, etc.) são mais frequentes em certos tipos de vídeo. Teste: qui-quadrado por categoria ou análise de correspondência.
+
+> ⚠️ Estas opções serão executadas **após o refinamento do léxico MOL**, que é a prioridade atual. Nenhuma análise estatística formal foi realizada ainda — as opções estão registradas para planejamento.
+
+## Referência metodológica citável
+
+**MARTÍNEZ ARRANZ, A.; ZECH, S. T.; BONOTTI, M.** Political Parties and Civility in Parliament: The Case of Australia from 1901 to 2020. *Parliamentary Affairs*, v. 77, n. 2, p. 371–399, 2024. DOI: 10.1093/pa/gsad008. Open Access.
+
+- **Por que é relevante:** usa abordagem lexicon-based para detectar incivilidade (mesma família do MOL). Métrica central = frequência de termos por mil palavras → diretamente aplicável às transcrições deste corpus.
+- **Equivalência:** léxico deles (1.383 termos, inglês) ↔ MOL (92 termos, português); corpus Hansard ↔ comentários + transcrições; comparação entre partidos ↔ comparação entre temas de vídeo.
+- **Como citar:** na metodologia ("seguindo Martínez Arranz et al., 2024...") e na discussão ("enquanto Martínez Arranz et al. comparam incivilidade entre partidos, este estudo compara misoginia entre tipos de conteúdo...").
+
 ## O que eu pretendo fazer no futuro
 
-A versão atual é **primária** (entrega de 02/10/2026). Os próximos passos planejados são:
+A versão atual é **primária** (entrega de 02/10/2026). A prioridade é refinar o léxico antes de qualquer análise estatística. Os próximos passos planejados são:
 
-1. **Refinar o léxico MOL** com termos específicos da comunidade de League of Legends (gamer slang, gírias do jogo) — o léxico atual combina HurtLex PT + termos observados empiricamente, mas precisa de especialização para o contexto gamer
-2. **Analisar as descrições dos 43 vídeos** — hoje só os comentários passam pelo léxico; as descrições (`descricao.md`) são fonte ainda inexplorada
-3. **Evoluir da codificação binária para análise multilabel mais granular** — o flag 1/0 atual identifica presença/ausência por categoria; futuramente pode-se contar ocorrências, pesar severidade, ou combinar categorias
-4. **Atualizar colunas de transcrição** (`transcrição_ytb`, `status-transcricao`) na base de vídeos com os resultados do faster-whisper
-5. **Integrar transcrições e descrições** à análise de misoginia — não só comentários
+1. **Refinar o léxico MOL** com termos específicos da comunidade de League of Legends (gamer slang, gírias do jogo) — **prioridade atual, bloqueia as análises abaixo**
+2. **Recodificar os 43 vídeos** com coluna `tema_video` (gameplay neutro / treta / relacionamento) — necessária para a Opção 1
+3. **Aplicar o léxico MOL às 43 transcrições** e gerar `base_transcricoes_mol.csv` — necessária para a Opção 2
+4. **Rodar análise estatística formal** (qui-quadrado, odds ratio, correlação de Pearson) após refinamento do léxico
+5. **Analisar as descrições dos 43 vídeos** — fonte ainda inexplorada
+6. **Evoluir da codificação binária para análise multilabel** mais granular
+7. **Atualizar colunas de transcrição** (`transcrição_ytb`, `status-transcricao`) com resultados do faster-whisper
+8. **Baixar e armazenar o PDF** do artigo de Martínez Arranz et al. (2024) como referência metodológica
 
 ## Como eu quero organizar as coisas
 
@@ -114,7 +145,11 @@ A versão atual é **primária** (entrega de 02/10/2026). Os próximos passos pl
 - ✅ 61 comentários flagged pelo léxico MOL
 - ✅ Léxico MOL v2 (92 termos / 8 categorias)
 - ✅ Base analítica com codificação binária por categoria
-- ⏳ Versão primária — será refinada (MOL + léxico gamer LoL, análise de descrições, multilabel)
+- ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica identificada
+- ✅ Opções de análise comparativa interna mapeadas (4 opções)
+- ✅ Referência metodológica citável registrada (Martínez Arranz et al., 2024)
+- ⏳ Léxico MOL em refinamento (prioridade atual) — análise estatística bloqueada até conclusão
+- ⏳ Versão primária — será refinada (MOL + léxico gamer LoL, análise de transcrições, análise estatística)
 
 ## Contexto acadêmico
 

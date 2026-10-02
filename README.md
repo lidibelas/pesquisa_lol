@@ -169,9 +169,90 @@ A base analítica (`data/comentarios/base_analitica_mol.csv`) reúne os 1.222 co
 
 Este repositório contém dados de pesquisa acadêmica. Os vídeos e áudios pertencem ao canal Yiok. As transcrições e análises são de uso acadêmico.
 
+## 📊 As duas fontes do corpus
+
+Este corpus contém **duas fontes textuais distintas**, ambas passíveis de análise pelo léxico MOL:
+
+| | Fonte 1 — Comentários | Fonte 2 — Transcrições |
+|---|---|---|
+| **O que é** | O que a audiência escreve | O que o Yiok diz nos vídeos |
+| **Arquivos** | `data/comentarios/` | `data/videos/<videoId>/<videoId>_transcricao.txt` |
+| **Volume** | 1.222 comentários | 43 transcrições (81.553 palavras) |
+| **Métrica MOL** | Flag binário (1/0) por comentário | Frequência de termos por mil palavras |
+| **Flagged** | 61 (5,0%) | 24 de 43 (55,8%) |
+| **Natureza** | Reação da audiência | Discurso do criador de conteúdo |
+
+> 🔑 As transcrições são uma **segunda fonte analítica**, não um complemento dos comentários. Permitem comparar a linguagem do streamer com a linguagem da audiência — uma camada analítica que a maioria dos estudos de comentários de YouTube não tem.
+
+
+## 🔍 Opções de análise comparativa dentro da base
+
+A base atual permite **comparações internas** (não apenas descrições de dados). As opções viáveis são:
+
+### Opção 1 — Tema do vídeo × misoginia nos comentários
+
+Classificar os 43 vídeos por **tipo de conteúdo** (gameplay neutro / treta e conflito / relacionamento e gênero) e comparar a proporção de comentários misóginos entre os grupos.
+
+- **Variável independente:** tema do vídeo (3 categorias)
+- **Variável dependente:** presença de misoginia (flag MOL)
+- **Teste:** qui-quadrado + odds ratio
+
+### Opção 2 — Discurso do vídeo × discurso dos comentários
+
+Aplicar o léxico MOL às **43 transcrições** (além dos comentários) e comparar a misoginia na fala do Yiok com a misoginia nos comentários de cada vídeo.
+
+- **Métrica das transcrições:** frequência de termos por mil palavras (mesma métrica usada por Martínez Arranz et al., 2024)
+- **Métrica dos comentários:** % de comentários flagged
+- **Pergunta:** vídeos em que o criador usa mais linguagem misógina geram comentários mais misóginos?
+
+### Opção 3 — Engajamento × misoginia
+
+Avaliar se comentários misóginos recebem mais ou menos likes que comentários não-misóginos.
+
+- **Variável independente:** flag MOL (sim/não)
+- **Variável dependente:** likeCount
+- **Teste:** comparação de médias (t-test ou Mann-Whitney)
+
+### Opção 4 — Categorias de misoginia × tipo de vídeo
+
+Analisar se certas **categorias do léxico MOL** (body shaming, racial interseccional, gamer misógino, etc.) são mais frequentes em certos tipos de vídeo do que em outros.
+
+- **Variável independente:** tema do vídeo
+- **Variável dependente:** distribuição das 8 categorias MOL
+- **Teste:** qui-quadrado por categoria ou análise de correspondência
+
+> ⚠️ Estas opções serão executadas **após o refinamento do léxico MOL**, que é a prioridade atual. As opções estão registradas aqui para planejamento — a análise estatística formal ainda não foi realizada.
+
+
+## 📚 Referência metodológica citável
+
+### Martínez Arranz, Zech & Bonotti (2024)
+
+> MARTÍNEZ ARRANZ, A.; ZECH, S. T.; BONOTTI, M. **Political Parties and Civility in Parliament: The Case of Australia from 1901 to 2020.** *Parliamentary Affairs*, v. 77, n. 2, p. 371–399, 2024. DOI: [10.1093/pa/gsad008](https://doi.org/10.1093/pa/gsad008). Open Access.
+
+**Por que este artigo é relevante:**
+
+O artigo usa uma **abordagem lexicon-based** para detectar incivilidade no Parlamento australiano (corpus Hansard, >1,2 milhão de documentos) — a mesma família metodológica do MOL deste projeto. A métrica central é **frequência de termos por mil palavras**, que pode ser aplicada diretamente às transcrições deste corpus.
+
+**Equivalência metodológica:**
+
+| Artigo (Martínez Arranz et al.) | Este projeto |
+|---|---|
+| Corpus: discursos Hansard | Corpus: comentários + transcrições de vídeos de LoL |
+| Léxico: 1.383 termos de incivilidade (inglês) | Léxico MOL: 92 termos de misoginia (português) |
+| Métrica: frequência/mil palavras | Métrica: flag binário (comentários) + freq/mil palavras (transcrições) |
+| Comparação: entre partidos, câmaras, décadas | Comparação: entre temas de vídeo, fala vs comentários |
+| Variável dependente: incivilidade | Variável dependente: misoginia |
+
+**Como citar no artigo futuro:**
+
+- Na **seção de metodologia**: "Seguindo a abordagem lexicon-based de Martínez Arranz, Zech e Bonotti (2024) para detecção de incivilidade parlamentar — que utiliza um dicionário de termos e mede frequência por mil palavras —, este estudo aplica um léxico de misoginia em português brasileiro..."
+- Na **seção de discussão**: "Enquanto Martínez Arranz et al. (2024) comparam incivilidade entre partidos políticos, este estudo compara misoginia entre tipos de conteúdo em vídeos de gaming..."
+
+
 ## 📌 Status
 
-**Versão primária da base de dados** — primeira versão da entrega prevista para 02/10/2026. A base está funcional mas ainda será refinada em etapas futuras.
+**Versão primária da base de dados** — primeira versão da entrega prevista para 02/10/2026. A base está funcional mas o léxico ainda será refinado antes da análise estatística formal.
 
 - ✅ 43 pastas por videoId com descrição, transcrição e metadados
 - ✅ 35 áudios `.mp3` no repositório (8 mantidos localmente pela pesquisadora)
@@ -180,11 +261,18 @@ Este repositório contém dados de pesquisa acadêmica. Os vídeos e áudios per
 - ✅ 1.222 comentários brutos (`data/comentarios/data_base yiok - comentários.csv`)
 - ✅ Base analítica unificada (`data/comentarios/base_analitica_mol.csv`) — 1.222 comentários + codificação binária por categoria
 - ✅ 61 comentários flagged (MOL)
+- ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica identificada
+- ✅ Opções de análise comparativa interna mapeadas (4 opções)
+- ✅ Referência metodológica citável registrada (Martínez Arranz et al., 2024)
 
 
 ### 🔜 Próximos passos previstos
 
-- [ ] Refinar o léxico MOL com termos específicos da comunidade de League of Legends (gamer slang)
+- [ ] **Refinar o léxico MOL** com termos específicos da comunidade de League of Legends (gamer slang) — prioridade atual
+- [ ] Recodificar os 43 vídeos com coluna `tema_video` (gameplay neutro / treta / relacionamento)
+- [ ] Aplicar o léxico MOL às 43 transcrições (gerar `base_transcricoes_mol.csv`)
+- [ ] Rodar análise estatística formal (qui-quadrado, odds ratio, correlação) após refinamento do léxico
 - [ ] Analisar também as descrições dos 43 vídeos
 - [ ] Evoluir da codificação binária para análise multilabel mais granular
 - [ ] Atualizar colunas de transcrição (`transcrição_ytb`, `status-transcricao`) com resultados do faster-whisper
+- [ ] Baixar e armazenar o PDF do artigo de Martínez Arranz et al. (2024) como referência metodológica
