@@ -262,7 +262,7 @@ Analisar se certas **categorias do léxico MOL** (body shaming, racial intersecc
 - ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica identificada
 - ✅ Opções de análise comparativa interna mapeadas (4 opções)
 - ✅ Referência metodológica citável registrada (Martínez Arranz et al., 2024)
-
+- ✅ Atualizar colunas de transcrição (`transcrição_ytb`, `status-transcricao`) com resultados do faster-whisper
 
 ### 🔜 Próximos passos previstos
 
@@ -272,5 +272,4 @@ Analisar se certas **categorias do léxico MOL** (body shaming, racial intersecc
 - [ ] Rodar análise estatística formal (qui-quadrado, odds ratio, correlação) após refinamento do léxico
 - [ ] Analisar também as descrições dos 43 vídeos
 - [ ] Evoluir da codificação binária para análise multilabel mais granular
-- [ ] Atualizar colunas de transcrição (`transcrição_ytb`, `status-transcricao`) com resultados do faster-whisper
 - [ ] Baixar e armazenar o PDF do artigo de Martínez Arranz et al. (2024) como referência metodológica
