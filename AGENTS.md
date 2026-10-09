@@ -65,8 +65,10 @@ pesquisa_lol/
 ├── lexico/                                ← léxico MOL (ferramenta de análise, NÃO é dado bruto)
 │   ├── mol-lexicon.json
 │   └── mol-lexicon.csv
+├── scripts/                               ← scripts de análise
+│   └── analise_lexical.py                    ← aplica léxico MOL em comentários + transcrições
 └── data/                                  ← dados da pesquisa (brutos e analíticos)
-    ├── data_base yiok - videos.csv        ← base de vídeos (43 linhas, 30 variáveis YTDT)
+    ├── data_base yiok - videos.csv        ← base de vídeos (43 linhas, 30+ variáveis YTDT + categoria_video)
     ├── data_base yiok.csv                 ← cópia da base de vídeos (upload via navegador)
     ├── comentarios/                       ← comentários coletados + base analítica
     │   ├── data_base yiok - comentários.csv   ← brutos (1.222 comentários)
@@ -114,7 +116,7 @@ A base atual permite comparações internas (correlação, não apenas descriç�
 A versão atual é **primária** (entrega de 02/10/2026). A prioridade é refinar o léxico antes de qualquer análise estatística. Os próximos passos planejados são:
 
 1. **Refinar o léxico MOL** com termos específicos da comunidade de League of Legends (gamer slang, gírias do jogo) — **prioridade atual, bloqueia as análises abaixo**
-2. **Recodificar os 43 vídeos** com coluna `tema_video` (gameplay neutro / treta / relacionamento) — necessária para a Opção 1
+2. ~~Recodificar os 43 vídeos com coluna `tema_video`~~ — ✅ **FEITO**: coluna `categoria_video` adicionada (5 categorias: gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl)
 3. **Aplicar o léxico MOL às 43 transcrições** e gerar `base_transcricoes_mol.csv` — necessária para a Opção 2
 4. **Rodar análise estatística formal** (qui-quadrado, odds ratio, correlação de Pearson) após refinamento do léxico
 5. **Analisar as descrições dos 43 vídeos** — fonte ainda inexplorada
@@ -138,18 +140,19 @@ A versão atual é **primária** (entrega de 02/10/2026). A prioridade é refina
 - **Remote:** `github-pesquisa-lol-write:lidibelas/pesquisa_lol.git`
 - **NUNCA** use token ou conta GitHub de terceiros aqui
 
-## Estado atual (versão primária — 02/10/2026)
+## Estado atual (versão preliminar — out/2026)
 
 - ✅ 43 vídeos coletados (22 longos + 21 shorts)
+- ✅ 43 vídeos categorizados em 5 categorias (`categoria_video`: gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl)
 - ✅ 1.222 comentários brutos
-- ✅ 61 comentários flagged pelo léxico MOL
-- ✅ Léxico MOL v2 (92 termos / 8 categorias)
+- ✅ Léxico MOL v2 (92 termos / 8 categorias) — em refinamento
 - ✅ Base analítica com codificação binária por categoria
-- ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica identificada
+- ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica
 - ✅ Opções de análise comparativa interna mapeadas (4 opções)
 - ✅ Referência metodológica citável registrada (Martínez Arranz et al., 2024)
+- ✅ Script de análise léxica (`scripts/analise_lexical.py`) — roda léxico em comentários + transcrições
 - ⏳ Léxico MOL em refinamento (prioridade atual) — análise estatística bloqueada até conclusão
-- ⏳ Versão primária — será refinada (MOL + léxico gamer LoL, análise de transcrições, análise estatística)
+- ⏳ Versão preliminar — será refinada (MOL + léxico gamer LoL, análise de transcrições, análise estatística)
 
 ## Contexto acadêmico
 

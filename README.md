@@ -24,8 +24,10 @@ pesquisa_lol/
 ├── lexico/                                ← léxico MOL (ferramenta de análise, NÃO é dado bruto)
 │   ├── mol-lexicon.json
 │   └── mol-lexicon.csv
+├── scripts/                               ← scripts de análise
+│   └── analise_lexical.py                    ← aplica léxico MOL em comentários + transcrições
 └── data/                                  ← dados da pesquisa (brutos e analíticos)
-    ├── data_base yiok - videos.csv        ← base de vídeos (43 linhas, 30 variáveis do YTDT)
+    ├── data_base yiok - videos.csv        ← base de vídeos (43 linhas, 30+ variáveis do YTDT + categoria_video)
     ├── data_base yiok.csv                 ← cópia da base de vídeos (upload via navegador)
     ├── comentarios/                       ← comentários coletados e base analítica
     │   ├── data_base yiok - comentários.csv   ← base completa de comentários brutos (1.222)
@@ -95,18 +97,19 @@ A detecção de misoginia utiliza a abordagem **MOL (Misoginia Online em Léxico
 - **HurtLex PT** — léxico de discurso de ódio com categorias misóginas
 - **Termos emergentes** — vocabulário observado empiricamente na comunidade de League of Legends, acrescentado pela pesquisadora a partir de sua experiência como jogadora
 
-O léxico MOL final contém **92 termos** distribuídos em **8 categorias**, aplicados aos 1.222 comentários do corpus.
+O léxico MOL atual contém **92 termos** distribuídos em **8 categorias**, aplicados aos 1.222 comentários do corpus.
+
+> ⚠️ **Versão preliminar.** O léxico MOL está em refinamento. Os números de detecção podem mudar significativamente com a melhoria do léxico.
 
 ### 5. Base analítica — codificação binária por categoria
 
 A base analítica (`data/comentarios/base_analitica_mol.csv`) reúne os 1.222 comentários em uma única tabela com codificação binária (1 = presença / 0 = ausência) para cada uma das 8 categorias do léxico MOL, seguindo o modelo de datasets acadêmicos com codificação categorial (cf. Fernandez, Bertholini e Maia, 2025; Lourenço, Vitena e Silva, 2022).
 
-**Estrutura da base analítica (17 colunas):**
+**Estrutura da base analítica:**
 
 | Coluna | Descrição |
 |--------|-----------|
 | `videoId` | ID do vídeo no YouTube |
-| `comment_id` | ID único do comentário |
 | `text` | Texto do comentário |
 | `publishedAt` | Data de publicação |
 | `likeCount` | Número de likes |
@@ -123,20 +126,173 @@ A base analítica (`data/comentarios/base_analitica_mol.csv`) reúne os 1.222 co
 | `cat_racial_interseccional` | 1/0 — interseccionalidade raça/gênero |
 | `termos_encontrados` | Lista dos termos que bateram |
 
-**Distribuição dos 61 comentários flagged por categoria:**
+> ⚠️ **Versão preliminar.** Esta é a versão inicial da base de dados. O léxico ainda será refinado e os números de detecção podem mudar.
 
-| Categoria | Comentários |
-|-----------|-------------|
-| racial_interseccional | 18 |
-| body_shaming | 14 |
-| sexual_degradante | 13 |
-| xingamentos_genero | 11 |
-| gamer_misogino | 7 |
-| genitalia_feminina | 1 |
-| homofobia_misoginia | 1 |
-| prostituicao_degradante | 0 |
 
-> ⚠️ **Versão primária.** Esta é a versão inicial da base de dados, entregue como primeira versão da entrega prevista para 02/10/2026. A codificação por flag binário (presença/ausência) é um modelo provisório que ainda será refinado em etapas futuras.
+## 🎬 Categorização dos vídeos
+
+Os 43 vídeos do corpus foram classificados em **5 categorias de conteúdo** com base na análise dos títulos, descrições e transcrições. Esta categorização permite investigar se **diferentes tipos de conteúdo** geram **diferentes padrões de misoginia** nos comentários.
+
+### Como as categorias foram definidas
+
+A categorização foi feita por **análise indutiva do conteúdo** — cada vídeo foi classificado a partir do que de fato apresenta, não a partir de uma grade pré-fixada. Os critérios foram:
+
+1. **Objetivo principal do vídeo** — o que o criador estava tentando fazer? (jogar, ensinar,entreter, narrar conflito)
+2. **Estrutura narrativa** — é uma partida completa? Um clipe curto? Um tutorial? Um desabafo?
+3. **Formato** — vídeos longos tendem a ser gameplay ou guia; shorts tendem a entretenimento/meme
+4. **Presença de conflito interpessoal** — vídeos que narram ou respondem a tretas, haters ou polêmicas
+5. **Relação com gênero** — vídeos que explicitamente envolvem mulheres no enredo (e-girl, relacionamento)
+
+### As 5 categorias
+
+| Categoria | Nº vídeos | O que é | Por que existe |
+|-----------|-----------|---------|----------------|
+| `gameplay` | 14 | Partidas gravadas, clipes de jogadas, momentos de jogo | Categoria central do canal: o Yiok é player de Kassadin e a maior parte do conteúdo é ele jogando. Inclui vídeos onde ele encontra haters na partida, pois o foco principal ainda é o gameplay |
+| `entretenimento_meme` | 20 | Shorts humorísticos, memes, sketches, piadas | Maior categoria em quantidade. São clipes curtos (9-51s) com momentos engraçados, trocadilhos ou referências internas da comunidade. Quase todos os shorts se enquadram aqui |
+| `guia_tutorial` | 5 | Conteúdo educativo: runas, builds, dicas, coach | Vídeos onde o objetivo é ensinar — seja um guia completo do campeão, análise de runas, discussão de items, ou coaching ao vivo para um viewer. Fundidos em uma categoria porque ambos são conteúdo didático |
+| `treta_drama` | 3 | Conflito, polêmica, rivalidade entre players | Vídeos onde o foco não é o jogo em si, mas uma narrativa de conflito — ser atacado, ser ameaçado, ser odiado. Importante porque pode gerar mais comentários agressivos |
+| `relacionamento_egirl` | 1 | Conteúdo que envolve gênero/mulher no enredo | Vídeo onde o Yiok encontra uma e-girl no jogo e reage. Categoria mantida separada porque é o tipo de conteúdo mais diretamente ligado a disparar comentários misóginos — a presença de uma mulher no centro do vídeo |
+
+### Lista completa por categoria
+
+<details>
+<summary><strong>🎮 gameplay (14 vídeos)</strong></summary>
+
+| videoId | Título | Tipo |
+|---------|--------|------|
+| `hlf8CuBXMws` | RANK 1 KASSADIN VISITANDO O MESTRE! | longo |
+| `ct2DIjWG4uM` | OFICIALMENTE DE VOLTA AO CHALLENGER! | longo |
+| `PGFU_utw5qg` | E ASSIM QUE O TOP 1 KASSADIN DO BRASIL JOGA! | short |
+| `_8W2fSnL1vY` | LATE GAME KASSADIN ☠️ | longo |
+| `nmPCfoxku2k` | ABSOLUT CONHECEU O MELHOR KASSADIN DO MUNDO! | longo |
+| `6l1hMZZ_3ms` | APAVORANDO PRO - PLAYER DA LOUD NO CHALLENGER! | longo |
+| `9sFGyNdtN8Y` | TOP 1 KASSADIN CARREGANDO O @ayellol1 NO CHALLENGER! | longo |
+| `zeYD8_RXrrA` | PIJACK PENSO QUE EU IA TROLAR A PARTIDA MAS ISSO ACONTECEU... | longo |
+| `8q5VFwutoGE` | COMO JOGAR CONTRA O MAIOR COUNTER DO KASSADIN! | longo |
+| `7iO7Ygle6sE` | KASSADIN DEPOIS DOS BUFFS ESTA IMPARÁVEL...! | longo |
+| `12oibiOBoSI` | TOP 1 KASSADIN TESTA OS NOVOS BUFFS... * FICOU MUITO FORTE * | longo |
+| `DierqZNnOHA` | FOI OU NÃO FOI? 🫢 | longo |
+| `VvTJJ6u9n8Y` | YIOK CAIU COM 4 HATERS NO CHALLENGER TROLLANDO A PARTIDA! | longo |
+| `E3ToJX4yMXM` | JUKES SURTOU AO CONHECER O PICK SECRETO DO YIOK! | longo |
+
+</details>
+
+<details>
+<summary><strong>😂 entretenimento_meme (20 vídeos)</strong></summary>
+
+| videoId | Título | Tipo |
+|---------|--------|------|
+| `slhtOG9uSmQ` | KASSADOLA DO ESTUDO! | short |
+| `cyk1wQGe3tE` | KASSADOLF NA FUGA DO LAZARO 😂 | short |
+| `w4wrS-f4oFo` | O COISA RUIM DE KASSADIN... | short |
+| `IeNxaErKY7g` | TIPO O KAYNE WEST 😂 | short |
+| `bxVRyxvjqmc` | OLHA O NICK DO CARA... 💀 | short |
+| `eaMHWygC3PM` | BOATE KASSADIN 🤣 | short |
+| `7STM0pLxRgo` | PASSAR EM MEDICINA OU SER MOD DA LIVE 😂 | short |
+| `jV1M7FOgJoU` | SALVE GUIVEN VIM PELO YIOK... | short |
+| `NlMxSXvoztk` | O CARA GASTOU 50K PRA FICAR PRESO NO MESTRE... | short |
+| `TRNthMDhtSU` | SAPO IMUNDO 😂 | short |
+| `Jyknzm3ZojA` | ESSE SYLAS É CEGO 😂 | short |
+| `3-jtcrUTDTw` | KARMA INSTANTÂNEO... | short |
+| `SeRNWYWd7V4` | TRESH DONO DO ENGENHO 💀 | short |
+| `AysubRW-kvQ` | TIO DO ALANZOKA NO LOL... | short |
+| `RtNMWGV4wf8` | TRESH FULL AP TA BUGADO 💀 | short |
+| `F7XtKG59y4Q` | KASSADIN NA FUGA DO LAZARO 😂 | short |
+| `MhR6WbG2UD0` | JOGAR DE ADC É ISSO AE 🫢 | short |
+| `jjA-vG38qWU` | IMPOSSIVEL ACERTAR SKILL NO YIOK 😂 | short |
+| `S8zUa3KSBj8` | TINHA COMO SER PIOR? 🫢 | short |
+| `6hO01e5kvvQ` | PLAYZUDA NO LIMITE! 😎 | short |
+
+</details>
+
+<details>
+<summary><strong>📚 guia_tutorial (5 vídeos)</strong></summary>
+
+| videoId | Título | Tipo |
+|---------|--------|------|
+| `0sD6xl3EFbo` | TUDO O QUE VOCÊ PRECISA SABER - GUIA DEFINITIVO CHALLENGER KASSADIN | longo |
+| `92KeIj8hsOE` | APÓS 1 ANO, FINALMENTE ENCONTREI A MELHOR RUNA DO KASSADIN! | longo |
+| `PIyw-_gHTzU` | PAREM DE COMPRAR ESSE ITEM NO KASSADIN! | longo |
+| `DjhpGJAZBi8` | A RIOT ADICIONOU UM BUFF EXTRA OCULTO NO KASSADIN! | longo |
+| `r8C57BD7aDc` | YIOK SURTA AO VIVO DANDO COACH PARA UM VIEWER BRONZE IV! | longo |
+
+</details>
+
+<details>
+<summary><strong>🔥 treta_drama (3 vídeos)</strong></summary>
+
+| videoId | Título | Tipo |
+|---------|--------|------|
+| `Cyai8_m_ZQ8` | YIOK FOI ATACADO PELOS GADOS DA COMUNIVIA... TRETA PESADA! | longo |
+| `xJExphI2SRU` | YIOK FOI AMEAÇADO AO VIVO PELO MUCALOL! | longo |
+| `ifSpvNYqE2g` | COMO O YIOK SE TORNOU O PLAYER MAIS ODIADO DO SERVIDOR! | longo |
+
+</details>
+
+<details>
+<summary><strong>💖 relacionamento_egirl (1 vídeo)</strong></summary>
+
+| videoId | Título | Tipo |
+|---------|--------|------|
+| `SBT6DCNR4BY` | YIOK CAIU CONTRA UMA E-GIRL NO CHALLENGER E FICOU APAIXONADO! | longo |
+
+</details>
+
+A coluna `categoria_video` foi adicionada ao arquivo `data/data_base yiok - videos.csv`.
+
+
+## 📊 As duas fontes do corpus
+
+Este corpus contém **duas fontes textuais distintas**, ambas passíveis de análise pelo léxico MOL:
+
+| | Fonte 1 — Comentários | Fonte 2 — Transcrições |
+|---|---|---|
+| **O que é** | O que a audiência escreve | O que o Yiok diz nos vídeos |
+| **Arquivos** | `data/comentarios/` | `data/videos/<videoId>/<videoId>_transcricao.txt` |
+| **Volume** | 1.222 comentários | 43 transcrições (81.553 palavras) |
+| **Métrica MOL** | Flag binário (1/0) por comentário | Frequência de termos por mil palavras |
+| **Natureza** | Reação da audiência | Discurso do criador de conteúdo |
+
+> 🔑 As transcrições são uma **segunda fonte analítica**, não um complemento dos comentários. Permitem comparar a linguagem do streamer com a linguagem da audiência — uma camada analítica que a maioria dos estudos de comentários de YouTube não tem.
+
+
+## 🔍 Opções de análise comparativa dentro da base
+
+A base atual permite **comparações internas** (não apenas descrições de dados). As opções viáveis são:
+
+### Opção 1 — Categoria do vídeo × misoginia nos comentários
+
+Comparar a proporção de comentários misóginos entre as **5 categorias de vídeo** (gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl).
+
+- **Variável independente:** categoria do vídeo (5 categorias)
+- **Variável dependente:** presença de misoginia (flag MOL)
+- **Teste:** qui-quadrado + odds ratio
+
+### Opção 2 — Discurso do vídeo × discurso dos comentários
+
+Aplicar o léxico MOL às **43 transcrições** (além dos comentários) e comparar a misoginia na fala do Yiok com a misoginia nos comentários de cada vídeo.
+
+- **Métrica das transcrições:** frequência de termos por mil palavras (mesma métrica usada por Martínez Arranz et al., 2024)
+- **Métrica dos comentários:** % de comentários flagged
+- **Pergunta:** vídeos em que o criador usa mais linguagem misógina geram comentários mais misóginos?
+
+### Opção 3 — Engajamento × misoginia
+
+Avaliar se comentários misóginos recebem mais ou menos likes que comentários não-misóginos.
+
+- **Variável independente:** flag MOL (sim/não)
+- **Variável dependente:** likeCount
+- **Teste:** comparação de médias (t-test ou Mann-Whitney)
+
+### Opção 4 — Categorias de misoginia × categoria do vídeo
+
+Analisar se certas **categorias do léxico MOL** (body shaming, racial interseccional, gamer misógino, etc.) são mais frequentes em certos tipos de vídeo do que em outros.
+
+- **Variável independente:** categoria do vídeo (5 categorias)
+- **Variável dependente:** distribuição das 8 categorias MOL
+- **Teste:** qui-quadrado por categoria ou análise de correspondência
+
+> ⚠️ Estas opções serão executadas **após o refinamento do léxico MOL**, que é a prioridade atual. As opções estão registradas aqui para planejamento — a análise estatística formal ainda não foi realizada.
 
 
 ## 📚 Créditos e referências
@@ -157,7 +313,7 @@ A base analítica (`data/comentarios/base_analitica_mol.csv`) reúne os 1.222 co
 ### Referências
 
 - **RIEDER, Bernhard.** YouTube Data Tools. Version 2.0. 2015. Software.
-- **RADFORD, Alec; KIM, Jong Wook; XU, Tao; BROCKMAN, Greg; MCLEAVEY, Christine; SUTSKEVER, Ilya.** Robust Speech Recognition via Large-Scale Weak Supervision. *Proceedings of the 40th International Conference on Machine Learning*, v. 202, p. 28492–28518, 2023.
+- **RADFORD, Alec; KIM, Jong Wook; XU, Tao; BROCKMAN, Greg; MCLEAVEY, Christine; SUTSKEVER, Ilya.** Robust Speech Recognition via Large-Scale Weak Supervision. *Proceedings of the 40th International Conference on Machine Learning*, v. 202, p. 28492–28418, 2023.
 - **MARTÍNEZ ARRANZ, A.; ZECH, S. T.; BONOTTI, M.** Political Parties and Civility in Parliament: The Case of Australia from 1901 to 2020. *Parliamentary Affairs*, v. 77, n. 2, p. 371–399, 2024. DOI: [10.1093/pa/gsad008](https://doi.org/10.1093/pa/gsad008). Open Access.
 - **FERNANDEZ, Michelle; BERTHOLINI, Frederico; MAIA, Bárbara.** Políticas de saúde dos Estados brasileiros durante a pandemia de Covid-19: um dataset das normativas produzidas. *Dados*, Rio de Janeiro, v. 68, n. 3, e20230153, 2025.
 - **LOURENÇO, Luiz Claudio; VITENA, Gabrielle Simões Lima; SILVA, Marina de Macedo.** Prisão provisória, racismo e seletividade penal: uma discussão a partir dos prontuários de uma unidade prisional. *Revista Brasileira de Segurança Pública*, v. 16, n. 2, p. 220–239, 2022.
@@ -177,7 +333,7 @@ O artigo usa uma **abordagem lexicon-based** para detectar incivilidade no Parla
 | Corpus: discursos Hansard | Corpus: comentários + transcrições de vídeos de LoL |
 | Léxico: 1.383 termos de incivilidade (inglês) | Léxico MOL: 92 termos de misoginia (português) |
 | Métrica: frequência/mil palavras | Métrica: flag binário (comentários) + freq/mil palavras (transcrições) |
-| Comparação: entre partidos, câmaras, décadas | Comparação: entre temas de vídeo, fala vs comentários |
+| Comparação: entre partidos, câmaras, décadas | Comparação: entre categorias de vídeo, fala vs comentários |
 | Variável dependente: incivilidade | Variável dependente: misoginia |
 
 **Como citar no artigo futuro:**
@@ -193,83 +349,26 @@ O artigo usa uma **abordagem lexicon-based** para detectar incivilidade no Parla
 
 Este repositório contém dados de pesquisa acadêmica. Os vídeos e áudios pertencem ao canal Yiok. As transcrições e análises são de uso acadêmico.
 
-## 📊 As duas fontes do corpus
-
-Este corpus contém **duas fontes textuais distintas**, ambas passíveis de análise pelo léxico MOL:
-
-| | Fonte 1 — Comentários | Fonte 2 — Transcrições |
-|---|---|---|
-| **O que é** | O que a audiência escreve | O que o Yiok diz nos vídeos |
-| **Arquivos** | `data/comentarios/` | `data/videos/<videoId>/<videoId>_transcricao.txt` |
-| **Volume** | 1.222 comentários | 43 transcrições (81.553 palavras) |
-| **Métrica MOL** | Flag binário (1/0) por comentário | Frequência de termos por mil palavras |
-| **Flagged** | 61 (5,0%) | 24 de 43 (55,8%) |
-| **Natureza** | Reação da audiência | Discurso do criador de conteúdo |
-
-> 🔑 As transcrições são uma **segunda fonte analítica**, não um complemento dos comentários. Permitem comparar a linguagem do streamer com a linguagem da audiência — uma camada analítica que a maioria dos estudos de comentários de YouTube não tem.
-
-
-## 🔍 Opções de análise comparativa dentro da base
-
-A base atual permite **comparações internas** (não apenas descrições de dados). As opções viáveis são:
-
-### Opção 1 — Tema do vídeo × misoginia nos comentários
-
-Classificar os 43 vídeos por **tipo de conteúdo** (gameplay neutro / treta e conflito / relacionamento e gênero) e comparar a proporção de comentários misóginos entre os grupos.
-
-- **Variável independente:** tema do vídeo (3 categorias)
-- **Variável dependente:** presença de misoginia (flag MOL)
-- **Teste:** qui-quadrado + odds ratio
-
-### Opção 2 — Discurso do vídeo × discurso dos comentários
-
-Aplicar o léxico MOL às **43 transcrições** (além dos comentários) e comparar a misoginia na fala do Yiok com a misoginia nos comentários de cada vídeo.
-
-- **Métrica das transcrições:** frequência de termos por mil palavras (mesma métrica usada por Martínez Arranz et al., 2024)
-- **Métrica dos comentários:** % de comentários flagged
-- **Pergunta:** vídeos em que o criador usa mais linguagem misógina geram comentários mais misóginos?
-
-### Opção 3 — Engajamento × misoginia
-
-Avaliar se comentários misóginos recebem mais ou menos likes que comentários não-misóginos.
-
-- **Variável independente:** flag MOL (sim/não)
-- **Variável dependente:** likeCount
-- **Teste:** comparação de médias (t-test ou Mann-Whitney)
-
-### Opção 4 — Categorias de misoginia × tipo de vídeo
-
-Analisar se certas **categorias do léxico MOL** (body shaming, racial interseccional, gamer misógino, etc.) são mais frequentes em certos tipos de vídeo do que em outros.
-
-- **Variável independente:** tema do vídeo
-- **Variável dependente:** distribuição das 8 categorias MOL
-- **Teste:** qui-quadrado por categoria ou análise de correspondência
-
-> ⚠️ Estas opções serão executadas **após o refinamento do léxico MOL**, que é a prioridade atual. As opções estão registradas aqui para planejamento — a análise estatística formal ainda não foi realizada.
-
 
 ## 📌 Status
 
-**Versão primária da base de dados** — primeira versão da entrega prevista para 02/10/2026. A base está funcional mas o léxico ainda será refinado antes da análise estatística formal.
+**Versão preliminar** — entrega inicial para as disciplinas de Métodos Digitais e Laboratório Quantitativo em Ciências Sociais. O léxico MOL está em refinamento e os números podem mudar.
 
-- ✅ 43 pastas por videoId com descrição, transcrição e metadados
-- ✅ 35 áudios `.mp3` no repositório (8 mantidos localmente pela pesquisadora)
-- ✅ Léxico MOL v2 (92 termos / 8 categorias)
-- ✅ Base de vídeos (`data/data_base yiok - videos.csv`) — 43 vídeos, 30 variáveis do YTDT
-- ✅ 1.222 comentários brutos (`data/comentarios/data_base yiok - comentários.csv`)
-- ✅ Base analítica unificada (`data/comentarios/base_analitica_mol.csv`) — 1.222 comentários + codificação binária por categoria
-- ✅ 61 comentários flagged (MOL)
-- ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica identificada
-- ✅ Opções de análise comparativa interna mapeadas (4 opções)
+- ✅ 43 vídeos coletados (22 longos + 21 shorts)
+- ✅ 43 vídeos categorizados em 5 categorias (`categoria_video` no CSV)
+- ✅ 1.222 comentários brutos
+- ✅ Léxico MOL v2 (92 termos / 8 categorias) — em refinamento
+- ✅ Base analítica com codificação binária por categoria
+- ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica
 - ✅ Referência metodológica citável registrada (Martínez Arranz et al., 2024)
-- ✅ Atualizar colunas de transcrição (`transcrição_ytb`, `status-transcricao`) com resultados do faster-whisper
+- ✅ Script de análise léxica (`scripts/analise_lexical.py`) — roda léxico em comentários + transcrições
 
 ### 🔜 Próximos passos previstos
 
-- [ ] **Refinar o léxico MOL** com termos específicos da comunidade de League of Legends (gamer slang) — prioridade atual
-- [ ] Recodificar os 43 vídeos com coluna `tema_video` (gameplay neutro / treta / relacionamento)
-- [ ] Aplicar o léxico MOL às 43 transcrições (gerar `base_transcricoes_mol.csv`)
+- [ ] **Refinar o léxico MOL** com termos específicos da comunidade de League of Legends — prioridade atual
+- [ ] Aplicar o léxico MOL melhorado aos comentários e transcrições
 - [ ] Rodar análise estatística formal (qui-quadrado, odds ratio, correlação) após refinamento do léxico
-- [ ] Analisar também as descrições dos 43 vídeos
+- [ ] Comparar misoginia entre as 5 categorias de vídeo
+- [ ] Comparar misoginia na fala do criador vs comentários da audiência
 - [ ] Evoluir da codificação binária para análise multilabel mais granular
 - [ ] Baixar e armazenar o PDF do artigo de Martínez Arranz et al. (2024) como referência metodológica
