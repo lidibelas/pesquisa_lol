@@ -94,7 +94,9 @@ O corpus contém **duas fontes textuais distintas** — ambas analisáveis com o
 
 ## Pergunta de pesquisa e design analítico
 
-> **Vídeos em que o criador de conteúdo usa mais linguagem misógina geram comentários mais misóginos?**
+> **Como a misoginia se manifesta de forma distinta na fala do criador de conteúdo e nos comentários da audiência em vídeos de League of Legends?**
+
+**Natureza:** estudo de caso do canal Yiok (LoL/YouTube). Corpus delimitado temporalmente (21/08–21/11/2025), 43 vídeos, 1.222 comentários, 43 transcrições. Design **descritivo-comparativo** — não inferencial.
 
 **Design:** comparar duas fontes textuais do mesmo corpus — transcrições (fala do Yiok) vs comentários (audiência). Unidade de análise = vídeo (n=43).
 
@@ -108,9 +110,11 @@ O corpus contém **duas fontes textuais distintas** — ambas analisáveis com o
 - `pct_flagged_comentarios` (numérica) — % de comentários flagged
 - `categoria_video` (categórica, 5 níveis) — gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl
 
-**Análise principal:** correlação entre freq_mol_transcricao × pct_flagged_comentarios. `categoria_video` pode estratificar.
+**Base comparativa:** `data/analise/base_comparativa_por_video.csv` — 43 linhas, 1 por vídeo, com as 3 variáveis.
 
-> ⚠️ Léxico MOL em refinamento — análise estatística formal bloqueada até conclusão.
+**Achado preliminar (léxico v1):** categorias dominantes diferem entre fontes — transcrições: sexual_degradante (70%); comentários: racial_interseccional (30%).
+
+> ⚠️ Léxico MOL em refinamento — números podem mudar.
 
 ## Referência metodológica citável
 
