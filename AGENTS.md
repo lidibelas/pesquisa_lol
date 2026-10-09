@@ -92,16 +92,25 @@ O corpus contém **duas fontes textuais distintas** — ambas analisáveis com o
 
 > As transcrições são uma **segunda fonte analítica**, não um complemento. Permitem comparar a linguagem do criador de conteúdo com a linguagem da audiência.
 
-## Opções de análise comparativa dentro da base
+## Pergunta de pesquisa e design analítico
 
-A base atual permite comparações internas (correlação, não apenas descrição). As opções viáveis mapeadas são:
+> **Vídeos em que o criador de conteúdo usa mais linguagem misógina geram comentários mais misóginos?**
 
-1. **Tema do vídeo × misoginia nos comentários** — classificar vídeos por tipo de conteúdo (gameplay neutro / treta / relacionamento) e comparar proporção de comentários misóginos. VI: tema; VD: flag MOL. Teste: qui-quadrado + odds ratio.
-2. **Discurso do vídeo × discurso dos comentários** — aplicar MOL às 43 transcrições e comparar misoginia na fala do Yiok com misoginia nos comentários. Métrica das transcrições: freq/mil palavras (mesma do artigo de Martínez Arranz et al., 2024).
-3. **Engajamento × misoginia** — comparar likeCount entre comentários flagged e não-flagged. Teste: t-test ou Mann-Whitney.
-4. **Categorias MOL × tipo de vídeo** — analisar se certas categorias (body shaming, racial, gamer misógino, etc.) são mais frequentes em certos tipos de vídeo. Teste: qui-quadrado por categoria ou análise de correspondência.
+**Design:** comparar duas fontes textuais do mesmo corpus — transcrições (fala do Yiok) vs comentários (audiência). Unidade de análise = vídeo (n=43).
 
-> ⚠️ Estas opções serão executadas **após o refinamento do léxico MOL**, que é a prioridade atual. Nenhuma análise estatística formal foi realizada ainda — as opções estão registradas para planejamento.
+| Fonte | Métrica MOL |
+|-------|-------------|
+| Transcrições | Frequência de termos por mil palavras (cf. Martínez Arranz et al., 2024) |
+| Comentários | % de comentários flagged (flag binário 1/0) |
+
+**Variáveis:**
+- `freq_mol_transcricao` (numérica) — freq/mil palavras na transcrição
+- `pct_flagged_comentarios` (numérica) — % de comentários flagged
+- `categoria_video` (categórica, 5 níveis) — gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl
+
+**Análise principal:** correlação entre freq_mol_transcricao × pct_flagged_comentarios. `categoria_video` pode estratificar.
+
+> ⚠️ Léxico MOL em refinamento — análise estatística formal bloqueada até conclusão.
 
 ## Referência metodológica citável
 
@@ -117,9 +126,9 @@ A versão atual é **primária** (entrega de 02/10/2026). A prioridade é refina
 
 1. **Refinar o léxico MOL** com termos específicos da comunidade de League of Legends (gamer slang, gírias do jogo) — **prioridade atual, bloqueia as análises abaixo**
 2. ~~Recodificar os 43 vídeos com coluna `tema_video`~~ — ✅ **FEITO**: coluna `categoria_video` adicionada (5 categorias: gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl)
-3. **Aplicar o léxico MOL às 43 transcrições** e gerar `base_transcricoes_mol.csv` — necessária para a Opção 2
-4. **Rodar análise estatística formal** (qui-quadrado, odds ratio, correlação de Pearson) após refinamento do léxico
-5. **Analisar as descrições dos 43 vídeos** — fonte ainda inexplorada
+3. ~~Aplicar o léxico MOL às 43 transcrições~~ — ✅ **FEITO**: `scripts/analise_lexical.py` roda léxico em comentários + transcrições
+4. **Rodar análise comparativa** (correlação freq_mol_transcricao × pct_flagged_comentarios) após refinamento do léxico
+5. **Estratificar por categoria_video** — verificar se a correlação varia entre tipos de conteúdo
 6. **Evoluir da codificação binária para análise multilabel** mais granular
 7. **Atualizar colunas de transcrição** (`transcrição_ytb`, `status-transcricao`) com resultados do faster-whisper
 8. **Baixar e armazenar o PDF** do artigo de Martínez Arranz et al. (2024) como referência metodológica

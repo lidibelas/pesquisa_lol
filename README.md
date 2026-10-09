@@ -256,43 +256,42 @@ Este corpus contém **duas fontes textuais distintas**, ambas passíveis de aná
 > 🔑 As transcrições são uma **segunda fonte analítica**, não um complemento dos comentários. Permitem comparar a linguagem do streamer com a linguagem da audiência — uma camada analítica que a maioria dos estudos de comentários de YouTube não tem.
 
 
-## 🔍 Opções de análise comparativa dentro da base
+## 🔬 Pergunta de pesquisa
 
-A base atual permite **comparações internas** (não apenas descrições de dados). As opções viáveis são:
+> **Vídeos em que o criador de conteúdo usa mais linguagem misógina geram comentários mais misóginos?**
 
-### Opção 1 — Categoria do vídeo × misoginia nos comentários
+### Design analítico
 
-Comparar a proporção de comentários misóginos entre as **5 categorias de vídeo** (gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl).
+Este projeto adota um design **comparativo entre duas fontes textuais** do mesmo corpus:
 
-- **Variável independente:** categoria do vídeo (5 categorias)
-- **Variável dependente:** presença de misoginia (flag MOL)
-- **Teste:** qui-quadrado + odds ratio
+| | Fonte 1 — Transcrições | Fonte 2 — Comentários |
+|---|---|---|
+| **O que é** | O que o Yiok diz nos vídeos | O que a audiência escrece |
+| **Arquivos** | `data/videos/<videoId>/<videoId>_transcricao.txt` | `data/comentarios/` |
+| **Volume** | 43 transcrições (~81.553 palavras) | 1.222 comentários |
+| **Métrica MOL** | **Frequência de termos por mil palavras** (mesma métrica de Martínez Arranz et al., 2024) | **% de comentários flagged** (flag binário 1/0) |
+| **Natureza** | Discurso do criador de conteúdo | Reação da audiência |
 
-### Opção 2 — Discurso do vídeo × discurso dos comentários
+A unidade de análise é o **vídeo** (n=43). Para cada vídeo, calcula-se:
 
-Aplicar o léxico MOL às **43 transcrições** (além dos comentários) e comparar a misoginia na fala do Yiok com a misoginia nos comentários de cada vídeo.
+1. **Misoginia na fala do criador** — frequência de termos MOL por mil palavras na transcrição
+2. **Misoginia nos comentários** — % de comentários flagged pelo léxico MOL
 
-- **Métrica das transcrições:** frequência de termos por mil palavras (mesma métrica usada por Martínez Arranz et al., 2024)
-- **Métrica dos comentários:** % de comentários flagged
-- **Pergunta:** vídeos em que o criador usa mais linguagem misógina geram comentários mais misóginos?
+A comparação entre essas duas medidas permite investigar se há **relação entre o discurso do criador e o discurso da audiência** — ou seja, se vídeos em que o Yiok usa mais linguagem misógina tendem a atrair comentários mais misóginos.
 
-### Opção 3 — Engajamento × misoginia
+### Variáveis
 
-Avaliar se comentários misóginos recebem mais ou menos likes que comentários não-misóginos.
+| Variável | Tipo | Descrição |
+|----------|------|-----------|
+| `freq_mol_transcricao` | Numérica (contínua) | Frequência de termos MOL por mil palavras na transcrição do vídeo |
+| `pct_flagged_comentarios` | Numérica (contínua) | % de comentários do vídeo flagged pelo léxico MOL |
+| `categoria_video` | Categórica (5 níveis) | Tipo de conteúdo: gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl |
 
-- **Variável independente:** flag MOL (sim/não)
-- **Variável dependente:** likeCount
-- **Teste:** comparação de médias (t-test ou Mann-Whitney)
+### Possíveis cruzamentos
 
-### Opção 4 — Categorias de misoginia × categoria do vídeo
+A análise principal é a correlação entre `freq_mol_transcricao` × `pct_flagged_comentarios`. A variável `categoria_video` pode ser usada como variável de controle ou para estratificar a análise.
 
-Analisar se certas **categorias do léxico MOL** (body shaming, racial interseccional, gamer misógino, etc.) são mais frequentes em certos tipos de vídeo do que em outros.
-
-- **Variável independente:** categoria do vídeo (5 categorias)
-- **Variável dependente:** distribuição das 8 categorias MOL
-- **Teste:** qui-quadrado por categoria ou análise de correspondência
-
-> ⚠️ Estas opções serão executadas **após o refinamento do léxico MOL**, que é a prioridade atual. As opções estão registradas aqui para planejamento — a análise estatística formal ainda não foi realizada.
+> ⚠️ **Versão preliminar.** O léxico MOL atual (92 termos) está em refinamento. Os números apresentados são da versão atual e podem mudar significativamente com a melhoria do léxico.
 
 
 ## 📚 Créditos e referências
@@ -360,15 +359,14 @@ Este repositório contém dados de pesquisa acadêmica. Os vídeos e áudios per
 - ✅ Léxico MOL v2 (92 termos / 8 categorias) — em refinamento
 - ✅ Base analítica com codificação binária por categoria
 - ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica
+- ✅ Pergunta de pesquisa definida: discurso do criador × discurso dos comentários
 - ✅ Referência metodológica citável registrada (Martínez Arranz et al., 2024)
 - ✅ Script de análise léxica (`scripts/analise_lexical.py`) — roda léxico em comentários + transcrições
 
 ### 🔜 Próximos passos previstos
 
 - [ ] **Refinar o léxico MOL** com termos específicos da comunidade de League of Legends — prioridade atual
-- [ ] Aplicar o léxico MOL melhorado aos comentários e transcrições
-- [ ] Rodar análise estatística formal (qui-quadrado, odds ratio, correlação) após refinamento do léxico
-- [ ] Comparar misoginia entre as 5 categorias de vídeo
-- [ ] Comparar misoginia na fala do criador vs comentários da audiência
+- [ ] **Rodar análise comparativa** (correlação freq_mol_transcricao × pct_flagged_comentarios) após refinamento
+- [ ] **Estratificar por categoria_video** — verificar se a correlação varia entre tipos de conteúdo
 - [ ] Evoluir da codificação binária para análise multilabel mais granular
 - [ ] Baixar e armazenar o PDF do artigo de Martínez Arranz et al. (2024) como referência metodológica
