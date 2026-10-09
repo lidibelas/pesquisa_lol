@@ -31,10 +31,6 @@ pesquisa_lol/
     │   ├── data_base yiok - comentários.csv   ← base completa de comentários brutos (1.222)
     │   ├── base_analitica_mol.csv             ← base analítica unificada (1.222 + codificação binária MOL)
     │   └── comentarios_flagged_mol.csv        ← 61 comentários flagged (MOL)
-    ├── analise/                           ← análise preliminar (entrega inicial out/2026)
-    │   ├── crosstab_video_categorias_mol.csv  ← crosstab vídeo × categorias MOL
-    │   ├── resumo_estatistico_mol.csv         ← métricas gerais + frequência por categoria
-    │   └── pesquisa_lol_misoginia_por_video.xlsx ← planilha completa (5 abas: tabelas + gráficos)
     └── videos/                            ← uma pasta por vídeo (43 total)
         └── <videoId>/
             ├── descricao.md                   ← metadados + descrição original
@@ -252,140 +248,6 @@ Analisar se certas **categorias do léxico MOL** (body shaming, racial intersecc
 > ⚠️ Estas opções serão executadas **após o refinamento do léxico MOL**, que é a prioridade atual. As opções estão registradas aqui para planejamento — a análise estatística formal ainda não foi realizada.
 
 
-## 📊 Análise preliminar — entregas de outubro/2026
-
-> ⚠️ **Entrega inicial.** Os arquivos abaixo são **resultados preliminares** produzidos para cumprir a demanda da disciplina de **Laboratório Quantitativo em Ciências Sociais**. O léxico MOL ainda será aprimorado em etapas futuras — os números de comentários flagged podem aumentar significativamente com o refinamento do léxico. Nenhuma análise estatística formal (qui-quadrado, correlação, etc.) foi realizada ainda.
-
-### Arquivos em `data/analise/`
-
-| Arquivo | Formato | O que é |
-|---------|---------|---------|
-| `crosstab_video_categorias_mol.csv` | CSV | Tabela cruzada: vídeo × categorias MOL |
-| `resumo_estatistico_mol.csv` | CSV | Métricas gerais + frequência por categoria |
-| `pesquisa_lol_misoginia_por_video.xlsx` | Excel | Planilha completa com 5 abas (tabelas + gráficos) |
-
-### Tabela 1 — Crosstab "Vídeo × Categorias MOL" (`crosstab_video_categorias_mol.csv`)
-
-**O que está sendo comparado com o quê:**
-
-Esta tabela cruza **cada vídeo do corpus** (linhas) com **cada categoria do léxico MOL** (colunas). O objetivo é ver, vídeo por vídeo, quantos comentários foram flagged e em quais categorias de misoginia eles se enquadram.
-
-**Colunas e o que cada uma significa:**
-
-| Coluna | O que é | O que compara |
-|--------|---------|---------------|
-| `videoId` | ID do vídeo no YouTube | Identifica o vídeo |
-| `titulo` | Título do vídeo | Contexto do conteúdo |
-| `tipo` | longo ou short | Formato do vídeo |
-| `views` | Nº de visualizações | Alcance do vídeo |
-| `total_comentarios` | Nº total de comentários extraídos | Volume de audiência |
-| `flagged_mol` | Nº de comentários flagged (≥1 termo MOL) | **Quanto de misoginia foi detectada** |
-| `pct_flagged` | % de comentários flagged sobre o total | **Proporção de misoginia no vídeo** |
-| `replies` | Nº de comentários que são respostas | Nível de interação |
-| `likes_total` | Soma de likes dos comentários | Engajamento |
-| `cat_xingamentos_genero` | Nº de comentários com xingamentos de gênero | Categoria MOL |
-| `cat_genitalia_feminina` | Nº com referências a genitália feminina | Categoria MOL |
-| `cat_body_shaming` | Nº com depreciação corporal | Categoria MOL |
-| `cat_gamer_misogino` | Nº com termos misóginos da cultura gamer | Categoria MOL |
-| `cat_homofobia_misoginia` | Nº com homofobia + misoginia | Categoria MOL |
-| `cat_sexual_degradante` | Nº com linguagem sexual degradante | Categoria MOL |
-| `cat_prostituicao_degradante` | Nº com depreciação via prostituição | Categoria MOL |
-| `cat_racial_interseccional` | Nº com interseccionalidade raça/gênero | Categoria MOL |
-
-**Como ler:** cada linha = um vídeo. Se o vídeo `abc123` tem `flagged_mol = 5` e `cat_body_shaming = 3`, significa que 5 comentários foram flagged no total, e 3 deles continham termos de body shaming. A coluna `pct_flagged` permite comparar vídeos de tamanhos diferentes (um vídeo com 100 comentários e 5 flagged tem 5%, enquanto um com 20 comentários e 5 flagged tem 25%).
-
-**O que o crosstab permite comparar:**
-- Qual vídeo tem **mais** misoginia em números absolutos (`flagged_mol`)
-- Qual vídeo tem **maior proporção** de misoginia (`pct_flagged`)
-- **Quais categorias** dominam em cada vídeo (olhando as colunas `cat_*`)
-- Se vídeos longos ou shorts geram mais comentários misóginos (`tipo` vs `flagged_mol`)
-
-### Tabela 2 — Resumo Estatístico (`resumo_estatistico_mol.csv`)
-
-**O que está sendo comparado com o quê:**
-
-Esta tabela agrega os dados de toda a base em métricas gerais, permitindo uma visão macro do corpus. Não é uma comparação vídeo-a-vídeo, mas sim um **panorama do dataset inteiro**.
-
-**Métricas gerais:**
-- `total_videos`, `videos_longos`, `videos_shorts` — composição do corpus
-- `total_comentarios`, `comentarios_flagged`, `comentarios_nao_flagged` — volume de dados
-- `pct_flagged` — **5,0%** dos comentários foram flagged (taxa geral de misoginia)
-- `videos_com_flagged` vs `videos_sem_flagged` — em quantos vídeos apareceu misoginia
-- `max_flagged_por_video` — o vídeo com mais comentários misóginos (19)
-- `media_flagged_por_video` — média de comentários flaggados por vídeo (1,4)
-
-**Frequência por categoria MOL:**
-
-| Categoria | Frequência | % do total flagged |
-|-----------|------------|---------------------|
-| racial_interseccional | 18 | 29,5% |
-| body_shaming | 14 | 23,0% |
-| sexual_degradante | 13 | 21,3% |
-| xingamentos_genero | 11 | 18,0% |
-| gamer_misogino | 7 | 11,5% |
-| genitalia_feminina | 1 | 1,6% |
-| homofobia_misoginia | 1 | 1,6% |
-| prostituicao_degradante | 0 | 0,0% |
-
-> ⚠️ Os percentages não somam 100% porque um comentário pode ser flagged em mais de uma categoria simultaneamente (codificação multilabel).
-
-**O que o resumo permite comparar:**
-- **Quais categorias de misoginia são mais frequentes** no corpus (racial interseccional domina)
-- A **taxa geral de detecção** (5,0%) como linha de base para futuras melhorias do léxico
-- A **distribuição desigual** — alguns vídeos concentram a maior parte dos comentários misóginos
-
-### Gráfico 1 — Barras: "Comentários Flagged por Vídeo" (aba "Gráfico" do Excel)
-
-**O que representa:**
-
-Um gráfico de barras horizontais mostrando os **top 15 vídeos** com maior número absoluto de comentários flagged pelo léxico MOL. Cada barra = um vídeo; o comprimento da barra = número de comentários misóginos detectados.
-
-**O que compara:**
-- **Eixo Y (vertical):** cada vídeo (identificado pelo título truncado)
-- **Eixo X (horizontal):** número de comentários flagged (0 a 19)
-- **Comparação:** qual vídeo concentra mais misoginia nos comentários
-
-**Como ler:** barras mais longas = mais comentários misóginos. O gráfico permite identificar rapidamente quais vídeos são "hotspots" de misoginia. O vídeo com mais flagged é "YIOK FOI ATACADO PELOS GADOS" (19 comentários).
-
-### Gráfico 2 — Barras: "Total de Comentários por Vídeo" (aba "Gráfico" do Excel)
-
-**O que representa:**
-
-Mesmos 15 vídeos do Gráfico 1, mas mostrando o **total de comentários** (não apenas os flagged). Serve como **contexto** — um vídeo pode ter muitos comentários flagged simplesmente porque tem muitos comentários no total.
-
-**O que compara:**
-- O **volume total** de comentários vs os **flagged** (comparando com o Gráfico 1)
-- Permite distinguir "muito comentário misógino porque o vídeo é popular" de "alta concentração de misoginia mesmo com poucos comentários"
-
-### Gráfico 3 — Pizza: "Distribuição das Categorias de Misoginia" (aba "Resumo Estatístico" do Excel)
-
-**O que representa:**
-
-Um gráfico de pizza mostrando a **proporção de cada categoria MOL** entre os 61 comentários flagged. Cada fatia = uma categoria; o tamanho da fatia = frequência relativa.
-
-**O que compara:**
-- **Qual tipo de misoginia é mais comum** nos comentários do corpus
-- A **distribuição relativa** entre as 8 categorias do léxico MOL
-
-**Como ler:** a fatia maior (racial interseccional, ~30%) indica que a forma mais comum de misoginia detectada é a que combina raça e gênero. Isso sugere que a interseccionalidade é um eixo importante na análise — não apenas gênero isolado.
-
-### Aba "Comentários Flagged" (Excel)
-
-**O que é:**
-
-A listagem detalhada dos **61 comentários** flagged como misóginos, com as seguintes colunas:
-- `Vídeo` — em qual vídeo o comentário foi postado
-- `Título do Vídeo` — contexto
-- `Data` — quando foi postado
-- `Likes` — quantos likes o comentário recebeu
-- `Reply?` — se é resposta a outro comentário
-- `Nº Match` — quantos termos do léxico foram encontrados
-- `Categorias` — quais categorias MOL foram acionadas
-- `Termos` — quais termos específicos do léxico foram encontrados
-- `Comentário` — o texto do comentário (truncado em 200 caracteres)
-
-**Para que serve:** permite **auditar** cada detecção — verificar se o léxico está acertando ou errando, identificar falsos positivos, e entender qualitativamente o que está sendo classificado como misoginia.
-
 ## 📌 Status
 
 **Versão primária da base de dados** — primeira versão da entrega prevista para 02/10/2026. A base está funcional mas o léxico ainda será refinado antes da análise estatística formal.
@@ -400,7 +262,6 @@ A listagem detalhada dos **61 comentários** flagged como misóginos, com as seg
 - ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica identificada
 - ✅ Opções de análise comparativa interna mapeadas (4 opções)
 - ✅ Referência metodológica citável registrada (Martínez Arranz et al., 2024)
-- ✅ Análise preliminar (out/2026): crosstab vídeo × categorias + resumo estatístico + planilha Excel com gráficos
 - ✅ Atualizar colunas de transcrição (`transcrição_ytb`, `status-transcricao`) com resultados do faster-whisper
 
 ### 🔜 Próximos passos previstos

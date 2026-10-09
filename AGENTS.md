@@ -72,10 +72,6 @@ pesquisa_lol/
     │   ├── data_base yiok - comentários.csv   ← brutos (1.222 comentários)
     │   ├── base_analitica_mol.csv            ← base analítica (1.222 + codificação binária)
     │   └── comentarios_flagged_mol.csv       ← 61 comentários flagged
-    ├── analise/                           ← análise preliminar (entrega inicial out/2026)
-    │   ├── crosstab_video_categorias_mol.csv  ← crosstab vídeo × categorias MOL
-    │   ├── resumo_estatistico_mol.csv         ← métricas gerais + frequência por categoria
-    │   └── pesquisa_lol_misoginia_por_video.xlsx ← planilha completa (5 abas: tabelas + gráficos)
     └── videos/                            ← uma pasta por vídeo (43 total)
         └── <videoId>/
             ├── descricao.md               ← metadados + descrição original
@@ -152,7 +148,6 @@ A versão atual é **primária** (entrega de 02/10/2026). A prioridade é refina
 - ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica identificada
 - ✅ Opções de análise comparativa interna mapeadas (4 opções)
 - ✅ Referência metodológica citável registrada (Martínez Arranz et al., 2024)
-- ✅ Análise preliminar (out/2026): crosstab vídeo × categorias + resumo estatístico + planilha Excel com gráficos — **entrega inicial para Laboratório Quantitativo**
 - ⏳ Léxico MOL em refinamento (prioridade atual) — análise estatística bloqueada até conclusão
 - ⏳ Versão primária — será refinada (MOL + léxico gamer LoL, análise de transcrições, análise estatística)
 
