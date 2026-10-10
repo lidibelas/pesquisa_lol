@@ -287,10 +287,14 @@ Este estudo de caso adota um design **descritivo-comparativo** entre duas fontes
 | **Métrica MOL** | **Frequência de termos por mil palavras** (mesma métrica de Martínez Arranz et al., 2024) | **% de comentários flagged** (flag binário 1/0) |
 | **Natureza** | Discurso do criador de conteúdo | Reação da audiência |
 
-A unidade de análise é o **vídeo** (n=43). Para cada vídeo, calcula-se:
+A unidade de análise é o vídeo (n=43). Para cada vídeo, calcula-se:
 
-1. **Misoginia na fala do criador** — frequência de termos MOL por mil palavras na transcrição
-2. **Misoginia nos comentários** — % de comentários flagged pelo léxico MOL
+- **Frequência de segmentos sinalizados na transcrição:** número de segmentos classificados como `flagged` pelo léxico MOL dividido pelo total de segmentos transcritos, multiplicado por 1.000.
+- **Percentual de comentários sinalizados:** número de comentários classificados como `flagged` pelo léxico MOL dividido pelo total de comentários do vídeo, multiplicado por 100.
+
+A frequência da transcrição é expressa em **segmentos sinalizados por mil segmentos transcritos**. A padronização permite comparar vídeos com quantidades diferentes de segmentos. Por exemplo, uma frequência de 53,37 indica que, mantida a proporção observada, haveria aproximadamente 53 segmentos sinalizados a cada mil segmentos. Isso não significa que 53 segmentos tenham sido sinalizados no vídeo: a contagem real deve ser consultada na variável `flagged_transcricao`.
+
+A taxa deve ser interpretada junto às contagens absolutas (`flagged_transcricao` e `total_segmentos`). Em vídeos com poucos segmentos, a sinalização ou não de um único segmento pode alterar bastante o resultado. Além disso, `flagged` indica que o procedimento baseado no léxico encontrou um ou mais termos correspondentes naquele segmento; não constitui, por si só, uma confirmação de misoginia no contexto.
 
 A comparação entre essas duas medidas permite mapear **como a misoginia se manifesta distintamente** em cada fonte — quais categorias predominam na fala do criador vs nos comentários da audiência.
 
