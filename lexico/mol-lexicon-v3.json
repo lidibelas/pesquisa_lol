@@ -1,0 +1,103 @@
+{
+  "nome": "MOL v3 — expressões candidatas",
+  "versao": "3.0-provisoria",
+  "descricao": "Triagem de misoginia e violência sexual metafórica nas falas de 43 vídeos Yiok; não é codificação validada",
+  "escopo": "transcricoes",
+  "total_entradas": 77,
+  "categorias": {
+    "violencia_sexual_metaforica": [
+      "estupro",
+      "estupros",
+      "estuprar",
+      "estupra",
+      "estuprou",
+      "estuprando",
+      "estuprado",
+      "estuprada",
+      "estuprados",
+      "estupradas",
+      "estuprindo"
+    ],
+    "insultos_sexistas": [
+      "vadia",
+      "vadias",
+      "vagabunda",
+      "vagabundas",
+      "piranha",
+      "piranhas",
+      "putinha",
+      "putinhas",
+      "webputa",
+      "quenga",
+      "rameira",
+      "meretriz",
+      "mulherzinha"
+    ],
+    "deslegitimacao_gamer_genero": [
+      "boostada",
+      "boostado",
+      "boostadas",
+      "bustada",
+      "bustado",
+      "bustadas",
+      "webgado",
+      "webgados",
+      "egirl",
+      "e-girl",
+      "egirls",
+      "e-girls",
+      "carregada",
+      "carregadas"
+    ],
+    "objetificacao_sexual": [
+      "gostosona",
+      "gostosa",
+      "gostosas",
+      "escravo de buceta",
+      "escravos de buceta",
+      "fome de buceta",
+      "buceta",
+      "boceta",
+      "bct",
+      "ppk"
+    ],
+    "humilhacao_corporal_genero": [
+      "obesa",
+      "obesas",
+      "gorda",
+      "gordas",
+      "baleia",
+      "feia",
+      "feias",
+      "obesinha"
+    ],
+    "policiamento_genero": [
+      "travecão",
+      "travecao",
+      "pouco feminina",
+      "não é feminina",
+      "nao e feminina"
+    ],
+    "homofobia_transfobia_contextual": [
+      "viado",
+      "viadinho",
+      "viada",
+      "bicha",
+      "boiola",
+      "sapatão",
+      "sapatao",
+      "traveco"
+    ],
+    "frases_sexistas": [
+      "mulher não sabe jogar",
+      "mulher nao sabe jogar",
+      "mulher não entende de lol",
+      "mulher nao entende de lol",
+      "mulher falando de lol",
+      "mulher mestre",
+      "foi boostada pelo namorado",
+      "foi bustada pelo namorado"
+    ]
+  },
+  "nota": "Homofobia, transfobia e violência sexual metafórica devem ser analisadas separadamente; todas as ocorrências exigem revisão contextual."
+}
