@@ -1,6 +1,6 @@
 # Pesquisa LoL — Corpus Yiok
 
-Corpus de vídeos, transcrições e comentários do canal **Yiok** (League of Legends) para um **estudo de caso** sobre **misoginia online em jogos**, usando abordagem **MOL (Misoginia Online em Léxico)**.
+Estudo de caso sobre a **associação entre expressões potencialmente misóginas nas falas dos vídeos** do canal **Yiok** (League of Legends) e **suas visualizações no YouTube**, usando o léxico MOL. Comentários são mantidos apenas como acervo histórico.
 
 > ℹ️ **Sobre este projeto:** projeto de pesquisa pessoal da estudante **Lídia Belas** (Antropologia/UFBA), vinculado às disciplinas de **Métodos Digitais** e **Laboratório Quantitativo em Ciências Sociais**. Não há orientador formal — a pesquisadora conduz o projeto de forma independente. O propósito de toda a documentação é garantir reprodutibilidade e rastreabilidade metodológica para um futuro artigo acadêmico.
 
@@ -110,7 +110,7 @@ O léxico MOL atual contém **92 termos** distribuídos em **8 categorias**, apl
 
 > ⚠️ **Versão preliminar.** O léxico MOL está em refinamento. Os números de detecção podem mudar significativamente com a melhoria do léxico.
 
-### 5. Base analítica — codificação binária por categoria
+### 5. Base analítica histórica dos comentários (fora do desenho atual)
 
 A base analítica (`data/comentarios/base_analitica_mol.csv`) reúne os 1.222 comentários em uma única tabela com codificação binária (1 = presença / 0 = ausência) para cada uma das 8 categorias do léxico MOL, seguindo o modelo de datasets acadêmicos com codificação categorial (cf. Fernandez, Bertholini e Maia, 2025; Lourenço, Vitena e Silva, 2022).
 
@@ -250,91 +250,33 @@ A categorização foi feita por **análise indutiva do conteúdo** — cada víd
 A coluna `categoria_video` foi adicionada ao arquivo `data/data_base yiok - videos.csv`.
 
 
-## 📊 As duas fontes do corpus
+## 📊 Corpus ativo e acervo histórico
 
-Este corpus contém **duas fontes textuais distintas**, ambas passíveis de análise pelo léxico MOL:
-
-| | Fonte 1 — Comentários | Fonte 2 — Transcrições |
-|---|---|---|
-| **O que é** | O que a audiência escreve | O que o Yiok diz nos vídeos |
-| **Arquivos** | `data/comentarios/` | `data/videos/<videoId>/<videoId>_transcricao.txt` |
-| **Volume** | 1.222 comentários | 43 transcrições (81.553 palavras) |
-| **Métrica MOL** | Flag binário (1/0) por comentário | Frequência de termos por mil palavras |
-| **Natureza** | Reação da audiência | Discurso do criador de conteúdo |
-
-> 🔑 As transcrições são uma **segunda fonte analítica**, não um complemento dos comentários. Permitem comparar a linguagem do streamer com a linguagem da audiência — uma camada analítica que a maioria dos estudos de comentários de YouTube não tem.
-
+A análise atual usa **43 transcrições dos vídeos** e **metadados de visualizações**. A unidade de análise é cada vídeo. Os **1.222 comentários** e suas tabelas derivadas permanecem preservados, mas **não participam das variáveis, análises ou conclusões**. As seções anteriores deste README que descrevem codificação de comentários documentam apenas etapas históricas do projeto.
 
 ## 🔬 Pergunta de pesquisa
 
-> **Como a misoginia se manifesta de forma distinta na fala do criador de conteúdo e nos comentários da audiência em vídeos de League of Legends?**
+> **Qual é a relação entre a frequência de expressões potencialmente misóginas na fala presente nos vídeos de League of Legends e o número de visualizações que esses vídeos alcançam no YouTube?**
 
-### Natureza do estudo
+**Hipótese H1:** vídeos com maior frequência de expressões potencialmente misóginas por mil palavras apresentam mais visualizações. **H0:** não há associação.
 
-Trata-se de um **estudo de caso** do canal **Yiok** (League of Legends / YouTube). O corpus foi delimitado temporalmente (21/08/2025 a 21/11/2025) e compreende 43 vídeos, 1.222 comentários e 43 transcrições. O estudo é **descritivo-comparativo**: descreve como a misoginia aparece em duas fontes textuais distintas (fala do criador vs comentários da audiência) e compara os padrões encontrados.
+### Desenho e variáveis
 
-> ⚠️ Não se trata de um estudo inferencial nem de uma amostra representativa do fenômeno da misoginia em gaming. É um estudo de caso exploratório que mapeia padrões em um corpus específico e delimitado.
+Estudo de caso **observacional, quantitativo e exploratório** do canal Yiok, com 43 vídeos publicados entre 21/08/2025 e 21/11/2025 (n=43). Uma associação observada **não demonstra causalidade**.
 
-### Design analítico
+- **Frequência MOL por mil palavras:** ocorrências de termos do léxico na transcrição ÷ total de palavras × 1.000. É indicador de linguagem *potencialmente* misógina, sujeito a polissemia, falsos positivos, ironia e contexto gamer.
+- **Visualizações:** número por vídeo nos metadados do YouTube; confirmar a coluna exata e a data da medição antes de calcular.
+- **Tempo de exposição e formato:** conferir datas de publicação e aferição e distinguir Shorts de vídeos longos na interpretação.
 
-Este estudo de caso adota um design **descritivo-comparativo** entre duas fontes textuais do mesmo corpus:
+### Plano de análise — ainda não executado
 
-| | Fonte 1 — Transcrições | Fonte 2 — Comentários |
-|---|---|---|
-| **O que é** | O que o Yiok diz nos vídeos | O que a audiência escrece |
-| **Arquivos** | `data/videos/<videoId>/<videoId>_transcricao.txt` | `data/comentarios/` |
-| **Volume** | 43 transcrições (8.384 segmentos) | 1.222 comentários |
-| **Métrica MOL** | **Frequência de termos por mil palavras** (mesma métrica de Martínez Arranz et al., 2024) | **% de comentários flagged** (flag binário 1/0) |
-| **Natureza** | Discurso do criador de conteúdo | Reação da audiência |
+1. Refinar o léxico e revisar ocorrências no contexto das transcrições.
+2. Conferir metadados de visualizações e datas.
+3. Criar **nova base analítica por vídeo**, com ID, frequência MOL, visualizações e datas disponíveis, sem sobrescrever arquivos históricos.
+4. Descrever distribuições, produzir dispersão e avaliar correlação exploratória de Spearman; interpretar com cautela o tamanho da amostra e diferenças de idade e formato.
+5. Relatar limitações sem fazer afirmações causais.
 
-A unidade de análise é o vídeo (n=43). Para cada vídeo, calcula-se:
-
-- **Frequência de segmentos sinalizados na transcrição:** número de segmentos classificados como `flagged` pelo léxico MOL dividido pelo total de segmentos transcritos, multiplicado por 1.000.
-- **Percentual de comentários sinalizados:** número de comentários classificados como `flagged` pelo léxico MOL dividido pelo total de comentários do vídeo, multiplicado por 100.
-
-A frequência da transcrição é expressa em **segmentos sinalizados por mil segmentos transcritos**. A padronização permite comparar vídeos com quantidades diferentes de segmentos. Por exemplo, uma frequência de 53,37 indica que, mantida a proporção observada, haveria aproximadamente 53 segmentos sinalizados a cada mil segmentos. Isso não significa que 53 segmentos tenham sido sinalizados no vídeo: a contagem real deve ser consultada na variável `flagged_transcricao`.
-
-A taxa deve ser interpretada junto às contagens absolutas (`flagged_transcricao` e `total_segmentos`). Em vídeos com poucos segmentos, a sinalização ou não de um único segmento pode alterar bastante o resultado. Além disso, `flagged` indica que o procedimento baseado no léxico encontrou um ou mais termos correspondentes naquele segmento; não constitui, por si só, uma confirmação de misoginia no contexto.
-
-A comparação entre essas duas medidas permite mapear **como a misoginia se manifesta distintamente** em cada fonte — quais categorias predominam na fala do criador vs nos comentários da audiência.
-
-### Variáveis
-
-| Variável | Tipo | Descrição |
-|----------|------|-----------|
-| `freq_mol_transcricao` | Numérica (contínua) | Frequência de termos MOL por mil palavras na transcrição do vídeo |
-| `pct_flagged_comentarios` | Numérica (contínua) | % de comentários do vídeo flagged pelo léxico MOL |
-| `categoria_video` | Categórica (5 níveis) | Tipo de conteúdo: gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl |
-
-### Base comparativa por vídeo
-
-O arquivo `data/analise/base_comparativa_por_video.csv` reúne as 3 variáveis em uma única tabela com 43 linhas (1 por vídeo):
-
-| Coluna | Descrição |
-|--------|-----------|
-| `videoId` | ID do vídeo no YouTube |
-| `categoria_video` | Categoria do vídeo (5 níveis) |
-| `flagged_transcricao` | Nº de segmentos da transcrição flagged |
-| `total_segmentos` | Total de segmentos da transcrição |
-| `freq_mol_por_mil` | Frequência de termos MOL por mil palavras |
-| `flagged_comentarios` | Nº de comentários flagged |
-| `total_comentarios` | Total de comentários do vídeo |
-| `pct_flagged_comentarios` | % de comentários flagged |
-
-### Resultados preliminares (léxico v1 — 92 termos)
-
-> ⚠️ **Versão preliminar.** Estes números são do léxico atual e podem mudar significativamente com o refinamento.
-
-| | Comentários | Transcrições |
-|---|---|---|
-| Total | 1.222 | 8.384 segmentos |
-| Flagged | 60 (4,9%) | 236 (2,8%) |
-| Categoria mais frequente | racial interseccional (30%) | sexual degradante (70%) |
-| 2ª mais frequente | body shaming (21,7%) | homofobia/misoginia (13,1%) |
-| 3ª mais frequente | sexual degradante (21,7%) | xingamentos de gênero (11,0%) |
-
-**Achado preliminar:** a categoria dominante é **diferente** entre as duas fontes. Na fala do Yiok, predomina `sexual_degradante` (caralho, pica, etc. — usados como xingamento genérico). Nos comentários, predomina `racial_interseccional` (neguinho, macaco, etc.) — a audiência xinga mais por raça/gênero do que o criador.
-
+As cinco categorias de vídeo continuam documentadas, mas **não são variáveis da análise principal (opção A)**. A antiga `data/analise/base_comparativa_por_video.csv` e as análises de comentários são **legados preservados**, não resultados do novo desenho.
 
 ## 📚 Créditos e referências
 
@@ -393,23 +335,9 @@ Este repositório contém dados de pesquisa acadêmica. Os vídeos e áudios per
 
 ## 📌 Status
 
-**Versão preliminar** — entrega inicial para as disciplinas de Métodos Digitais e Laboratório Quantitativo em Ciências Sociais. O léxico MOL está em refinamento e os números podem mudar.
-
-- ✅ 43 vídeos coletados (22 longos + 21 shorts)
-- ✅ 43 vídeos categorizados em 5 categorias (`categoria_video` no CSV)
-- ✅ 1.222 comentários brutos
-- ✅ Léxico MOL v2 (92 termos / 8 categorias) — em refinamento
-- ✅ Base analítica com codificação binária por categoria
-- ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica
-- ✅ Pergunta de pesquisa definida: estudo de caso descritivo-comparativo (fala do criador × comentários da audiência)
-- ✅ Base comparativa por vídeo (`data/analise/base_comparativa_por_video.csv` — 43 linhas, 3 variáveis)
-- ✅ Referência metodológica citável registrada (Martínez Arranz et al., 2024)
-- ✅ Script de análise léxica (`scripts/analise_lexical.py`) — roda léxico em comentários + transcrições
-
-### 🔜 Próximos passos previstos
-
-- [ ] **Refinar o léxico MOL** com termos específicos da comunidade de League of Legends — prioridade atual
-- [ ] **Gerar gráficos** comparativos (categorias MOL: transcrições vs comentários)
-- [ ] **Estratificar por categoria_video** — verificar se o padrão varia entre tipos de conteúdo
-- [ ] Evoluir da codificação binária para análise multilabel mais granular
-- [ ] Baixar e armazenar o PDF do artigo de Martínez Arranz et al. (2024) como referência metodológica
+- ✅ 43 vídeos e 43 transcrições preservados; 1.222 comentários arquivados fora da análise atual.
+- ✅ Nova pergunta documentada: frequência MOL nas transcrições × visualizações.
+- ⏳ Léxico em refinamento e revisão contextual.
+- ⏳ Conferência das visualizações e datas.
+- ⏳ Nova base por vídeo e análise exploratória de associação ainda não realizadas.
+- ℹ️ Resultados anteriores envolvendo comentários são históricos e não sustentam conclusões do novo estudo.
