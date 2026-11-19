@@ -21,3 +21,7 @@ Este glossário auxilia a **interpretação contextual das transcrições**, nã
 | ADC | Papel de dano físico sustentado, geralmente na rota inferior | Termo técnico neutro |
 
 **Regra:** não incluir termos deste glossário na variável de misoginia sem ocorrência e justificativa contextual específicas.
+
+## Expressões de violência sexual como metáfora de jogo
+
+Formas como **estupro**, **estuprar**, **estuprado** e **estuprada** podem ser mobilizadas em alguns discursos gamer para descrever derrota, domínio ou humilhação. O uso não literal é registrado como **metáfora sexualizada** e possível **banalização da violência sexual**, com exame do contexto. Diferenciar metáfora, ameaça, relato literal e crítica/citação; nenhuma dessas classes deve ser atribuída só pela palavra isolada.
