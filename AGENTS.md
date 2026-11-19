@@ -4,7 +4,7 @@
 
 ## O que é este repositório
 
-`pesquisa_lol` é o corpus de dados de um projeto de pesquisa pessoal da estudante **Lídia Belas** (Antropologia/UFBA), vinculado às disciplinas de **Métodos Digitais** e **Laboratório Quantitativo em Ciências Sociais**. A pesquisa investiga **misoginia em comentários de vídeos de League of Legends** no YouTube, usando uma abordagem baseada em léxico (**MOL — Misogyny-Oriented Lexicon**).
+`pesquisa_lol` é o corpus de dados de um projeto de pesquisa pessoal da estudante **Lídia Belas** (Antropologia/UFBA), vinculado às disciplinas de **Métodos Digitais** e **Laboratório Quantitativo em Ciências Sociais**. A pesquisa investiga **a associação entre a frequência de expressões potencialmente misóginas nas falas dos vídeos de League of Legends e o número de visualizações** no YouTube, usando o léxico MOL.
 
 O corpus foi coletado do canal do YouTuber **Yiok** (janela: 21/08/2025 a 21/11/2025), incluindo vídeos, transcrições, descrições e comentários.
 
@@ -12,15 +12,7 @@ O corpus foi coletado do canal do YouTuber **Yiok** (janela: 21/08/2025 a 21/11/
 
 ## Propósito da base
 
-Esta base de dados serve como **corpus de pesquisa** para:
-
-1. **Detectar misoginia** em comentários de vídeos de LoL no YouTube por abordagem léxico (MOL)
-2. **Mapear categorias** de discurso misógino (xingamentos de gênero, body shaming, sexual degradante, racial interseccional, etc.)
-3. **Produzir evidência empírica** para análise antropológica sobre violência de gênero em espaços digitais de gaming
-4. **Servir de base para um artigo acadêmico futuro** — por isso a documentação precisa estar completa e bem organizada, garantindo reprodutibilidade e rastreabilidade metodológica
-5. **Cumprir exigências das disciplinas** de Métodos Digitais e Laboratório Quantitativo em Ciências Sociais (UFBA)
-
-A base segue o modelo de codificação binária por categoria inspirado em **Fernandez et al. (2025)** e **Lourenço et al. (2022)**: cada comentário = 1 linha, cada categoria do léxico = 1 coluna com valor 1 (presente) ou 0 (ausente).
+Investigar, em estudo de caso quantitativo e exploratório do canal Yiok, se vídeos com maior frequência de expressões potencialmente misóginas nas transcrições apresentam maior número de visualizações. O léxico MOL é ferramenta de triagem, não classificação contextual definitiva. Preservar reprodutibilidade e rastreabilidade para pesquisa acadêmica. Os comentários e bases derivadas são acervo histórico, **excluído da análise atual**.
 
 ## Como lidar com os dados
 
@@ -83,38 +75,24 @@ pesquisa_lol/
             └── <videoId>_metadados_transcricao.txt
 ```
 
-## As duas fontes do corpus
+## Fontes da pesquisa
 
-O corpus contém **duas fontes textuais distintas** — ambas analisáveis com o léxico MOL:
-
-1. **Comentários** (`data/comentarios/`) — o que a audiência escreve. 1.222 comentários, 61 flagged (5,0%). Métrica: flag binário (1/0).
-2. **Transcrições** (`data/videos/<videoId>/<videoId>_transcricao.txt`) — o que o Yiok diz nos vídeos. 43 transcrições, 81.553 palavras totais, 24 com misoginia detectada (55,8%). Métrica: frequência de termos por mil palavras.
-
-> As transcrições são uma **segunda fonte analítica**, não um complemento. Permitem comparar a linguagem do criador de conteúdo com a linguagem da audiência.
+- **Ativas:** 43 transcrições dos vídeos (fala do criador) e metadados dos vídeos, incluindo visualizações e datas a conferir.
+- **Históricas, fora da análise:** 1.222 comentários e tabelas analíticas anteriores. Preservar integralmente os dados originais e não utilizar comentários nos resultados do novo desenho.
 
 ## Pergunta de pesquisa e design analítico
 
-> **Como a misoginia se manifesta de forma distinta na fala do criador de conteúdo e nos comentários da audiência em vídeos de League of Legends?**
+> **Qual é a relação entre a frequência de expressões potencialmente misóginas na fala presente nos vídeos de League of Legends e o número de visualizações que esses vídeos alcançam no YouTube?**
 
-**Natureza:** estudo de caso do canal Yiok (LoL/YouTube). Corpus delimitado temporalmente (21/08–21/11/2025), 43 vídeos, 1.222 comentários, 43 transcrições. Design **descritivo-comparativo** — não inferencial.
+**H1:** vídeos com maior frequência de expressões potencialmente misóginas por mil palavras apresentam mais visualizações. **H0:** não há associação entre essas medidas.
 
-**Design:** comparar duas fontes textuais do mesmo corpus — transcrições (fala do Yiok) vs comentários (audiência). Unidade de análise = vídeo (n=43).
+**Desenho:** estudo de caso observacional, quantitativo e exploratório do canal Yiok; 43 vídeos publicados entre 21/08/2025 e 21/11/2025; unidade de análise = vídeo (n=43). Investigar associação, **não causalidade**.
 
-| Fonte | Métrica MOL |
-|-------|-------------|
-| Transcrições | Frequência de termos por mil palavras (cf. Martínez Arranz et al., 2024) |
-| Comentários | % de comentários flagged (flag binário 1/0) |
+**Variáveis:** frequência de ocorrências do léxico MOL por mil palavras da transcrição (indicador lexical sujeito a falsos positivos, gírias, citações e contexto); número de visualizações por vídeo (verificar nome da coluna, data de aferição e valores ausentes).
 
-**Variáveis:**
-- `freq_mol_transcricao` (numérica) — freq/mil palavras na transcrição
-- `pct_flagged_comentarios` (numérica) — % de comentários flagged
-- `categoria_video` (categórica, 5 níveis) — gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl
+**Plano:** refinar e validar o léxico nas transcrições; verificar visualizações, datas de publicação e de medição; produzir **nova** base por vídeo sem sobrescrever bases antigas; descrever distribuições, construir dispersão e explorar correlação de Spearman. Considerar diferenças de idade dos vídeos e entre Shorts e vídeos longos; com n=43, interpretar com cautela. Não declarar resultados antes dos cálculos.
 
-**Base comparativa:** `data/analise/base_comparativa_por_video.csv` — 43 linhas, 1 por vídeo, com as 3 variáveis.
-
-**Achado preliminar (léxico v1):** categorias dominantes diferem entre fontes — transcrições: sexual_degradante (70%); comentários: racial_interseccional (30%).
-
-> ⚠️ Léxico MOL em refinamento — números podem mudar.
+**Fora do escopo:** comentários e comparação fala × audiência; estratificação por categoria de vídeo. As cinco categorias já documentadas permanecem arquivadas, mas não integram a análise principal (opção A).
 
 ## Referência metodológica citável
 
@@ -124,18 +102,13 @@ O corpus contém **duas fontes textuais distintas** — ambas analisáveis com o
 - **Equivalência:** léxico deles (1.383 termos, inglês) ↔ MOL (92 termos, português); corpus Hansard ↔ comentários + transcrições; comparação entre partidos ↔ comparação entre temas de vídeo.
 - **Como citar:** na metodologia ("seguindo Martínez Arranz et al., 2024...") e na discussão ("enquanto Martínez Arranz et al. comparam incivilidade entre partidos, este estudo compara misoginia entre tipos de conteúdo...").
 
-## O que eu pretendo fazer no futuro
+## Próximos passos do novo desenho
 
-A versão atual é **primária** (entrega de 02/10/2026). A prioridade é refinar o léxico antes de qualquer análise estatística. Os próximos passos planejados são:
-
-1. **Refinar o léxico MOL** com termos específicos da comunidade de League of Legends (gamer slang, gírias do jogo) — **prioridade atual, bloqueia as análises abaixo**
-2. ~~Recodificar os 43 vídeos com coluna `tema_video`~~ — ✅ **FEITO**: coluna `categoria_video` adicionada (5 categorias: gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl)
-3. ~~Aplicar o léxico MOL às 43 transcrições~~ — ✅ **FEITO**: `scripts/analise_lexical.py` roda léxico em comentários + transcrições
-4. **Rodar análise comparativa** (correlação freq_mol_transcricao × pct_flagged_comentarios) após refinamento do léxico
-5. **Estratificar por categoria_video** — verificar se a correlação varia entre tipos de conteúdo
-6. **Evoluir da codificação binária para análise multilabel** mais granular
-7. **Atualizar colunas de transcrição** (`transcrição_ytb`, `status-transcricao`) com resultados do faster-whisper
-8. **Baixar e armazenar o PDF** do artigo de Martínez Arranz et al. (2024) como referência metodológica
+1. Refinar e validar o léxico MOL no contexto das transcrições.
+2. Conferir visualizações e datas nos metadados do YouTube.
+3. Criar nova tabela por vídeo: identificador, frequência MOL/mil palavras, visualizações, data de publicação e data de aferição (se disponível).
+4. Fazer descrição, dispersão e análise exploratória de associação, com atenção à idade e ao formato dos vídeos.
+5. Documentar limitações, sem inferir causalidade. Scripts e bases envolvendo comentários são legados e não devem ser usados como resultados atuais.
 
 ## Como eu quero organizar as coisas
 
@@ -153,19 +126,14 @@ A versão atual é **primária** (entrega de 02/10/2026). A prioridade é refina
 - **Remote:** `github-pesquisa-lol-write:lidibelas/pesquisa_lol.git`
 - **NUNCA** use token ou conta GitHub de terceiros aqui
 
-## Estado atual (versão preliminar — out/2026)
+## Estado atual (redirecionamento metodológico — nov/2026)
 
-- ✅ 43 vídeos coletados (22 longos + 21 shorts)
-- ✅ 43 vídeos categorizados em 5 categorias (`categoria_video`: gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl)
-- ✅ 1.222 comentários brutos
-- ✅ Léxico MOL v2 (92 termos / 8 categorias) — em refinamento
-- ✅ Base analítica com codificação binária por categoria
-- ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica
-- ✅ Opções de análise comparativa interna mapeadas (4 opções)
-- ✅ Referência metodológica citável registrada (Martínez Arranz et al., 2024)
-- ✅ Script de análise léxica (`scripts/analise_lexical.py`) — roda léxico em comentários + transcrições
-- ⏳ Léxico MOL em refinamento (prioridade atual) — análise estatística bloqueada até conclusão
-- ⏳ Versão preliminar — será refinada (MOL + léxico gamer LoL, análise de transcrições, análise estatística)
+- ✅ 43 vídeos e transcrições preservados.
+- ✅ 1.222 comentários e análises antigas preservados **fora da análise atual**.
+- ✅ Léxico MOL v2 (92 termos / 8 categorias), em refinamento.
+- ⏳ Conferir visualizações e datas de coleta.
+- ⏳ Criar nova base por vídeo e executar análise exploratória de associação.
+- ℹ️ Nenhuma correlação ou resultado novo foi calculado nesta atualização documental.
 
 ## Contexto acadêmico
 
