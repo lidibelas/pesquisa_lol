@@ -4,7 +4,7 @@ Estudo de caso sobre linguagem, misoginia e visibilidade em vídeos de League of
 
 ## Pergunta de pesquisa
 
-**No canal do Yiok, vídeos com mais ocorrências de termos do léxico MOL por mil palavras transcritas têm mais visualizações?**
+**Nos 43 vídeos de League of Legends do canal Yiok, qual é a relação entre a frequência de termos associados à misoginia nas falas, medida por mil palavras transcritas, e o número de visualizações no YouTube?**
 
 A unidade de análise é o vídeo. O recorte atual cruza **transcrições e visualizações por vídeo**. Os comentários e os resultados da comparação anterior entre transcrições e comentários continuam no repositório, mas não entram nesta análise. O estudo é descritivo e exploratório: trata de um canal e não estima a prevalência de misoginia em League of Legends.
 
@@ -104,7 +104,7 @@ Cada transcrição gera três arquivos:
 
 ### 4. Aplicação do léxico MOL
 
-MOL (Misoginia Online em Léxico) foi construído a partir de fontes lexicais em português, literatura e vocabulário observado na comunidade de League of Legends e no corpus. Use o **[MOL sem frases específicas de cena](lexico/mol-sem-frases-de-cena.csv)** como indicador de referência e o **[MOL com frases específicas de cena](lexico/mol-com-frases-de-cena.csv)** para a comparação. Os dois derivam do v3 revisado e registram 97 entradas, incluindo formas fora da contagem. O v2 e os arquivos de origem do v3 estão em [descartados](lexico/descartados/), apenas para consulta e reprodução histórica. Veja as [decisões metodológicas](artigo/decisoes-metodologicas.md) para a diferença exata entre as versões. As entradas têm os seguintes status:
+MOL (Misoginia Online em Léxico) foi construído a partir de fontes lexicais em português, literatura e vocabulário observado na comunidade de League of Legends e no corpus. Use o **[MOL sem frases específicas de cena](lexico/mol-sem-frases-de-cena.csv)** como indicador de referência e o **[MOL com frases específicas de cena](lexico/mol-com-frases-de-cena.csv)** para a comparação. Os dois derivam do v3 revisado. O arquivo **sem** tem 90 entradas (34 principais); o **com** tem 97 (40 principais). Os totais incluem entradas fora da contagem. O v2 e os arquivos de origem do v3 estão em [descartados](lexico/descartados/), apenas para consulta e reprodução histórica. Veja as [decisões metodológicas](artigo/decisoes-metodologicas.md) para a diferença exata entre as versões. As entradas têm os seguintes status:
 
 | Status | Uso |
 |---|---|
@@ -115,7 +115,7 @@ MOL (Misoginia Online em Léxico) foi construído a partir de fontes lexicais em
 
 A análise proposta conta correspondências literais no campo `texto` dos CSVs de transcrição, sem distinguir maiúsculas de minúsculas e sem incluir horários ou outros metadados. As exceções de frase, como “puta que pariu”, “filho da puta” e “filha da puta”, afetam apenas a ocorrência correspondente de `puta`, não o número de palavras do trecho. Em sobreposições, conta-se a expressão mais longa uma vez, sem duplicar a palavra que faz parte dela. Uma **ocorrência** é cada correspondência aceita; uma **flag** indica que um segmento tem ao menos uma correspondência na categoria em questão. Várias ocorrências no mesmo segmento não equivalem a várias flags desse segmento.
 
-A adaptação do léxico ao próprio corpus é exploratória, não uma validação externa do instrumento. As duas versões mantêm as mesmas exceções. A diferença é se as duas formulações específicas da cena do namorado entram como expressões principais; as formas curtas continuam elegíveis em ambas. Registre a versão e o critério antes de calcular a associação; não escolha a especificação pelo resultado mais alto. Correspondências são marcadores lexicais, não confirmação de misoginia, intenção, alvo ou autoria da fala.
+A adaptação do léxico ao próprio corpus é exploratória, não uma validação externa do instrumento. As duas versões mantêm as mesmas exceções. O arquivo **sem** não contém as sete linhas com formulações longas listadas nas [decisões metodológicas](artigo/decisoes-metodologicas.md#4-duas-versões-uma-única-diferença): duas sobre subir de elo com ajuda do namorado, uma de “mulher falando de LoL” e quatro variantes de “mulher não sabe jogar” e “mulher não entende de LoL”. No arquivo **com**, seis dessas linhas são principais; “mulher falando de LoL” é contextual. As formas curtas e as regras de exclusão permanecem iguais. Registre a versão e o critério antes de calcular a associação; não escolha a especificação pelo resultado mais alto. Correspondências são marcadores lexicais, não confirmação de misoginia, intenção, alvo ou autoria da fala.
 
 ### 5. Comparação por vídeo
 
