@@ -14,6 +14,7 @@ A unidade de análise é o vídeo. O recorte atual cruza **transcrições e visu
 - **Janela de publicação:** 21/08/2025 a 21/11/2025, sem seleção prévia pela presença de termos.
 - **Vídeos:** 43, sendo 22 longos e 21 Shorts, com transcrições automáticas e metadados.
 - **Visualizações:** coluna `viewCount` da base de metadados. São os valores registrados na coleta, não o contador atual do YouTube.
+- **Descrições escritas:** 14 vazias e 29 preenchidas, em sua maioria com texto padrão. Se analisadas, suas contagens ficam em colunas próprias, fora da taxa calculada sobre a transcrição do áudio.
 
 ## 📁 Estrutura do repositório
 
@@ -23,8 +24,10 @@ pesquisa_lol/
 ├── README.md                              ← este arquivo
 ├── .gitignore
 ├── lexico/                                ← léxico MOL (ferramenta de análise, NÃO é dado bruto)
-│   ├── mol-lexicon.json
-│   └── mol-lexicon.csv
+│   ├── mol-lexicon.json                    ← MOL v2 (legado)
+│   ├── mol-lexicon.csv                     ← MOL v2 (legado)
+│   ├── mol-lexicon-v3.json                 ← MOL v3 revisado e regras
+│   └── mol-lexicon-v3.csv                  ← mesmas entradas do MOL v3
 ├── scripts/                               ← scripts de análise
 │   └── analise_lexical.py                    ← análise legada de comentários e segmentos de transcrição
 └── data/                                  ← dados da pesquisa (brutos e analíticos)
@@ -33,7 +36,7 @@ pesquisa_lol/
     ├── comentarios/                       ← comentários coletados e base analítica
     │   ├── data_base yiok - comentários.csv   ← base completa de comentários brutos (1.222)
     │   ├── base_analitica_mol.csv             ← base analítica unificada (1.222 + codificação binária MOL)
-    │   └── comentarios_flagged_mol.csv        ← 61 comentários flagged (MOL)
+    │   └── comentarios_flagged_mol.csv        ← comentários sinalizados na análise anterior
     ├── analise/                           ← resultados da análise anterior
     │   ├── base_comparativa_por_video.csv     ← comparação anterior por vídeo (segmentos e comentários)
     │   ├── base_analitica_comentarios_mol.csv ← 1.222 comentários codificados pelo MOL
@@ -102,22 +105,33 @@ Cada transcrição gera três arquivos:
 
 ### 4. Aplicação do léxico MOL
 
-MOL (Misoginia Online em Léxico) combina termos do HurtLex em português, da literatura e do vocabulário observado no corpus ou na comunidade de League of Legends. O CSV e o JSON publicados contêm 92 entradas em oito categorias; o dicionário está em revisão. Registre a versão exata usada em cada análise. As contagens da versão antiga não substituem a nova execução.
+MOL (Misoginia Online em Léxico) foi construído a partir de fontes lexicais em português, literatura e vocabulário observado na comunidade de League of Legends e no corpus. A versão publicada para o recorte atual é o **MOL v3 revisado** ([CSV](lexico/mol-lexicon-v3.csv) e [JSON](lexico/mol-lexicon-v3.json)). O v2, com 92 termos, permanece disponível para reproduzir a análise anterior. O v3 registra 97 entradas, incluindo formas que não entram em nenhuma contagem. As entradas têm os seguintes status:
 
-A análise proposta conta as ocorrências do léxico no campo `texto` dos arquivos de transcrição, sem incluir os horários ou outros metadados na contagem de palavras. Ocorrências repetidas entram na contagem; um segmento com mais de uma ocorrência não vale necessariamente uma só. As correspondências são sinais lexicais: não identificam o falante nem determinam, por si só, intenção, alvo ou misoginia no contexto.
+| Status | Uso |
+|---|---|
+| `principal` | Ocorrências que entram no indicador principal, com contagens por categoria: insulto de gênero, policiamento da masculinidade, deslegitimação da habilidade ou do elo, sexualização e desqualificação pela aparência. |
+| `auxiliar` | Flags separadas para marcadores raciais, marcadores de homofobia ou transfobia e menções a violência sexual. Não entram na taxa principal. |
+| `contextual` | Elementos preservados para interpretação, sem contagem automática. |
+| `excluido` | Elementos documentados, mas fora das contagens. |
+
+A análise proposta conta correspondências literais no campo `texto` dos CSVs de transcrição, sem distinguir maiúsculas de minúsculas e sem incluir horários ou outros metadados. As exceções de frase, como “puta que pariu”, “filho da puta” e “filha da puta”, afetam apenas a ocorrência correspondente de `puta`, não o número de palavras do trecho. Em sobreposições, conta-se a expressão mais longa uma vez, sem duplicar a palavra que faz parte dela. Uma **ocorrência** é cada correspondência aceita; uma **flag** indica que um segmento tem ao menos uma correspondência na categoria em questão. Várias ocorrências no mesmo segmento não equivalem a várias flags desse segmento.
+
+A adaptação do léxico ao próprio corpus é exploratória, não uma validação externa do instrumento. O v3 publicado inclui palavras e expressões entre as entradas principais. Para avaliar se expressões muito específicas de uma cena influenciam a associação com visualizações, pode-se comparar a especificação completa com outra sem essas expressões, preservando as regras de exclusão. Registre a versão e o critério antes de calcular a associação; não escolha a especificação pelo resultado mais alto. Correspondências são marcadores lexicais, não confirmação de misoginia, intenção, alvo ou autoria da fala.
 
 ### 5. Comparação por vídeo
 
 A base da nova análise deve ter uma linha por `videoId`. O mesmo identificador vincula a transcrição aos metadados. A taxa principal é:
 
-**Ocorrências por mil palavras = (ocorrências do léxico ÷ total de palavras transcritas) × 1.000.**
+**Ocorrências principais por mil palavras = (ocorrências principais ÷ total de palavras transcritas) × 1.000.**
 
 | Campo | Uso |
 |---|---|
 | `videoId` | Identificador único do vídeo |
 | Total de palavras transcritas | Denominador da taxa |
-| Ocorrências do léxico | Contagem bruta por vídeo |
-| Ocorrências por mil palavras | Medida padronizada para comparar transcrições de tamanhos diferentes |
+| Ocorrências principais | Contagem bruta de correspondências de status `principal`, por vídeo |
+| Segmentos sinalizados (flags) | Número de segmentos com pelo menos uma ocorrência principal, sem confundir com o total de ocorrências |
+| Ocorrências principais por mil palavras | Medida padronizada para comparar transcrições de tamanhos diferentes |
+| Flags auxiliares por categoria | Registradas separadamente, sem compor a taxa principal |
 | `viewCount` | Visualizações registradas na base |
 | Formato e `categoria_video` | Identificar Shorts, vídeos longos e categorias de conteúdo |
 
@@ -236,7 +250,7 @@ A coluna `categoria_video` foi adicionada ao arquivo `data/data_base yiok - vide
 
 ## Arquivos da análise anterior
 
-O script `scripts/analise_lexical.py` e as tabelas existentes em `data/analise/` documentam o recorte anterior. Na tabela `data/analise/base_comparativa_por_video.csv`, `freq_mol_por_mil` significa **segmentos sinalizados por mil segmentos transcritos**, e não ocorrências por mil palavras. O percentual de comentários sinalizados também pertence ao recorte anterior. Nenhuma dessas colunas deve ser usada como resultado da nova comparação com visualizações.
+O script `scripts/analise_lexical.py` e as tabelas existentes em `data/analise/` documentam o recorte anterior. **O script legado não implementa os status e as exceções do v3.** Passar o CSV v3 para ele não reproduz o desenho descrito aqui. Na tabela `data/analise/base_comparativa_por_video.csv`, `freq_mol_por_mil` significa **segmentos sinalizados por mil segmentos transcritos**, e não ocorrências por mil palavras. O percentual de comentários sinalizados também pertence ao recorte anterior. Nenhuma dessas colunas deve ser usada como resultado da nova comparação com visualizações.
 
 ## 📚 Créditos e referências
 
@@ -273,7 +287,8 @@ Este repositório contém dados de pesquisa acadêmica. Os vídeos e áudios per
 
 ## Próximos passos
 
-- [ ] Consolidar e versionar o dicionário revisado.
+- [x] Publicar e versionar o MOL v3 revisado.
+- [ ] Implementar e testar um script para o v3, incluindo flags separadas e exceções de frase.
 - [ ] Gerar uma nova tabela por vídeo sem sobrescrever dados brutos ou análises antigas.
 - [ ] Conferir a junção por `videoId`, os denominadores e a cobertura das transcrições.
 - [ ] Comparar as taxas e as visualizações, distinguindo Shorts e vídeos longos.
