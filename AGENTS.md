@@ -25,11 +25,11 @@
 
 ## Léxico, contagens e resultados
 
-- A versão do recorte atual é o **MOL v3 revisado**, em [CSV](lexico/mol-lexicon-v3.csv) e [JSON](lexico/mol-lexicon-v3.json). Os arquivos sem sufixo são a versão anterior. Mantenha `lexico/` separado de `data/` e registre a versão em toda execução.
+- Os únicos léxicos ativos são [sem frases específicas de cena](lexico/mol-sem-frases-de-cena.csv) (referência) e [com frases específicas de cena](lexico/mol-com-frases-de-cena.csv) (comparação). Os arquivos anteriores estão em [descartados](lexico/descartados/) e não são entradas da análise atual. Consulte as [decisões metodológicas](artigo/decisoes-metodologicas.md). Mantenha `lexico/` separado de `data/` e registre o arquivo usado em toda execução.
 - A taxa principal é **ocorrências de status `principal` ÷ palavras transcritas × 1.000**. Uma flag indica um segmento com pelo menos uma correspondência; não equivale à quantidade de termos. Marcadores raciais, de homofobia ou transfobia e menções a violência sexual têm flags auxiliares independentes e ficam fora da taxa principal. Não conte entradas contextuais ou excluídas.
 - Aplique as exceções por ocorrência, sem alterar o denominador de palavras; em sobreposições, dê prioridade à expressão mais longa. Se houver comparação com e sem expressões específicas, documente o critério antes de calcular a associação com views e apresente as duas especificações sem escolher pela correlação mais alta.
 - Gere uma nova tabela com uma linha por vídeo: ID, total de palavras, ocorrências principais, segmentos sinalizados, taxa por mil palavras, flags auxiliares, views e formato. Registre transcrição ausente ou vazia como sem taxa, não como zero.
-- **O script `scripts/analise_lexical.py` é legado.** Não passa a aplicar as regras do v3 apenas trocando o arquivo de léxico. A coluna `freq_mol_por_mil` da tabela antiga mede segmentos sinalizados por mil segmentos, não ocorrências por mil palavras.
+- **O script `scripts/analise_lexical.py` é legado.** Não passa a aplicar as regras do v3 apenas trocando o arquivo de léxico. Seu caminho padrão é anterior ao arquivamento: só para reprodução histórica, em cópia isolada, indique `--lexico lexico/descartados/mol-lexicon.csv`. A coluna `freq_mol_por_mil` da tabela antiga mede segmentos sinalizados por mil segmentos, não ocorrências por mil palavras.
 - **Nunca sobrescreva os dados brutos ou resultados anteriores.** Uma nova implementação, execução, atualização de arquivos ou publicação deve respeitar o escopo autorizado pela Lídia. Não declare a análise executada até verificar a nova tabela e a cobertura do corpus.
 
 Consulte o [README](README.md) para estrutura de pastas, coleta, transcrição e referências. Martínez Arranz, Zech e Bonotti (2024) são uma referência para normalização por mil palavras, não uma validação do MOL no corpus Yiok.
@@ -64,7 +64,7 @@ Consulte o [README](README.md) para estrutura de pastas, coleta, transcrição e
 
 ## Estado da análise
 
-O corpus e o MOL v3 revisado já estão disponíveis. A implementação e a execução da nova análise transcrições × visualizações ainda estão pendentes. A análise legada permanece arquivada.
+O corpus e os dois léxicos ativos já estão disponíveis. A implementação e a execução da nova análise transcrições × visualizações ainda estão pendentes. A análise legada permanece arquivada.
 
 ## Contexto acadêmico
 
