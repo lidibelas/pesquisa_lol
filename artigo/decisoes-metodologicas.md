@@ -35,10 +35,17 @@ O MOL combina fontes lexicais em português, literatura e termos observados na c
 
 | Versão | Uso | Entradas de status principal |
 |---|---|---:|
-| [Sem frases de cena](../lexico/mol-sem-frases-de-cena.csv) | Especificação de referência | 38 |
+| [Sem frases de cena](../lexico/mol-sem-frases-de-cena.csv) | Especificação de referência | 34 |
 | [Com frases de cena](../lexico/mol-com-frases-de-cena.csv) | Comparação de sensibilidade; reproduz o MOL v3 revisado | 40 |
 
-Ambos preservam as 97 entradas e seu histórico. Só mudam o status de duas expressões específicas da acusação: **“foi boostada pelo namorado”** e **“foi bustada pelo namorado”**. Sem frases de cena, elas ficam em `contextual`, mas as formas curtas `boostada`/`bustada` continuam contáveis. Expressões mais gerais do léxico, como `web puta`, continuam nas duas versões; “sem” significa **sem as duas frases específicas**, não sem toda expressão de várias palavras. A remoção de uma expressão longa pode não alterar o total quando a forma curta ainda é contada, pois não se conta duas vezes no mesmo ponto do texto. Por isso, essa comparação específica não testa a influência de todas as expressões do MOL e pode ter pouco efeito nas taxas.
+O arquivo **com** conserva 97 entradas. O **sem** tem 90: as sete linhas abaixo foram retiradas fisicamente do CSV, em vez de apenas mudar seu status.
+
+- `foi boostada pelo namorado` e `foi bustada pelo namorado`;
+- `mulher falando de lol`;
+- `mulher não sabe jogar` e `mulher nao sabe jogar`;
+- `mulher não entende de lol` e `mulher nao entende de lol`.
+
+No arquivo **com**, seis dessas linhas têm status `principal`; `mulher falando de lol` continua `contextual` e não entra automaticamente na taxa. As outras 90 linhas são idênticas entre as versões, incluindo `boostada`, `bustada` e gírias de várias palavras, como `web puta`. As exceções por frase são regras para não contar uma ocorrência, não entradas do léxico. Quando a versão **com** reconhece uma expressão longa que contém um termo curto elegível, não duplica a ocorrência. Assim, remover uma expressão longa pode não mudar o total se o termo curto ainda contar. A comparação testa o efeito das formulações selecionadas, não de todas as expressões com várias palavras.
 
 As duas versões usam as **mesmas exceções de frase** e as mesmas categorias auxiliares. A seleção foi feita antes de executar a comparação com views. Não trocar de especificação em função de qual resultado ficou mais forte.
 
