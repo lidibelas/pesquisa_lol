@@ -11,138 +11,40 @@
 
 ## O que é este repositório
 
-`pesquisa_lol` é o corpus de dados de um projeto de pesquisa pessoal da estudante **Lídia Belas** (Antropologia/UFBA), vinculado às disciplinas de **Métodos Digitais** e **Laboratório Quantitativo em Ciências Sociais**. A pesquisa investiga **misoginia em comentários de vídeos de League of Legends** no YouTube, usando uma abordagem baseada em léxico (**MOL — Misogyny-Oriented Lexicon**).
+`pesquisa_lol` reúne dados de um projeto independente de **Lídia Belas** (Antropologia/UFBA) vinculado a **Métodos Digitais** e ao **Laboratório Quantitativo em Ciências Sociais**. Não é um projeto do LABHDUFBA ou do PIBIC. A pesquisadora conduz o projeto sem orientador formal.
 
-O corpus foi coletado do canal do YouTuber **Yiok** (janela: 21/08/2025 a 21/11/2025), incluindo vídeos, transcrições, descrições e comentários.
+## Desenho atual
 
-> ℹ️ Este projeto é de interesse pessoal de pesquisa da Lídia (LoL/gaming), não vinculado ao LABHDUFBA nem ao PIBIC. Não há orientador formal — a pesquisadora conduz o projeto de forma independente.
+**Pergunta:** no canal do Yiok, vídeos com mais ocorrências de termos do léxico MOL por mil palavras transcritas têm mais visualizações?
 
-## Propósito da base
+- **Unidade de análise:** vídeo (`videoId`). São 43 vídeos publicados de 21/08/2025 a 21/11/2025, sendo 22 longos e 21 Shorts, com transcrições automáticas.
+- **Fonte principal:** campo `texto` em `data/videos/<videoId>/<videoId>_transcricao.csv`. Use `viewCount` da base `data/data_base yiok - videos.csv`, como o valor registrado na coleta, não o contador atual. Identifique formato e categoria do vídeo.
+- **Descrições escritas:** podem ser medidas separadamente, sem somar suas palavras ou ocorrências às das transcrições. Não trate descrição inexistente como se fosse texto analisado.
+- **Comentários:** pertencem ao recorte anterior. Preserve os dados e resultados, mas não os use como insumo para a comparação atual.
+- **Interpretação:** estudo de caso exploratório, sem inferência causal. Um marcador lexical não confirma misoginia nem determina a intenção ou identidade do falante.
 
-Esta base de dados serve como **corpus de pesquisa** para:
+## Léxico, contagens e resultados
 
-1. **Detectar misoginia** em comentários de vídeos de LoL no YouTube por abordagem léxico (MOL)
-2. **Mapear categorias** de discurso misógino (xingamentos de gênero, body shaming, sexual degradante, racial interseccional, etc.)
-3. **Produzir evidência empírica** para análise antropológica sobre violência de gênero em espaços digitais de gaming
-4. **Servir de base para um artigo acadêmico futuro** — por isso a documentação precisa estar completa e bem organizada, garantindo reprodutibilidade e rastreabilidade metodológica
-5. **Cumprir exigências das disciplinas** de Métodos Digitais e Laboratório Quantitativo em Ciências Sociais (UFBA)
+- A versão do recorte atual é o **MOL v3 revisado**, em [CSV](lexico/mol-lexicon-v3.csv) e [JSON](lexico/mol-lexicon-v3.json). Os arquivos sem sufixo são a versão anterior. Mantenha `lexico/` separado de `data/` e registre a versão em toda execução.
+- A taxa principal é **ocorrências de status `principal` ÷ palavras transcritas × 1.000**. Uma flag indica um segmento com pelo menos uma correspondência; não equivale à quantidade de termos. Marcadores raciais, de homofobia ou transfobia e menções a violência sexual têm flags auxiliares independentes e ficam fora da taxa principal. Não conte entradas contextuais ou excluídas.
+- Aplique as exceções por ocorrência, sem alterar o denominador de palavras; em sobreposições, dê prioridade à expressão mais longa. Se houver comparação com e sem expressões específicas, documente o critério antes de calcular a associação com views e apresente as duas especificações sem escolher pela correlação mais alta.
+- Gere uma nova tabela com uma linha por vídeo: ID, total de palavras, ocorrências principais, segmentos sinalizados, taxa por mil palavras, flags auxiliares, views e formato. Registre transcrição ausente ou vazia como sem taxa, não como zero.
+- **O script `scripts/analise_lexical.py` é legado.** Não passa a aplicar as regras do v3 apenas trocando o arquivo de léxico. A coluna `freq_mol_por_mil` da tabela antiga mede segmentos sinalizados por mil segmentos, não ocorrências por mil palavras.
+- **Nunca sobrescreva os dados brutos ou resultados anteriores.** Uma nova implementação, execução, atualização de arquivos ou publicação deve respeitar o escopo autorizado pela Lídia. Não declare a análise executada até verificar a nova tabela e a cobertura do corpus.
 
-A base segue o modelo de codificação binária por categoria inspirado em **Fernandez et al. (2025)** e **Lourenço et al. (2022)**: cada comentário = 1 linha, cada categoria do léxico = 1 coluna com valor 1 (presente) ou 0 (ausente).
-
-## Como lidar com os dados
-
-### Hierarquia léxico ↔ dados
-
-O repositório separa claramente **ferramenta de análise** de **dados brutos**:
-
-- `lexico/` (raiz do repo) — o **léxico MOL** é uma ferramenta de análise, não um dado bruto. Contém a lista de termos e categorias usada para flaggear comentários. Pode ser atualizado, expandido e versionado independentemente dos dados.
-- `data/` — todos os **dados da pesquisa**: brutos (vídeos, comentários, transcrições) e analíticos (base analítica com codificação binária).
-
-**Nunca mova o léxico para dentro de `data/`.** Essa separação é uma decisão metodológica da pesquisadora.
-
-### Regras de manejo
-
-- ✅ **Ler e analisar** todos os arquivos do repositório
-- ✅ **Atualizar o README.md** e o AGENTS.md quando a estrutura mudar
-- ✅ **Adicionar novos dados** (novos vídeos, comentários) dentro de `data/`
-- ✅ **Atualizar o léxico** em `lexico/` (acrescentar termos, categorias, versões)
-- ✅ **Atualizar a base analítica** (`data/comentarios/base_analitica_mol.csv`) quando o léxico mudar
-- ✅ **Criar scripts de análise** (Python, R) desde que não modifiquem os dados originais
-- ✅ **Documentar mudanças** em commits claros e descritivos
+Consulte o [README](README.md) para estrutura de pastas, coleta, transcrição e referências. Martínez Arranz, Zech e Bonotti (2024) são uma referência para normalização por mil palavras, não uma validação do MOL no corpus Yiok.
 
 ### O que NÃO fazer
 
 - ❌ **NUNCA usar a conta ou token de terceiros** neste repositório. Use apenas git + deploy key SSH da própria Lídia.
 - ❌ **NÃO usar `gh` CLI** neste repositório — apenas `git` + deploy key SSH
 - ❌ **NÃO versionar documentos `.docx` de metodologia** (o arquivo enviado pela pesquisadora fica apenas como referência local, não no repo)
-- ❌ **NÃO subir áudios `.mp3` maiores que 25 MB** (limite do GitHub)
+- ❌ **NÃO subir áudios `.mp3` maiores que 25 MB** (limite adotado neste projeto)
 - ❌ **NÃO modificar ou deletar dados originais** coletados (comentários brutos, transcrições, descrições)
 - ❌ **NÃO mover o `lexico/` para dentro de `data/`** — são coisas diferentes
 - ❌ **NÃO inventar dados** — se algo não existe no corpus, diga que não existe
 - ❌ **NÃO alterar a estrutura de pastas** sem atualizar o README.md e o AGENTS.md
 - ❌ **NÃO expor credenciais, tokens, API keys ou deploy keys** em commits, issues ou arquivos do repo
-
-## Estrutura do repositório
-
-```
-pesquisa_lol/
-├── AGENTS.md                              ← este arquivo (leia primeiro!)
-├── README.md                              ← documentação completa do projeto
-├── .gitignore
-├── lexico/                                ← léxico MOL (ferramenta de análise, NÃO é dado bruto)
-│   ├── mol-lexicon.json
-│   └── mol-lexicon.csv
-├── scripts/                               ← scripts de análise
-│   └── analise_lexical.py                    ← aplica léxico MOL em comentários + transcrições
-└── data/                                  ← dados da pesquisa (brutos e analíticos)
-    ├── data_base yiok - videos.csv        ← base de vídeos (43 linhas, 30+ variáveis YTDT + categoria_video)
-    ├── data_base yiok.csv                 ← cópia da base de vídeos (upload via navegador)
-    ├── comentarios/                       ← comentários coletados + base analítica
-    │   ├── data_base yiok - comentários.csv   ← brutos (1.222 comentários)
-    │   ├── base_analitica_mol.csv            ← base analítica (1.222 + codificação binária)
-    │   └── comentarios_flagged_mol.csv       ← 61 comentários flagged
-    └── videos/                            ← uma pasta por vídeo (43 total)
-        └── <videoId>/
-            ├── descricao.md               ← metadados + descrição original
-            ├── <videoId>.mp3              ← áudio (35 de 43 no repo)
-            ├── <videoId>_transcricao.txt  ← transcrição em texto puro
-            ├── <videoId>_transcricao.csv  ← transcrição segmentada
-            └── <videoId>_metadados_transcricao.txt
-```
-
-## As duas fontes do corpus
-
-O corpus contém **duas fontes textuais distintas** — ambas analisáveis com o léxico MOL:
-
-1. **Comentários** (`data/comentarios/`) — o que a audiência escreve. 1.222 comentários, 61 flagged (5,0%). Métrica: flag binário (1/0).
-2. **Transcrições** (`data/videos/<videoId>/<videoId>_transcricao.txt`) — o que o Yiok diz nos vídeos. 43 transcrições, 81.553 palavras totais, 24 com misoginia detectada (55,8%). Métrica: frequência de termos por mil palavras.
-
-> As transcrições são uma **segunda fonte analítica**, não um complemento. Permitem comparar a linguagem do criador de conteúdo com a linguagem da audiência.
-
-## Pergunta de pesquisa e design analítico
-
-> **Como a misoginia se manifesta de forma distinta na fala do criador de conteúdo e nos comentários da audiência em vídeos de League of Legends?**
-
-**Natureza:** estudo de caso do canal Yiok (LoL/YouTube). Corpus delimitado temporalmente (21/08–21/11/2025), 43 vídeos, 1.222 comentários, 43 transcrições. Design **descritivo-comparativo** — não inferencial.
-
-**Design:** comparar duas fontes textuais do mesmo corpus — transcrições (fala do Yiok) vs comentários (audiência). Unidade de análise = vídeo (n=43).
-
-| Fonte | Métrica MOL |
-|-------|-------------|
-| Transcrições | Frequência de termos por mil palavras (cf. Martínez Arranz et al., 2024) |
-| Comentários | % de comentários flagged (flag binário 1/0) |
-
-**Variáveis:**
-- `freq_mol_transcricao` (numérica) — freq/mil palavras na transcrição
-- `pct_flagged_comentarios` (numérica) — % de comentários flagged
-- `categoria_video` (categórica, 5 níveis) — gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl
-
-**Base comparativa:** `data/analise/base_comparativa_por_video.csv` — 43 linhas, 1 por vídeo, com as 3 variáveis.
-
-**Achado preliminar (léxico v1):** categorias dominantes diferem entre fontes — transcrições: sexual_degradante (70%); comentários: racial_interseccional (30%).
-
-> ⚠️ Léxico MOL em refinamento — números podem mudar.
-
-## Referência metodológica citável
-
-**MARTÍNEZ ARRANZ, A.; ZECH, S. T.; BONOTTI, M.** Political Parties and Civility in Parliament: The Case of Australia from 1901 to 2020. *Parliamentary Affairs*, v. 77, n. 2, p. 371–399, 2024. DOI: 10.1093/pa/gsad008. Open Access.
-
-- **Por que é relevante:** usa abordagem lexicon-based para detectar incivilidade (mesma família do MOL). Métrica central = frequência de termos por mil palavras → diretamente aplicável às transcrições deste corpus.
-- **Equivalência:** léxico deles (1.383 termos, inglês) ↔ MOL (92 termos, português); corpus Hansard ↔ comentários + transcrições; comparação entre partidos ↔ comparação entre temas de vídeo.
-- **Como citar:** na metodologia ("seguindo Martínez Arranz et al., 2024...") e na discussão ("enquanto Martínez Arranz et al. comparam incivilidade entre partidos, este estudo compara misoginia entre tipos de conteúdo...").
-
-## O que eu pretendo fazer no futuro
-
-A versão atual é **primária** (entrega de 02/10/2026). A prioridade é refinar o léxico antes de qualquer análise estatística. Os próximos passos planejados são:
-
-1. **Refinar o léxico MOL** com termos específicos da comunidade de League of Legends (gamer slang, gírias do jogo) — **prioridade atual, bloqueia as análises abaixo**
-2. ~~Recodificar os 43 vídeos com coluna `tema_video`~~ — ✅ **FEITO**: coluna `categoria_video` adicionada (5 categorias: gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl)
-3. ~~Aplicar o léxico MOL às 43 transcrições~~ — ✅ **FEITO**: `scripts/analise_lexical.py` roda léxico em comentários + transcrições
-4. **Rodar análise comparativa** (correlação freq_mol_transcricao × pct_flagged_comentarios) após refinamento do léxico
-5. **Estratificar por categoria_video** — verificar se a correlação varia entre tipos de conteúdo
-6. **Evoluir da codificação binária para análise multilabel** mais granular
-7. **Atualizar colunas de transcrição** (`transcrição_ytb`, `status-transcricao`) com resultados do faster-whisper
-8. **Baixar e armazenar o PDF** do artigo de Martínez Arranz et al. (2024) como referência metodológica
 
 ## Como eu quero organizar as coisas
 
@@ -150,7 +52,7 @@ A versão atual é **primária** (entrega de 02/10/2026). A prioridade é refina
 - **`data/` para tudo que é coleta** — vídeos, comentários, transcrições, CSVs brutos e analíticos
 - **Uma pasta por vídeo** (`data/videos/<videoId>/`) — preserva a correspondência metadados ↔ áudio ↔ transcrição ↔ comentários
 - **`.docx` de metodologia fora do repo** — o documento enviado fica como referência local, não versionado
-- **Áudios >25 MB fora do repo** — 8 áudios que excedem o limite do GitHub ficam com a pesquisadora
+- **Áudios >25 MB fora do repo** — 8 áudios que excedem o limite adotado neste projeto ficam com a pesquisadora
 - **Commits claros** — `feat:`, `fix:`, `refactor:`, `docs:` para manter o histórico legível
 - **Deploy key SSH da Lídia** — nunca conta/token de terceiros
 
@@ -160,19 +62,9 @@ A versão atual é **primária** (entrega de 02/10/2026). A prioridade é refina
 - **Remote:** `github-pesquisa-lol-write:lidibelas/pesquisa_lol.git`
 - **NUNCA** use token ou conta GitHub de terceiros aqui
 
-## Estado atual (versão preliminar — out/2026)
+## Estado da análise
 
-- ✅ 43 vídeos coletados (22 longos + 21 shorts)
-- ✅ 43 vídeos categorizados em 5 categorias (`categoria_video`: gameplay, entretenimento_meme, guia_tutorial, treta_drama, relacionamento_egirl)
-- ✅ 1.222 comentários brutos
-- ✅ Léxico MOL v2 (92 termos / 8 categorias) — em refinamento
-- ✅ Base analítica com codificação binária por categoria
-- ✅ 43 transcrições (Whisper large-v3) — segunda fonte analítica
-- ✅ Opções de análise comparativa interna mapeadas (4 opções)
-- ✅ Referência metodológica citável registrada (Martínez Arranz et al., 2024)
-- ✅ Script de análise léxica (`scripts/analise_lexical.py`) — roda léxico em comentários + transcrições
-- ⏳ Léxico MOL em refinamento (prioridade atual) — análise estatística bloqueada até conclusão
-- ⏳ Versão preliminar — será refinada (MOL + léxico gamer LoL, análise de transcrições, análise estatística)
+O corpus e o MOL v3 revisado já estão disponíveis. A implementação e a execução da nova análise transcrições × visualizações ainda estão pendentes. A análise legada permanece arquivada.
 
 ## Contexto acadêmico
 
@@ -181,8 +73,8 @@ A versão atual é **primária** (entrega de 02/10/2026). A prioridade é refina
 - **Disciplinas vinculadas:** Métodos Digitais e Laboratório Quantitativo em Ciências Sociais (UFBA)
 - **Orientador:** não há orientador formal — a pesquisadora conduz o projeto de forma independente
 - **Ferramenta de coleta:** YouTube Data Tools (ytdt.digitalmethods.net)
-- **Léxico:** MOL — Misogyny-Oriented Lexicon (92 termos, 8 categorias)
-- **Modelo de dataset:** Fernandez et al. (2025) e Lourenço et al. (2022) — codificação binária por categoria
+- **Léxico:** MOL — Misoginia Online em Léxico; v3 revisado para o recorte atual e v2 preservado como legado
+- **Referências da análise anterior:** Fernandez et al. (2025) e Lourenço et al. (2022), para codificação binária por categoria
 
 ## Contato
 
