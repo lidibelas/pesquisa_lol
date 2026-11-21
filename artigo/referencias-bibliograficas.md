@@ -1,0 +1,64 @@
+# Referências bibliográficas | Pesquisa LoL — Corpus Yiok
+
+Bibliografia de trabalho para o artigo e a apresentação. Ajustar o estilo final às normas da revista escolhida. As notas explicam a função de cada fonte, sem transferir automaticamente seus resultados para o canal Yiok.
+
+## Gênero, jogos e League of Legends
+
+### Albuquerque e Matos (2022) — linguagem e interação no LoL
+ALBUQUERQUE, Rodrigo; MATOS, Tauane. Fica empoderada lá na cozinha: metapragmáticas misóginas no League of Legends. *Traços de Linguagem*, v. 6, n. 1, 2022. [DOI](https://doi.org/10.30681/2594.9063.2022v6n1id11651).
+
+**Como usar no meu trabalho:** discutir como ofensas e deslegitimação podem aparecer enquadradas como brincadeira. Ajuda a interpretar trechos selecionados; não permite concluir, pela simples presença de uma palavra, que o trecho inteiro é misógino.
+
+### Medrado e Mendes (2020) — experiências de mulheres no LoL
+MEDRADO, Andrea Meyer; MENDES, Adler Moreno. O silêncio não é a melhor arma: misoginia e violência contra as mulheres no game League of Legends. *Animus. Revista Interamericana de Comunicação Midiática*, v. 19, n. 39, p. 143–165, 2020. [DOI](https://doi.org/10.5902/2175497740329) · [Revista](https://periodicos.ufsm.br/animus/article/view/40329).
+
+**Como usar no meu trabalho:** situar o caso Yiok na literatura brasileira e distinguir o desenho do artigo (fala em vídeos e métricas de visualização) de pesquisas centradas nas experiências de jogadoras.
+
+### Ratan et al. (2015) — gênero, habilidade e participação no LoL
+RATAN, Rabindra A.; TAYLOR, Nicholas; HOGAN, James; KENNEDY, Tracy; WILLIAMS, Dmitri. Stand by Your Man: An Examination of Gender Disparity in League of Legends. *Games and Culture*, v. 10, n. 5, p. 438–462, 2015. [DOI](https://doi.org/10.1177/1555412014567228).
+
+**Como usar no meu trabalho:** situar a leitura de acusações como “boostada” no debate sobre gênero e competência. A pesquisa não verifica as acusações ou o mérito individual de ninguém no corpus.
+
+## Contagem lexical e validade
+
+### Grimmer e Stewart (2013) — limites da análise automática de texto
+GRIMMER, Justin; STEWART, Brandon M. Text as Data: The Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts. *Political Analysis*, v. 21, n. 3, p. 267–297, 2013. [DOI](https://doi.org/10.1093/pan/mps028).
+
+**Como usar no meu trabalho:** justificar por que as correspondências são um indicador lexical e por que adaptação do dicionário ao corpus, validação contextual e teste em dados novos são etapas distintas.
+
+### Martínez Arranz, Zech e Bonotti (2024) — frequência por mil palavras
+MARTÍNEZ ARRANZ, Alfonso; ZECH, Steven T.; BONOTTI, Matteo. Political Parties and Civility in Parliament: The Case of Australia from 1901 to 2020. *Parliamentary Affairs*, v. 77, n. 2, p. 371–399, 2024. [DOI](https://doi.org/10.1093/pa/gsad008).
+
+**Como usar no meu trabalho:** citar como exemplo de contagem de termos por mil palavras para comparar textos de tamanhos diferentes. O estudo é sobre incivilidade parlamentar; não valida o MOL nem o transporta para jogos.
+
+### Bassignana, Basile e Patti (2018) — HurtLex
+BASSIGNANA, Elisa; BASILE, Valerio; PATTI, Viviana. HurtLex: A Multilingual Lexicon of Words to Hurt. In: *Proceedings of the Fifth Italian Conference on Computational Linguistics (CLiC-it)*, p. 52–57, 2018. [ACL Anthology](https://aclanthology.org/2018.clicit-1.11/) · [Arquivos da edição portuguesa v1.2](https://github.com/valeriobasile/hurtlex/tree/master/lexica/PT/1.2).
+
+**Como usar no meu trabalho:** citar o original para a origem do recurso e identificar separadamente a edição portuguesa usada, se confirmada no histórico. Não tratar a versão portuguesa como léxico validado para o português falado no LoL.
+
+## Corpus, transcrição e documentação
+
+### Rieder (2015–) — YouTube Data Tools
+RIEDER, Bernhard. *YouTube Data Tools*. Software, 2015–. [Projeto](https://tools.digitalmethods.net/netvizz/youtube/) · [Página do autor](https://rieder.polsys.net/software/).
+
+**Como usar no meu trabalho:** documentar a origem dos IDs e metadados, os módulos Channel Info e Video List e a versão indicada no README. Registrar a data da coleta das views se verificável, separadamente da janela de publicação.
+
+### Radford et al. (2023) — Whisper
+RADFORD, Alec et al. Robust Speech Recognition via Large-Scale Weak Supervision. In: *Proceedings of the 40th International Conference on Machine Learning*. PMLR, v. 202, p. 28492–28518, 2023. [Anais oficiais](https://proceedings.mlr.press/v202/radford23a.html) · [faster-whisper](https://github.com/SYSTRAN/faster-whisper).
+
+**Como usar no meu trabalho:** citar a transcrição automática, documentar o modelo large-v3 e a implementação faster-whisper. Erros de grafia, gíria e atribuição de fala continuam sendo limitações. A extração de áudio descrita no README usou [Parabolic](https://github.com/NickvisionApps/Parabolic) e [yt-dlp](https://github.com/yt-dlp/yt-dlp).
+
+### Fernandez, Bertholini e Maia (2025) — documentação de dados
+FERNANDEZ, Michelle; BERTHOLINI, Frederico; MAIA, Bárbara. Políticas de saúde dos Estados brasileiros durante a pandemia de Covid-19: um dataset das normativas produzidas. *Dados*, v. 68, n. 3, e20230153, 2025. [DOI](https://doi.org/10.1590/dados.2025.68.3.004).
+
+**Como usar no meu trabalho:** referência já listada no README. Pode inspirar como apresentar variáveis, fontes e decisões de construção da base. Não é referência substantiva sobre misoginia no LoL.
+
+### Lourenço, Vitena e Silva (2022) — explicitação de unidades e codificação
+LOURENÇO, Luiz Claudio; VITENA, Gabrielle Simões Lima; SILVA, Marina de Macedo. Prisão provisória, racismo e seletividade penal: uma discussão a partir dos prontuários de uma unidade prisional. *Revista Brasileira de Segurança Pública*, v. 16, n. 2, p. 220–239, 2022. [DOI](https://doi.org/10.31060/rbsp.2022.v16.n2.1367).
+
+**Como usar no meu trabalho:** referência metodológica da análise legada. Manter na bibliografia final apenas se for usada para explicar a codificação e construção de variáveis.
+
+## Fonte primária do estudo
+
+- **Yiok**, canal do YouTube. O material do estudo é o recorte de 43 vídeos, suas transcrições e o [arquivo de metadados](../data/data_base%20yiok%20-%20videos.csv). Nas citações de trechos, registrar vídeo, minutagem e se houve conferência no áudio.
+- Para versões do léxico e protocolo de contagem, ver [Decisões metodológicas](decisoes-metodologicas.md).
