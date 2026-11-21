@@ -1,0 +1,717 @@
+{
+  "nome": "MOL v3 revisado",
+  "versao": "3.0-revisada",
+  "escopo": "Transcrições do áudio; descrições do YouTube, se cruzadas, em coluna separada.",
+  "origem": "Rascunho do léxico v3 e decisões da pesquisadora sobre o corpus Yiok",
+  "total_entradas": 97,
+  "categorias": {
+    "insulto_genero": "Insulto de gênero ou desqualificação sexual",
+    "policiamento_masculinidade": "Policiamento da masculinidade",
+    "deslegitimacao_elo": "Deslegitimação da habilidade ou do elo",
+    "sexualizacao": "Sexualização",
+    "aparencia": "Desqualificação pela aparência",
+    "racial": "Marcadores raciais (flag separada)",
+    "homofobia_transfobia": "Marcadores de homofobia ou transfobia (flag separada)",
+    "violencia_sexual": "Menções a violência sexual (flag separada)",
+    "referencia_sexual": "Referência sexual ou anatômica sem valor de insulto por si só",
+    "contextual": "Marcador contextual fora das contagens automáticas",
+    "palavrao_generico": "Excluído da contagem revisada"
+  },
+  "status": {
+    "principal": "Entra no indicador lexical principal por mil palavras",
+    "auxiliar": "Conta somente em flag separada, por categoria",
+    "contextual": "Fora das contagens automáticas principais e auxiliares",
+    "excluido": "Não contar"
+  },
+  "regras": [
+    "Buscar palavras inteiras e expressões literais, sem distinguir maiúsculas e minúsculas. Usar apenas as variantes registradas.",
+    "Aplicar as exceções de frase apenas à ocorrência correspondente. Não retirar palavras do denominador.",
+    "Entre expressões e palavras sobrepostas, contar primeiro a expressão mais longa e não duplicar sua palavra integrante.",
+    "As categorias classificam itens do léxico; correspondências não são casos confirmados de misoginia, racismo, homofobia ou violência sexual."
+  ],
+  "entradas": [
+    {
+      "termo": "vadia",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "vadias",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "vagabunda",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "vagabundas",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "piranha",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "piranhas",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "putinha",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "putinhas",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "webputa",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "quenga",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "rameira",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "meretriz",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "mulherzinha",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "web puta",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Correspondência lexical sujeita a usos ambíguos; não confirma o sentido do trecho."
+    },
+    {
+      "termo": "puta",
+      "categoria": "insulto_genero",
+      "status": "principal",
+      "excecoes_frase": [
+        "puta que pariu",
+        "filho da puta",
+        "filha da puta"
+      ],
+      "nota": "Exceção por ocorrência; outra ocorrência fora da expressão permanece contável."
+    },
+    {
+      "termo": "gado",
+      "categoria": "policiamento_masculinidade",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Pode marcar a desqualificação de quem é visto como subordinado a mulheres; o sentido não é inferido pelo script."
+    },
+    {
+      "termo": "gados",
+      "categoria": "policiamento_masculinidade",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Pode marcar a desqualificação de quem é visto como subordinado a mulheres; o sentido não é inferido pelo script."
+    },
+    {
+      "termo": "webgado",
+      "categoria": "policiamento_masculinidade",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Pode marcar a desqualificação de quem é visto como subordinado a mulheres; o sentido não é inferido pelo script."
+    },
+    {
+      "termo": "webgados",
+      "categoria": "policiamento_masculinidade",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Pode marcar a desqualificação de quem é visto como subordinado a mulheres; o sentido não é inferido pelo script."
+    },
+    {
+      "termo": "escravoceta",
+      "categoria": "policiamento_masculinidade",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Pode marcar a desqualificação de quem é visto como subordinado a mulheres; o sentido não é inferido pelo script."
+    },
+    {
+      "termo": "escravocetas",
+      "categoria": "policiamento_masculinidade",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Pode marcar a desqualificação de quem é visto como subordinado a mulheres; o sentido não é inferido pelo script."
+    },
+    {
+      "termo": "escravo de buceta",
+      "categoria": "policiamento_masculinidade",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Pode marcar a desqualificação de quem é visto como subordinado a mulheres; o sentido não é inferido pelo script."
+    },
+    {
+      "termo": "escravos de buceta",
+      "categoria": "policiamento_masculinidade",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Pode marcar a desqualificação de quem é visto como subordinado a mulheres; o sentido não é inferido pelo script."
+    },
+    {
+      "termo": "boostada",
+      "categoria": "deslegitimacao_elo",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Boostada é a grafia de referência; bustada é variante observada na transcrição automática, não validada pelo áudio."
+    },
+    {
+      "termo": "boostadas",
+      "categoria": "deslegitimacao_elo",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Boostada é a grafia de referência; bustada é variante observada na transcrição automática, não validada pelo áudio."
+    },
+    {
+      "termo": "bustada",
+      "categoria": "deslegitimacao_elo",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Boostada é a grafia de referência; bustada é variante observada na transcrição automática, não validada pelo áudio."
+    },
+    {
+      "termo": "bustadas",
+      "categoria": "deslegitimacao_elo",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Boostada é a grafia de referência; bustada é variante observada na transcrição automática, não validada pelo áudio."
+    },
+    {
+      "termo": "foi boostada pelo namorado",
+      "categoria": "deslegitimacao_elo",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Expressões candidatas explícitas; contam uma vez e não duplicam a palavra dentro da expressão."
+    },
+    {
+      "termo": "foi bustada pelo namorado",
+      "categoria": "deslegitimacao_elo",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Expressões candidatas explícitas; contam uma vez e não duplicam a palavra dentro da expressão."
+    },
+    {
+      "termo": "boostado",
+      "categoria": "deslegitimacao_elo",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Menção isolada não estabelece deslegitimação por gênero."
+    },
+    {
+      "termo": "bustado",
+      "categoria": "deslegitimacao_elo",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Menção isolada não estabelece deslegitimação por gênero."
+    },
+    {
+      "termo": "carregada",
+      "categoria": "deslegitimacao_elo",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Menção isolada não estabelece deslegitimação por gênero."
+    },
+    {
+      "termo": "carregadas",
+      "categoria": "deslegitimacao_elo",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Menção isolada não estabelece deslegitimação por gênero."
+    },
+    {
+      "termo": "mulher mestre",
+      "categoria": "deslegitimacao_elo",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Menção isolada não estabelece deslegitimação por gênero."
+    },
+    {
+      "termo": "mulher falando de lol",
+      "categoria": "deslegitimacao_elo",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Menção isolada não estabelece deslegitimação por gênero."
+    },
+    {
+      "termo": "mulher não sabe jogar",
+      "categoria": "deslegitimacao_elo",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Expressões candidatas; não identificam o falante nem distinguem citação de endosso."
+    },
+    {
+      "termo": "mulher nao sabe jogar",
+      "categoria": "deslegitimacao_elo",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Expressões candidatas; não identificam o falante nem distinguem citação de endosso."
+    },
+    {
+      "termo": "mulher não entende de lol",
+      "categoria": "deslegitimacao_elo",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Expressões candidatas; não identificam o falante nem distinguem citação de endosso."
+    },
+    {
+      "termo": "mulher nao entende de lol",
+      "categoria": "deslegitimacao_elo",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Expressões candidatas; não identificam o falante nem distinguem citação de endosso."
+    },
+    {
+      "termo": "gostosona",
+      "categoria": "sexualizacao",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Grafia registrada para gostosona nas transcrições; outras formas já constavam no rascunho."
+    },
+    {
+      "termo": "gostosa",
+      "categoria": "sexualizacao",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Grafia registrada para gostosona nas transcrições; outras formas já constavam no rascunho."
+    },
+    {
+      "termo": "gostosas",
+      "categoria": "sexualizacao",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Grafia registrada para gostosona nas transcrições; outras formas já constavam no rascunho."
+    },
+    {
+      "termo": "gorda",
+      "categoria": "aparencia",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Mantidas com contagem própria. A palavra isolada não confirma ataque."
+    },
+    {
+      "termo": "gordas",
+      "categoria": "aparencia",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Mantidas com contagem própria. A palavra isolada não confirma ataque."
+    },
+    {
+      "termo": "feia",
+      "categoria": "aparencia",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Mantidas com contagem própria. A palavra isolada não confirma ataque."
+    },
+    {
+      "termo": "feias",
+      "categoria": "aparencia",
+      "status": "principal",
+      "excecoes_frase": [],
+      "nota": "Mantidas com contagem própria. A palavra isolada não confirma ataque."
+    },
+    {
+      "termo": "obesa",
+      "categoria": "aparencia",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Candidatas preservadas do rascunho fora do indicador principal."
+    },
+    {
+      "termo": "obesas",
+      "categoria": "aparencia",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Candidatas preservadas do rascunho fora do indicador principal."
+    },
+    {
+      "termo": "baleia",
+      "categoria": "aparencia",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Candidatas preservadas do rascunho fora do indicador principal."
+    },
+    {
+      "termo": "obesinha",
+      "categoria": "aparencia",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Candidatas preservadas do rascunho fora do indicador principal."
+    },
+    {
+      "termo": "macaco",
+      "categoria": "racial",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Correspondências não são casos confirmados de racismo."
+    },
+    {
+      "termo": "macaca",
+      "categoria": "racial",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Correspondências não são casos confirmados de racismo."
+    },
+    {
+      "termo": "macaquinho",
+      "categoria": "racial",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Correspondências não são casos confirmados de racismo."
+    },
+    {
+      "termo": "macaquinhos",
+      "categoria": "racial",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Correspondências não são casos confirmados de racismo."
+    },
+    {
+      "termo": "neguinho",
+      "categoria": "racial",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Correspondências não são casos confirmados de racismo."
+    },
+    {
+      "termo": "neguinha",
+      "categoria": "racial",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Correspondências não são casos confirmados de racismo."
+    },
+    {
+      "termo": "viado",
+      "categoria": "homofobia_transfobia",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Não somar ao indicador principal; correspondência não confirma ataque."
+    },
+    {
+      "termo": "viadinho",
+      "categoria": "homofobia_transfobia",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Não somar ao indicador principal; correspondência não confirma ataque."
+    },
+    {
+      "termo": "viada",
+      "categoria": "homofobia_transfobia",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Não somar ao indicador principal; correspondência não confirma ataque."
+    },
+    {
+      "termo": "bicha",
+      "categoria": "homofobia_transfobia",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Não somar ao indicador principal; correspondência não confirma ataque."
+    },
+    {
+      "termo": "boiola",
+      "categoria": "homofobia_transfobia",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Não somar ao indicador principal; correspondência não confirma ataque."
+    },
+    {
+      "termo": "sapatão",
+      "categoria": "homofobia_transfobia",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Não somar ao indicador principal; correspondência não confirma ataque."
+    },
+    {
+      "termo": "sapatao",
+      "categoria": "homofobia_transfobia",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Não somar ao indicador principal; correspondência não confirma ataque."
+    },
+    {
+      "termo": "traveco",
+      "categoria": "homofobia_transfobia",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Não somar ao indicador principal; correspondência não confirma ataque."
+    },
+    {
+      "termo": "veado",
+      "categoria": "homofobia_transfobia",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Não somar ao indicador principal; correspondência não confirma ataque."
+    },
+    {
+      "termo": "viados",
+      "categoria": "homofobia_transfobia",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Não somar ao indicador principal; correspondência não confirma ataque."
+    },
+    {
+      "termo": "travecão",
+      "categoria": "homofobia_transfobia",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Não somar ao indicador principal; correspondência não confirma ataque."
+    },
+    {
+      "termo": "travecao",
+      "categoria": "homofobia_transfobia",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Não somar ao indicador principal; correspondência não confirma ataque."
+    },
+    {
+      "termo": "estupro",
+      "categoria": "violencia_sexual",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Conta menções; não distingue metáfora, denúncia, citação ou endosso."
+    },
+    {
+      "termo": "estupros",
+      "categoria": "violencia_sexual",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Conta menções; não distingue metáfora, denúncia, citação ou endosso."
+    },
+    {
+      "termo": "estuprar",
+      "categoria": "violencia_sexual",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Conta menções; não distingue metáfora, denúncia, citação ou endosso."
+    },
+    {
+      "termo": "estupra",
+      "categoria": "violencia_sexual",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Conta menções; não distingue metáfora, denúncia, citação ou endosso."
+    },
+    {
+      "termo": "estuprou",
+      "categoria": "violencia_sexual",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Conta menções; não distingue metáfora, denúncia, citação ou endosso."
+    },
+    {
+      "termo": "estuprando",
+      "categoria": "violencia_sexual",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Conta menções; não distingue metáfora, denúncia, citação ou endosso."
+    },
+    {
+      "termo": "estuprado",
+      "categoria": "violencia_sexual",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Conta menções; não distingue metáfora, denúncia, citação ou endosso."
+    },
+    {
+      "termo": "estuprada",
+      "categoria": "violencia_sexual",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Conta menções; não distingue metáfora, denúncia, citação ou endosso."
+    },
+    {
+      "termo": "estuprados",
+      "categoria": "violencia_sexual",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Conta menções; não distingue metáfora, denúncia, citação ou endosso."
+    },
+    {
+      "termo": "estupradas",
+      "categoria": "violencia_sexual",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Conta menções; não distingue metáfora, denúncia, citação ou endosso."
+    },
+    {
+      "termo": "estuprador",
+      "categoria": "violencia_sexual",
+      "status": "auxiliar",
+      "excecoes_frase": [],
+      "nota": "Conta menções; não distingue metáfora, denúncia, citação ou endosso."
+    },
+    {
+      "termo": "estuprindo",
+      "categoria": "violencia_sexual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Forma possivelmente produzida pela transcrição automática; fora da flag até verificação."
+    },
+    {
+      "termo": "buceta",
+      "categoria": "referencia_sexual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Referência isolada não equivale a misoginia; preservada fora da contagem principal."
+    },
+    {
+      "termo": "boceta",
+      "categoria": "referencia_sexual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Referência isolada não equivale a misoginia; preservada fora da contagem principal."
+    },
+    {
+      "termo": "bct",
+      "categoria": "referencia_sexual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Referência isolada não equivale a misoginia; preservada fora da contagem principal."
+    },
+    {
+      "termo": "ppk",
+      "categoria": "referencia_sexual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Referência isolada não equivale a misoginia; preservada fora da contagem principal."
+    },
+    {
+      "termo": "fome de buceta",
+      "categoria": "referencia_sexual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Referência isolada não equivale a misoginia; preservada fora da contagem principal."
+    },
+    {
+      "termo": "egirl",
+      "categoria": "contextual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Marcador de contexto; usar para interpretação sem contar automaticamente no indicador."
+    },
+    {
+      "termo": "e-girl",
+      "categoria": "contextual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Marcador de contexto; usar para interpretação sem contar automaticamente no indicador."
+    },
+    {
+      "termo": "egirls",
+      "categoria": "contextual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Marcador de contexto; usar para interpretação sem contar automaticamente no indicador."
+    },
+    {
+      "termo": "e-girls",
+      "categoria": "contextual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Marcador de contexto; usar para interpretação sem contar automaticamente no indicador."
+    },
+    {
+      "termo": "pouco feminina",
+      "categoria": "contextual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Marcador de contexto; usar para interpretação sem contar automaticamente no indicador."
+    },
+    {
+      "termo": "não é feminina",
+      "categoria": "contextual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Marcador de contexto; usar para interpretação sem contar automaticamente no indicador."
+    },
+    {
+      "termo": "nao e feminina",
+      "categoria": "contextual",
+      "status": "contextual",
+      "excecoes_frase": [],
+      "nota": "Marcador de contexto; usar para interpretação sem contar automaticamente no indicador."
+    },
+    {
+      "termo": "caralho",
+      "categoria": "palavrao_generico",
+      "status": "excluido",
+      "excecoes_frase": [],
+      "nota": "Palavrões ou usos genéricos, excluídos nesta versão; preservados somente para registro da decisão."
+    },
+    {
+      "termo": "pica",
+      "categoria": "palavrao_generico",
+      "status": "excluido",
+      "excecoes_frase": [],
+      "nota": "Palavrões ou usos genéricos, excluídos nesta versão; preservados somente para registro da decisão."
+    },
+    {
+      "termo": "foder",
+      "categoria": "palavrao_generico",
+      "status": "excluido",
+      "excecoes_frase": [],
+      "nota": "Palavrões ou usos genéricos, excluídos nesta versão; preservados somente para registro da decisão."
+    },
+    {
+      "termo": "puto",
+      "categoria": "palavrao_generico",
+      "status": "excluido",
+      "excecoes_frase": [],
+      "nota": "Palavrões ou usos genéricos, excluídos nesta versão; preservados somente para registro da decisão."
+    },
+    {
+      "termo": "putinho",
+      "categoria": "palavrao_generico",
+      "status": "excluido",
+      "excecoes_frase": [],
+      "nota": "Palavrões ou usos genéricos, excluídos nesta versão; preservados somente para registro da decisão."
+    }
+  ]
+}
