@@ -2,6 +2,13 @@
 
 > Este arquivo orienta qualquer agente de IA (LLM, bot, assistente) que acesse este repositório. Leia antes de fazer qualquer coisa.
 
+## Autorização obrigatória da Lídia
+
+- **Só acesse ou consulte este repositório quando Lídia pedir.** Um pedido de análise ou revisão autoriza leitura, não alterações.
+- **Antes de mudar qualquer coisa, informe o que pretende fazer e espere a autorização explícita da Lídia.** Isso vale para criar, editar, mover ou apagar arquivos, gerar ou substituir resultados no repositório, fazer commits, criar branches, abrir pull requests, dar push ou fazer merge, mesmo para correções pequenas.
+- A autorização vale só para a ação, os arquivos e o modo de acesso combinados. Se o escopo mudar, peça autorização de novo. Uma exceção à regra da chave SSH para uma tarefa não vale para a próxima.
+- As listas de tarefas e de boas práticas neste arquivo descrevem como trabalhar **depois** da autorização; não são permissões permanentes.
+
 ## O que é este repositório
 
 `pesquisa_lol` é o corpus de dados de um projeto de pesquisa pessoal da estudante **Lídia Belas** (Antropologia/UFBA), vinculado às disciplinas de **Métodos Digitais** e **Laboratório Quantitativo em Ciências Sociais**. A pesquisa investiga **misoginia em comentários de vídeos de League of Legends** no YouTube, usando uma abordagem baseada em léxico (**MOL — Misogyny-Oriented Lexicon**).
