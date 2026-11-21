@@ -1,0 +1,129 @@
+{
+  "nome": "MOL - Misoginia Online em Léxico",
+  "versao": "2.0",
+  "descricao": "Léxico para detecção de misoginia em comentários do canal Yiok (YouTube/League of Legends)",
+  "fontes": [
+    "HurtLex PT v1.2 (Bazzanella et al., 2020) — categorias ASF, PR, OM",
+    "Literatura sobre misoginia online e discurso de ódio em português brasileiro",
+    "Termos emergentes do corpus Yiok (observação empírica)",
+    "Gírias da comunidade de League of Legends (observação da pesquisadora — Lídia Belas)"
+  ],
+  "metodo_construcao": "Partir de léxico existente (HurtLex) + acrescentar termos observados na comunidade de LoL",
+  "total_termos": 92,
+  "total_categorias": 8,
+  "categorias": {
+    "xingamentos_genero": [
+      "puta",
+      "putas",
+      "putao",
+      "putasso",
+      "putinha",
+      "putinho",
+      "putones",
+      "puto",
+      "vagabunda",
+      "vagabundas",
+      "vagabundo",
+      "piranha",
+      "piranhao",
+      "piranhas",
+      "vadia",
+      "vadias",
+      "meretriz",
+      "rameira",
+      "quenga",
+      "periguete",
+      "oferecida",
+      "devassa",
+      "harpia",
+      "megera",
+      "bruxa",
+      "mulherzinha",
+      "mulherinha",
+      "chorona"
+    ],
+    "genitalia_feminina": [
+      "buceta",
+      "bucetao",
+      "bucetinha",
+      "boceta",
+      "xana",
+      "xoxota",
+      "xoxinha",
+      "xoxotinha",
+      "xereca",
+      "xavasca",
+      "bct",
+      "ppk"
+    ],
+    "body_shaming": [
+      "gordinha",
+      "gorducha",
+      "gorda",
+      "gordas",
+      "obesinha",
+      "obesinhas",
+      "ob3sinha",
+      "ob3sinhas",
+      "ob3sinh@s",
+      "feia",
+      "feias",
+      "baleia"
+    ],
+    "gamer_misogino": [
+      "gado",
+      "gados",
+      "gadoso",
+      "gadosao",
+      "egirl",
+      "egirls",
+      "minx"
+    ],
+    "homofobia_misoginia": [
+      "viado",
+      "viadinho",
+      "viada",
+      "viados",
+      "bicha",
+      "bichas",
+      "boiola",
+      "sapatão",
+      "sapatao",
+      "maricas",
+      "maricon",
+      "paneleiro",
+      "veado"
+    ],
+    "sexual_degradante": [
+      "sodomizado",
+      "sodomizar",
+      "sodomia",
+      "piroca",
+      "pica",
+      "jeba",
+      "caralho",
+      "foder",
+      "punheta",
+      "punheteiro"
+    ],
+    "prostituicao_degradante": [
+      "putaria",
+      "prostituta",
+      "prostitutas"
+    ],
+    "racial_interseccional": [
+      "macaquinho",
+      "macaquinhos",
+      "macaco",
+      "macaca",
+      "neguinho",
+      "neguinha",
+      "daku"
+    ]
+  },
+  "resultados_corpus": {
+    "total_comentarios": 1222,
+    "comentarios_flagged": 61,
+    "percentual": "5.0%"
+  }
+}
