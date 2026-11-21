@@ -24,10 +24,9 @@ pesquisa_lol/
 ├── README.md                              ← este arquivo
 ├── .gitignore
 ├── lexico/                                ← léxico MOL (ferramenta de análise, NÃO é dado bruto)
-│   ├── mol-lexicon.json                    ← MOL v2 (legado)
-│   ├── mol-lexicon.csv                     ← MOL v2 (legado)
-│   ├── mol-lexicon-v3.json                 ← MOL v3 revisado e regras
-│   └── mol-lexicon-v3.csv                  ← mesmas entradas do MOL v3
+│   ├── mol-sem-frases-de-cena.csv          ← versão principal da análise
+│   ├── mol-com-frases-de-cena.csv          ← comparação de sensibilidade
+│   └── descartados/                       ← versões anteriores, para consulta histórica
 ├── scripts/                               ← scripts de análise
 │   └── analise_lexical.py                    ← análise legada de comentários e segmentos de transcrição
 └── data/                                  ← dados da pesquisa (brutos e analíticos)
@@ -105,7 +104,7 @@ Cada transcrição gera três arquivos:
 
 ### 4. Aplicação do léxico MOL
 
-MOL (Misoginia Online em Léxico) foi construído a partir de fontes lexicais em português, literatura e vocabulário observado na comunidade de League of Legends e no corpus. A versão publicada para o recorte atual é o **MOL v3 revisado** ([CSV](lexico/mol-lexicon-v3.csv) e [JSON](lexico/mol-lexicon-v3.json)). O v2, com 92 termos, permanece disponível para reproduzir a análise anterior. O v3 registra 97 entradas, incluindo formas que não entram em nenhuma contagem. As entradas têm os seguintes status:
+MOL (Misoginia Online em Léxico) foi construído a partir de fontes lexicais em português, literatura e vocabulário observado na comunidade de League of Legends e no corpus. Use o **[MOL sem frases específicas de cena](lexico/mol-sem-frases-de-cena.csv)** como indicador de referência e o **[MOL com frases específicas de cena](lexico/mol-com-frases-de-cena.csv)** para a comparação. Os dois derivam do v3 revisado e registram 97 entradas, incluindo formas fora da contagem. O v2 e os arquivos de origem do v3 estão em [descartados](lexico/descartados/), apenas para consulta e reprodução histórica. Veja as [decisões metodológicas](artigo/decisoes-metodologicas.md) para a diferença exata entre as versões. As entradas têm os seguintes status:
 
 | Status | Uso |
 |---|---|
@@ -116,7 +115,7 @@ MOL (Misoginia Online em Léxico) foi construído a partir de fontes lexicais em
 
 A análise proposta conta correspondências literais no campo `texto` dos CSVs de transcrição, sem distinguir maiúsculas de minúsculas e sem incluir horários ou outros metadados. As exceções de frase, como “puta que pariu”, “filho da puta” e “filha da puta”, afetam apenas a ocorrência correspondente de `puta`, não o número de palavras do trecho. Em sobreposições, conta-se a expressão mais longa uma vez, sem duplicar a palavra que faz parte dela. Uma **ocorrência** é cada correspondência aceita; uma **flag** indica que um segmento tem ao menos uma correspondência na categoria em questão. Várias ocorrências no mesmo segmento não equivalem a várias flags desse segmento.
 
-A adaptação do léxico ao próprio corpus é exploratória, não uma validação externa do instrumento. O v3 publicado inclui palavras e expressões entre as entradas principais. Para avaliar se expressões muito específicas de uma cena influenciam a associação com visualizações, pode-se comparar a especificação completa com outra sem essas expressões, preservando as regras de exclusão. Registre a versão e o critério antes de calcular a associação; não escolha a especificação pelo resultado mais alto. Correspondências são marcadores lexicais, não confirmação de misoginia, intenção, alvo ou autoria da fala.
+A adaptação do léxico ao próprio corpus é exploratória, não uma validação externa do instrumento. As duas versões mantêm as mesmas exceções. A diferença é se as duas formulações específicas da cena do namorado entram como expressões principais; as formas curtas continuam elegíveis em ambas. Registre a versão e o critério antes de calcular a associação; não escolha a especificação pelo resultado mais alto. Correspondências são marcadores lexicais, não confirmação de misoginia, intenção, alvo ou autoria da fala.
 
 ### 5. Comparação por vídeo
 
@@ -250,7 +249,7 @@ A coluna `categoria_video` foi adicionada ao arquivo `data/data_base yiok - vide
 
 ## Arquivos da análise anterior
 
-O script `scripts/analise_lexical.py` e as tabelas existentes em `data/analise/` documentam o recorte anterior. **O script legado não implementa os status e as exceções do v3.** Passar o CSV v3 para ele não reproduz o desenho descrito aqui. Na tabela `data/analise/base_comparativa_por_video.csv`, `freq_mol_por_mil` significa **segmentos sinalizados por mil segmentos transcritos**, e não ocorrências por mil palavras. O percentual de comentários sinalizados também pertence ao recorte anterior. Nenhuma dessas colunas deve ser usada como resultado da nova comparação com visualizações.
+O script `scripts/analise_lexical.py` e as tabelas existentes em `data/analise/` documentam o recorte anterior. **O script legado não implementa os status e as exceções do v3.** Passar um dos CSVs ativos para ele não reproduz o desenho descrito aqui. O caminho padrão dele aponta para o v2 antes do arquivamento; para reprodução histórica, use uma cópia isolada e indique `--lexico lexico/descartados/mol-lexicon.csv` para não sobrescrever resultados do projeto. Na tabela `data/analise/base_comparativa_por_video.csv`, `freq_mol_por_mil` significa **segmentos sinalizados por mil segmentos transcritos**, e não ocorrências por mil palavras. O percentual de comentários sinalizados também pertence ao recorte anterior. Nenhuma dessas colunas deve ser usada como resultado da nova comparação com visualizações.
 
 ## 📚 Créditos e referências
 
@@ -287,7 +286,7 @@ Este repositório contém dados de pesquisa acadêmica. Os vídeos e áudios per
 
 ## Próximos passos
 
-- [x] Publicar e versionar o MOL v3 revisado.
+- [x] Publicar os dois léxicos ativos e arquivar suas versões anteriores.
 - [ ] Implementar e testar um script para o v3, incluindo flags separadas e exceções de frase.
 - [ ] Gerar uma nova tabela por vídeo sem sobrescrever dados brutos ou análises antigas.
 - [ ] Conferir a junção por `videoId`, os denominadores e a cobertura das transcrições.
