@@ -19,6 +19,14 @@ RATAN, Rabindra A.; TAYLOR, Nicholas; HOGAN, James; KENNEDY, Tracy; WILLIAMS, Dm
 
 **Como usar no meu trabalho:** situar a leitura de acusações como “boostada” no debate sobre gênero e competência. A pesquisa não verifica as acusações ou o mérito individual de ninguém no corpus.
 
+### Koung et al. (2025) — deslegitimação da competência e do elo
+
+KOUNG, Elena; ZHANG, Zinan; GUI, Xinning; KOU, Yubo. Gendered Toxicity in Competitive Gaming: Women’s Perceptions and Responses. *Proceedings of the ACM on Human-Computer Interaction*, v. 9, n. 6, art. GAMES015, 2025. [DOI](https://doi.org/10.1145/3748610).
+
+**Resumo:** em entrevistas qualitativas com 28 mulheres que jogam jogos competitivos, o estudo examina como elas percebem e enfrentam a toxicidade de gênero. Na seção 4.1.3, sobre a deslegitimação do desempenho e da competência, uma jogadora de League of Legends no Grão-Mestre relata que perguntaram, durante uma transmissão na Twitch, quanto ela havia pagado para chegar àquele elo com ajuda externa. O caso ilustra como uma acusação de *boosting* pode colocar em dúvida o mérito da jogadora.
+
+**Como usar no meu trabalho:** citar na definição da categoria `deslegitimacao_elo` ou na discussão da expressão “foi boostada pelo namorado”. Elo é a classificação nas partidas ranqueadas; nessa frase, atribui-se o elo da jogadora à ajuda do namorado, em vez de à habilidade dela. O estudo dá base para interpretar a acusação, mas não comprova que houve manipulação do elo no corpus nem que a palavra “boostada”, sozinha, indica misoginia.
+
 ## Contagem lexical e validade
 
 ### Grimmer e Stewart (2013) — limites da análise automática de texto
