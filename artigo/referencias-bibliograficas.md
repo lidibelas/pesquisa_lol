@@ -27,6 +27,20 @@ KOUNG, Elena; ZHANG, Zinan; GUI, Xinning; KOU, Yubo. Gendered Toxicity in Compet
 
 **Como usar no meu trabalho:** citar na definição da categoria `deslegitimacao_elo` ou na discussão da expressão “foi boostada pelo namorado”. Elo é a classificação nas partidas ranqueadas; nessa frase, atribui-se o elo da jogadora à ajuda do namorado, em vez de à habilidade dela. O estudo dá base para interpretar a acusação, mas não comprova que houve manipulação do elo no corpus nem que a palavra “boostada”, sozinha, indica misoginia.
 
+### Bareither (2020) — linguagem da dominação nas partidas
+BAREITHER, Christoph. *Playful Virtual Violence: An Ethnography of Emotional Practices in Video Games*. Cambridge: Cambridge University Press, 2020. [DOI](https://doi.org/10.1017/9781108873079).
+
+**Resumo:** em uma etnografia de jogos digitais, o autor examina como jogadores vivenciam e expressam emoções durante as partidas. Entre os exemplos, registra o uso do termo inglês *rape* para falar de dominar ou humilhar um adversário em jogos multijogador.
+
+**Como usar no meu trabalho:** citar em Resultados e Discussão, na leitura dos trechos em que termos ligados ao estupro descrevem situações da partida. O estudo documenta um uso semelhante em outros jogos; a interpretação desses trechos como banalização no corpus do Yiok é da pesquisa.
+
+### Guimarães e Pedroza (2015) — banalização da violência contra as mulheres
+GUIMARÃES, Maisa Campos; PEDROZA, Regina Lucia Sucupira. Violência contra a mulher: problematizando definições teóricas, filosóficas e jurídicas. *Psicologia & Sociedade*, v. 27, n. 2, p. 256–266, 2015. [DOI](https://doi.org/10.1590/1807-03102015v27n2p256).
+
+**Resumo:** o artigo discute a violência doméstica contra as mulheres no Brasil e examina como posturas machistas e patriarcais contribuem para legitimá-la e banalizá-la. As autoras articulam a perspectiva de gênero a uma discussão sobre direitos humanos e a Lei Maria da Penha.
+
+**Como usar no meu trabalho:** citar na discussão para fundamentar a noção mais ampla de banalização da violência contra as mulheres. O artigo não estuda jogos digitais nem os vídeos de Yiok; a aplicação dessa discussão à linguagem da partida é uma interpretação do corpus.
+
 ## Contagem lexical e validade
 
 ### Grimmer e Stewart (2013) — limites da análise automática de texto
