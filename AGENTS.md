@@ -64,7 +64,7 @@ Consulte o [README](README.md) para estrutura de pastas, coleta, transcrição e
 
 ## Estado da análise
 
-O corpus e os dois léxicos ativos já estão disponíveis. A implementação e a execução da nova análise transcrições × visualizações ainda estão pendentes. A análise legada permanece arquivada.
+O corpus, os dois léxicos ativos e os resultados da análise de transcrições × visualizações estão disponíveis. As cinco tabelas de resultados legados ficam em `data/analise/resultado/resultado_v1/`. O CSV do recorte atual e os materiais de leitura em `tratamento/` ficam em `data/analise/resultado/resultado_v2/`.
 
 ## Contexto acadêmico
 

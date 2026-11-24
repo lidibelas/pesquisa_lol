@@ -36,15 +36,15 @@ pesquisa_lol/
     │   ├── data_base yiok - comentários.csv   ← base completa de comentários brutos (1.222)
     │   ├── base_analitica_mol.csv             ← base analítica unificada (1.222 + codificação binária MOL)
     │   └── comentarios_flagged_mol.csv        ← comentários sinalizados na análise anterior
-    ├── analise/                           ← resultados da análise anterior
+    ├── analise/                           ← dados e resultados de análise
     │   ├── base_comparativa_por_video.csv     ← comparação anterior por vídeo (segmentos e comentários)
-    │   ├── base_analitica_comentarios_mol.csv ← 1.222 comentários codificados pelo MOL
-    │   ├── base_analitica_transcricoes_mol.csv← 8.384 segmentos codificados pelo MOL
-    │   ├── crosstab_comentarios_video_categorias.csv  ← vídeo × categorias MOL (comentários)
-    │   ├── crosstab_transcricoes_video_categorias.csv ← vídeo × categorias MOL (transcrições)
-    │   ├── resumo_estatistico_mol.csv         ← métricas gerais
-    │   ├── comentarios_flagged_mol.csv        ← comentários flagged pelo MOL
-    │   └── transcricoes_flagged_mol.csv       ← segmentos flagged pelo MOL
+    │   ├── base_analitica_comentarios_mol.csv ← comentários codificados na análise anterior
+    │   ├── base_analitica_transcricoes_mol.csv← segmentos codificados na análise anterior
+    │   └── resultado/
+    │       ├── resultado_v1/                  ← cinco tabelas de resultados da análise anterior
+    │       └── resultado_v2/                  ← análise atual de transcrições e visualizações
+    │           ├── resultado-mol-yiok-43-videos.csv
+    │           └── tratamento/                ← planilha, CSV de leitura e notas metodológicas
     └── videos/                            ← uma pasta por vídeo (43 total)
         └── <videoId>/
             ├── descricao.md                   ← metadados + descrição original
@@ -248,6 +248,8 @@ A categorização foi feita por **análise indutiva do conteúdo** — cada víd
 A coluna `categoria_video` foi adicionada ao arquivo `data/data_base yiok - videos.csv`.
 
 ## Arquivos da análise anterior
+
+As cinco tabelas de resultados da análise anterior estão em [`resultado_v1`](data/analise/resultado/resultado_v1/). O CSV original do recorte atual e sua versão tratada estão em [`resultado_v2`](data/analise/resultado/resultado_v2/).
 
 O script `scripts/analise_lexical.py` e as tabelas existentes em `data/analise/` documentam o recorte anterior. **O script legado não implementa os status e as exceções do v3.** Passar um dos CSVs ativos para ele não reproduz o desenho descrito aqui. O caminho padrão dele aponta para o v2 antes do arquivamento; para reprodução histórica, use uma cópia isolada e indique `--lexico lexico/descartados/mol-lexicon.csv` para não sobrescrever resultados do projeto. Na tabela `data/analise/base_comparativa_por_video.csv`, `freq_mol_por_mil` significa **segmentos sinalizados por mil segmentos transcritos**, e não ocorrências por mil palavras. O percentual de comentários sinalizados também pertence ao recorte anterior. Nenhuma dessas colunas deve ser usada como resultado da nova comparação com visualizações.
 
