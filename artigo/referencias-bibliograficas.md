@@ -41,6 +41,11 @@ GUIMARÃES, Maisa Campos; PEDROZA, Regina Lucia Sucupira. Violência contra a mu
 
 **Como usar no meu trabalho:** citar na discussão para fundamentar a noção mais ampla de banalização da violência contra as mulheres. O artigo não estuda jogos digitais nem os vídeos de Yiok; a aplicação dessa discussão à linguagem da partida é uma interpretação do corpus.
 
+### Arkade (2024) — fonte da figura dos elos de League of Legends
+ARKADE. Ranked LoL: como subir de elo no LoL sem perder a sanidade. **Arkade**, atualizado em 14 mar. 2024. Disponível em: [Arkade](https://arkade.com.br/ranked-lol-como-subir-de-elo-no-lol-sem-perder-a-sanidade/). Acesso em: 24 nov. 2026.
+
+**Como usar no meu trabalho:** fonte da figura que situa Mestre e Grão-Mestre na hierarquia das partidas ranqueadas. A matéria atribui a imagem à Riot Games. Abaixo da figura: “Fonte: Riot Games, imagem reproduzida em Arkade (2024).”
+
 ## Contagem lexical e validade
 
 ### Grimmer e Stewart (2013) — limites da análise automática de texto
