@@ -1,6 +1,6 @@
 # Figuras | Pesquisa LoL — Corpus Yiok
 
-As duas figuras usam a [tabela publicada dos 43 vídeos](../../data/analise/resultado-mol-yiok-43-videos.csv). O léxico sem frases específicas de cena é a referência; o léxico com frases produziu as mesmas taxas neste corpus. As visualizações são as registradas na base de coleta, e não as contagens atuais do YouTube.
+As duas figuras usam a [tabela publicada dos 43 vídeos](../resultado-mol-yiok-43-videos.csv). O léxico sem frases específicas de cena é a referência; o léxico com frases produziu as mesmas taxas neste corpus. As visualizações são as registradas na base de coleta, e não as contagens atuais do YouTube.
 
 ## Figura 1. Ocorrências do léxico e visualizações
 
@@ -14,4 +14,4 @@ As duas figuras usam a [tabela publicada dos 43 vídeos](../../data/analise/resu
 
 **Legenda.** Cada barra indica a porcentagem de vídeos daquele formato que tiveram pelo menos uma correspondência de um termo principal do léxico nas falas transcritas. Foram 15 de 22 vídeos longos (68,2%) e 0 de 21 Shorts. Esse zero indica que o léxico não captou os termos selecionados nesses Shorts; não comprova ausência de misoginia. Tampouco uma ocorrência isolada comprova um caso de misoginia.
 
-Fonte: corpus Yiok e [caderno de análise](../../scripts/analise-mol-yiok.ipynb). Ver também as [decisões metodológicas](../decisoes-metodologicas.md).
+Fonte: corpus Yiok e [caderno de análise](../../../../../scripts/analise-mol-yiok.ipynb). Ver também as [decisões metodológicas](../../../../../artigo/decisoes-metodologicas.md).

@@ -44,6 +44,7 @@ pesquisa_lol/
     │       ├── resultado_v1/                  ← cinco tabelas de resultados da análise anterior
     │       └── resultado_v2/                  ← análise atual de transcrições e visualizações
     │           ├── resultado-mol-yiok-43-videos.csv
+    │           ├── figuras/                   ← gráficos da análise atual e legendas
     │           └── tratamento/                ← planilha, CSV de leitura e notas metodológicas
     └── videos/                            ← uma pasta por vídeo (43 total)
         └── <videoId>/
@@ -249,7 +250,7 @@ A coluna `categoria_video` foi adicionada ao arquivo `data/data_base yiok - vide
 
 ## Arquivos da análise anterior
 
-As cinco tabelas de resultados da análise anterior estão em [`resultado_v1`](data/analise/resultado/resultado_v1/). O CSV original do recorte atual e sua versão tratada estão em [`resultado_v2`](data/analise/resultado/resultado_v2/).
+As cinco tabelas de resultados da análise anterior estão em [`resultado_v1`](data/analise/resultado/resultado_v1/). O CSV original do recorte atual e sua versão tratada estão em [`resultado_v2`](data/analise/resultado/resultado_v2/). Os gráficos e as legendas ficam em [`resultado_v2/figuras`](data/analise/resultado/resultado_v2/figuras/).
 
 O script `scripts/analise_lexical.py` e as tabelas existentes em `data/analise/` documentam o recorte anterior. **O script legado não implementa os status e as exceções do v3.** Passar um dos CSVs ativos para ele não reproduz o desenho descrito aqui. O caminho padrão dele aponta para o v2 antes do arquivamento; para reprodução histórica, use uma cópia isolada e indique `--lexico lexico/descartados/mol-lexicon.csv` para não sobrescrever resultados do projeto. Na tabela `data/analise/base_comparativa_por_video.csv`, `freq_mol_por_mil` significa **segmentos sinalizados por mil segmentos transcritos**, e não ocorrências por mil palavras. O percentual de comentários sinalizados também pertence ao recorte anterior. Nenhuma dessas colunas deve ser usada como resultado da nova comparação com visualizações.
 

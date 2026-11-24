@@ -64,7 +64,7 @@ Consulte o [README](README.md) para estrutura de pastas, coleta, transcrição e
 
 ## Estado da análise
 
-O corpus, os dois léxicos ativos e os resultados da análise de transcrições × visualizações estão disponíveis. As cinco tabelas de resultados legados ficam em `data/analise/resultado/resultado_v1/`. O CSV do recorte atual e os materiais de leitura em `tratamento/` ficam em `data/analise/resultado/resultado_v2/`.
+O corpus, os dois léxicos ativos e os resultados da análise de transcrições × visualizações estão disponíveis. As cinco tabelas de resultados legados ficam em `data/analise/resultado/resultado_v1/`. O CSV do recorte atual, os materiais de leitura em `tratamento/` e os [gráficos e legendas](data/analise/resultado/resultado_v2/figuras/) ficam em `data/analise/resultado/resultado_v2/`.
 
 ## Contexto acadêmico
 
