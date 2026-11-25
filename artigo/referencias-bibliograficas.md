@@ -19,6 +19,11 @@ RATAN, Rabindra A.; TAYLOR, Nicholas; HOGAN, James; KENNEDY, Tracy; WILLIAMS, Dm
 
 **Como usar no meu trabalho:** situar a leitura de acusações como “boostada” no debate sobre gênero e competência. A pesquisa não verifica as acusações ou o mérito individual de ninguém no corpus.
 
+### Manne (2017) — misoginia e policiamento das normas de gênero
+MANNE, Kate. *Down Girl: The Logic of Misogyny*. New York: Oxford University Press, 2017. [DOI](https://doi.org/10.1093/oso/9780190604981.001.0001).
+
+**Como usar no meu trabalho:** fundamentar a leitura da misoginia como uma forma de policiar expectativas de gênero. Na discussão sobre o elo, essa perspectiva ajuda a interpretar como a acusação de que a jogadora teria sido “boostada”, combinada ao insulto sexualizado, põe em dúvida o mérito dela. Manne oferece o referencial teórico; os estudos sobre jogos e o trecho analisado dão base à discussão do caso.
+
 ### Koung et al. (2025) — deslegitimação da competência e do elo
 
 KOUNG, Elena; ZHANG, Zinan; GUI, Xinning; KOU, Yubo. Gendered Toxicity in Competitive Gaming: Women’s Perceptions and Responses. *Proceedings of the ACM on Human-Computer Interaction*, v. 9, n. 6, art. GAMES015, 2025. [DOI](https://doi.org/10.1145/3748610).
