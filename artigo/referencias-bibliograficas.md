@@ -119,6 +119,14 @@ LOURENÇO, Luiz Claudio; VITENA, Gabrielle Simões Lima; SILVA, Marina de Macedo
 
 Essas fontes não confirmam banimento por IP nem estabelecem que a punição tenha sido motivada pela discussão com a outra criadora.
 
+### Contexto sobre Yiok e o meme dos mains de Kassadin
+
+- *LoL: Monochampion do Desafiante recebe ban em todas as contas e está proibido de jogar qualquer jogo da Riot*. Mais Esports, 2025. [Reportagem](https://maisesports.com.br/lol-monochampion-do-desafiante-recebe-ban-em-todas-as-contas-e-esta-proibido-de-jogar-qualquer-jogo-da-riot). Nos parágrafos iniciais, a matéria identifica Yiok como jogador de Kassadin e reproduz a explicação de Drew Levin para o banimento. Na seção sobre a escolha de itens de Chovy, reproduz a publicação de Yiok de 2 de novembro de 2025 em que ele usa o elo e o gênero de uma jogadora para desqualificar sua opinião. Usar como registro da controvérsia pública, não como evidência de que essa discussão foi o motivo do banimento.
+- LABORATÓRIO DE ZAUN. *O que levou o Kassadin a ser considerado um campeão “racista”?* YouTube, 25 abr. 2025. [Vídeo e descrição](https://www.youtube.com/watch?v=nwREbh1sUxE). O título e a descrição apresentam a associação com racismo como um meme que circula entre fãs de League of Legends.
+- *Where did the racist Kassadin thing come from?* Reddit, r/KassadinMains, fev. 2022. [Discussão](https://www.reddit.com/r/KassadinMains/comments/si93lz/where_did_the_racist_kassadin_thing_come_from/). A pergunta e as respostas registram a circulação do estereótipo entre participantes do fórum. Não usar a discussão como comprovação da origem do meme, de sua prevalência na comunidade ou da conduta de quem joga com o campeão.
+
+O vídeo e a discussão são fontes de contexto para a circulação do meme sobre racismo. Não sustentam uma generalização sobre jogadores de Kassadin nem a extensão do estereótipo à misoginia. A misoginia no canal é examinada a partir dos vídeos do corpus.
+
 ## Conferência de citações e minutagens
 
 ### Discussão
