@@ -46,6 +46,13 @@ GUIMARÃES, Maisa Campos; PEDROZA, Regina Lucia Sucupira. Violência contra a mu
 
 **Como usar no meu trabalho:** citar na discussão para fundamentar a noção mais ampla de banalização da violência contra as mulheres. O artigo não estuda jogos digitais nem os vídeos de Yiok; a aplicação dessa discussão à linguagem da partida é uma interpretação do corpus.
 
+### Salter e Blodgett (2012) — referências ao estupro como humor e desqualificação da crítica
+SALTER, Anastasia; BLODGETT, Bridget. Hypermasculinity & Dickwolves: The Contentious Role of Women in the New Gaming Public. *Journal of Broadcasting & Electronic Media*, v. 56, n. 3, p. 401–416, 2012. [DOI: 10.1080/08838151.2012.705199](https://doi.org/10.1080/08838151.2012.705199).
+
+**Onde conferir:** [pp. 406–407](https://www.tandfonline.com/doi/pdf/10.1080/08838151.2012.705199#page=7), apresentação da tirinha de *Penny Arcade* e das respostas dos criadores às críticas; [pp. 410–411](https://www.tandfonline.com/doi/pdf/10.1080/08838151.2012.705199#page=11), seção *Framing for a Lack of Common Ground* e parágrafo anterior, sobre a defesa da piada em nome da liberdade de expressão e os ataques e ameaças a quem a contestou.
+
+**Como usar no meu trabalho:** manter Bareither para o sentido das expressões durante as partidas e usar Salter e Blodgett para discutir a banalização em outro espaço da cultura dos jogos: o humor de uma tirinha e a reação a quem a critica. A ideia de que seria “só uma brincadeira” sintetiza como a crítica pode ser desqualificada; não é citação literal. O caso não demonstra como o público do Yiok reagiu.
+
 ### Arkade (2024) — fonte da figura dos elos de League of Legends
 ARKADE. Ranked LoL: como subir de elo no LoL sem perder a sanidade. **Arkade**, atualizado em 14 mar. 2024. Disponível em: [Arkade](https://arkade.com.br/ranked-lol-como-subir-de-elo-no-lol-sem-perder-a-sanidade/). Acesso em: 24 nov. 2026.
 
