@@ -4,6 +4,16 @@ Bibliografia de trabalho para o artigo e a apresentação. Ajustar o estilo fina
 
 ## Gênero, jogos e League of Legends
 
+### Cote (2018) — construção histórica do público gamer como masculino
+COTE, Amanda C. Writing “Gamers”: The Gendered Construction of Gamer Identity in Nintendo Power (1994–1999). *Games and Culture*, v. 13, n. 5, p. 479–503, 2018. [DOI: 10.1177/1555412015624742](https://doi.org/10.1177/1555412015624742).
+
+**Onde conferir:** p. 479, resumo. A análise da revista *Nintendo Power* de 1994 a 1999 mostra como a imprensa especializada reforçou a representação de um público masculino. É um caso histórico delimitado, não evidência de que as mulheres nunca estiveram nos jogos.
+
+### Riot Games (s.d.) — regras básicas e posições no League of Legends
+RIOT GAMES. *O que é League of Legends?* [Guia oficial](https://www.leagueoflegends.com/pt-br/how-to-play/).
+
+**Onde conferir:** página sem numeração, seções “O que é League of Legends?”, “Destrua a base” e “Escolha sua rota”. Sustenta a descrição do modo principal e das cinco posições. A afinidade entre campeões e posições não é uma regra fixa.
+
 ### Albuquerque e Matos (2022) — linguagem e interação no LoL
 ALBUQUERQUE, Rodrigo; MATOS, Tauane. Fica empoderada lá na cozinha: metapragmáticas misóginas no League of Legends. *Traços de Linguagem*, v. 6, n. 1, 2022. [DOI](https://doi.org/10.30681/2594.9063.2022v6n1id11651).
 
@@ -101,6 +111,13 @@ LOURENÇO, Luiz Claudio; VITENA, Gabrielle Simões Lima; SILVA, Marina de Macedo
 
 - **Yiok**, canal do YouTube. O material do estudo é o recorte de 43 vídeos, suas transcrições e o [arquivo de metadados](../data/data_base%20yiok%20-%20videos.csv). Nas citações de trechos, registrar vídeo, minutagem e se houve conferência no áudio.
 - Para versões do léxico e protocolo de contagem, ver [Decisões metodológicas](decisoes-metodologicas.md).
+
+### Fontes de contexto sobre o banimento de Yiok
+
+- CATARINA, Giulia. *Streamer brasileiro é banido de todos os jogos da Riot; entenda*. THESPIKE Brasil, 13 nov. 2025. [Reportagem](https://www.thespike.gg/br/valorant/news/valorant-riot-banido-jogos-streamer/7180). Página sem numeração; conferir os parágrafos iniciais, que relatam o banimento e atribuem a explicação a Drew Levin.
+- YIOK. [Vídeo em que o criador comenta o banimento dos jogos da Riot]. YouTube, 17 nov. 2025. [Vídeo](https://www.youtube.com/watch?v=WVcaYpRskw0). Conferir o título e a data de publicação. O identificador não consta da base de metadados consultada; usar como fonte de contexto, não como um dos 43 vídeos analisados.
+
+Essas fontes não confirmam banimento por IP nem estabelecem que a punição tenha sido motivada pela discussão com a outra criadora.
 
 ## Conferência de citações e minutagens
 
